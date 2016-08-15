@@ -1,0 +1,14 @@
+#
+# @author: Phoenix Integration
+# @description: calculates stiffness of a spring
+# @version: DEMO
+#
+
+# spreadsheet
+file=output.csv
+
+# variables
+setActiveSheet "output"
+
+#     cell 		name           type
+cell: a2   converged        input

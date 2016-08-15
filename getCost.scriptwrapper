@@ -1,0 +1,18 @@
+#
+# This ScriptWrapper reads the model cost.
+#
+variable: readValue string output default=0
+variable: path string input
+script: 
+option explicit
+ Dim fso, file, content, line
+sub run
+ Set fso = CreateObject("Scripting.FileSystemObject")
+ Set file = fso.OpenTextFile(path.Value, 1)
+
+line = file.Readline
+
+readValue.Value = line
+file.Close
+
+end sub

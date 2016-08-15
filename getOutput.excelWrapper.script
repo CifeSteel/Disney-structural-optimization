@@ -1,0 +1,1194 @@
+#
+# This ScriptWrapper was adapted from the the version created by
+# Analysis Server V5.2beta.
+#
+# Structure of this file
+#   - Scriptwrapper code to define intrinsic methods
+#   - Visual Basic Script Code
+#     - Define and set variables to control execution
+#     - Define and set variables that are exposed to the interface
+#     - Code executed at load (or first execution)
+#     - "run" method called each time the component is executed by the Analysis Server
+#     - "onEnd" method called when component is reloaded or closed
+#     - Functions and subroutines supporting the above (some also exposed as methods)
+#
+#========#=========#=========#=========#=========#=========#=========#=========#=========#=========#
+#
+# Define the methods which are based on subroutines written in the
+# scripting code in this wrapper.
+#
+method: showExcel             "Show Excel"
+method: hideExcel             "Hide Excel"
+method: reloadInputs          "Reload Input Values"
+method: startExcel            "Start Excel"
+method: stopExcel             "Stop Excel"
+method: setExcelRunOnlyTrue   "Close Excel After Running"
+method: setExcelRunOnlyFalse  "Keep Excel Open Until End"
+#
+#========#=========#=========#=========#=========#=========#=========#=========#=========#=========#
+#
+# The following "script" line is the final line using the scriptwrapper
+# syntax, everything else after it follows the scripting language syntax.
+#
+script: language=VBScript
+'
+'========'========='========='========='========='========='========='========='========='========='
+'
+' Begining of the scripting language based syntax
+'
+' Force all variables to be declared
+'
+option explicit
+'
+' Define the variables and set the values of the variables that correspond
+' to the original excelwrapper syntax.
+'
+dim excelFile, isAbsolute, excelShare, checkInputs
+dim promptUser, excelVisible, excelRunOnly
+'
+excelFile    = "output.csv"
+   ' Excel workbook to be used be this scriptwrapper.
+isAbsolute   =  false
+   ' true  = The "excelFile" variable is an absolute reference.
+   ' false = The "excelFile" variable is a filename in the wrapper directory 
+excelShare   = "false"
+   ' TRUE  = Share excel instances
+   ' AUTO  = Share excel instances if possible
+   ' FALSE = Do not share excel instances (default)
+   ' NOTE: Case sensitive string, not boolean
+   ' NOTE: Phoenix Intergration does not recommend "FALSE" or "AUTO".
+promptUser   =  "null"
+   ' true  = Propmt user when  component starts
+   ' false = Do not prompt user when component starts (default)
+   ' NOTE: Changed to boolean from AS V5.2beta usage.
+excelVisible =  false
+   ' true  = Make the Excel workbook visible and accessiable to the user.
+   ' false = Keep the Excel workbook hidden (Default).
+   ' Having the workbook visible is only useful if the Analysis Server and
+   ' the client (usually ModelCenter) are visible to the same display.
+checkInputs  =  false
+   ' true  = Check to see if inputs changed during component run
+   ' false = Do not check to see if inputs changed during component run (default)
+excelRunOnly =  false
+   ' true  = The Excel application is only shutdown between executions. 
+   ' false = The Excel application remains active until the component is closed. (default)
+'
+' Setup the internal arrays that will hold the variable information for the input and output
+' variables that are exposed to the interface.  This section is the primary area that needs to be
+' modified for each new Excel file.
+'
+' defineVariable(index, name, range, isOutput, description, units, upperBound, lowerBound,
+'                enumValues, enumAliases, numDims, ignoreExcel, varType)
+'
+' NOTE: varType was not an option in the orginal excelwrapper interface.
+'
+dim inputs(),outputs()
+redim inputs(1-1)
+redim outputs(0-1)
+defineVariable 0,"converged","'output'!a2",false,"","",0.0,0.0,"","",1,false,""
+'
+'========'========='========='========='========='========='========='========='========='========='
+'========'========='========='========='========='========='========='========='========='========='
+'
+'                  THERE SHOULD BE NO REASON TO CHANGE ANYTHING BELOW THIS POINT
+'
+'========'========='========='========='========='========='========='========='========='========='
+'========'========='========='========='========='========='========='========='========='========='
+'
+' Use the information from the setup section to create the full Excel workbook name.
+'
+dim workbookFileName
+if isAbsolute then
+   workbookFileName = excelFile
+else
+   workbookFileName = wrapper.directory & "\" & excelFile
+end if
+'
+' Define the variable to hold the Excel Application Object and start it.
+'
+dim excel
+set excel = Nothing
+startExcel
+'
+' The user definable macro "PHXStart" in the Excel workbook is part of the start-up sequence.
+'
+safeInvoke "PHXStart"
+'
+' Set the properties of the variables (input as a group, then outputs as a group) that are
+' exposed to the interface for those variables and properties that were not pre-defined in the
+' initial "defineVariable" call.  The properties are taken from the properties of the Excel cell
+' (range) to which the variable points.
+'
+dim ndx, avar, index, i, j, ftmp
+dim rows, cols, excelArray, oneDArray, tmpArray
+'
+' Set the properties of the input variables.
+'
+for ndx = lbound(inputs) to ubound(inputs)
+   '
+   ' Set the varType property using the Excel cell property if it is not already set.
+   '
+   if inputs(ndx).varType = "" Then
+      checkVarType(inputs(ndx))
+   end if
+   '
+   ' Load all of the input variable values from Excel.
+   '
+   ' NOTE: The scriptwrapper "default" property is not used with Excel, the value comes from
+   '       the workbook.
+   ' NOTE: The value from the workbook is overridden later when ModelCenter is the client and
+   '       the value is set in ModelCenter.
+   '
+   initializeInputElement
+   '
+   ' Set the input variable description property
+   '
+   avar.description = inputs(ndx).description
+   '
+   ' Set the input variable format property for those variable types that have it (double and
+   ' integer do; string and boolean do not).  Set the property to the empty string if the
+   ' format is to be ignored.  Use "ftmp" to check the current format for a null, which should
+   ' then default to "General".
+   '
+   ftmp = excel.range(inputs(ndx).range).NumberFormat
+   if (inputs(ndx).varType = "double" OR inputs(ndx).varType = "integer") then
+      if (inputs(ndx).ignoreExcel) then
+         avar.format = ""
+      elseif (isNull(ftmp)) then
+         avar.format = "General"
+      else
+         avar.format = excel.range(inputs(ndx).range).NumberFormat
+      end if
+   end if
+   '
+   ' Set the input variable units and upperBound and lowerBound properites for those variable
+   ' types that have it (double and integer do; string and boolean do not).
+   '
+   if (inputs(ndx).varType = "double" OR inputs(ndx).varType = "integer") then
+      avar.units = inputs(ndx).units
+      if (inputs(ndx).upperBound <> 0 AND inputs(ndx).lowerBound <> 0) then
+         avar.upperBound = inputs(ndx).upperBound
+         avar.lowerBound = inputs(ndx).lowerBound
+      end if
+   end if
+   '
+   ' Set the input variable enumValues and enumAliases properties for all types except boolean,
+   ' which does not have that property.
+   '
+   if (inputs(ndx).varType <> "boolean") then
+      avar.enumValues  = inputs(ndx).enumValues
+      avar.enumAliases = inputs(ndx).enumAliases
+   end if
+'
+next
+'
+' Set the properites of the Output variables.
+'
+for ndx = lbound(outputs) to ubound(outputs)
+   '
+   ' Set the varType property using the Excel cell property if it is not already set.
+   '
+   if outputs(ndx).varType = "" Then
+      checkVarType(outputs(ndx))
+   end if
+   '
+   ' Load all of the output variable values from Excel.
+   '
+   ' NOTE: The scriptwrapper "default" property is not used with Excel, the value comes from the
+   '       workbook.
+   ' NOTE: The value from the workbook is overridden later when ModelCenter is the client and
+   '       the value is set in ModelCenter.
+   '
+   initializeOutputElement
+   '
+   ' Set the output variable description property
+   '
+   avar.description = outputs(ndx).description
+   '
+   ' Set the output variable format property for those variable types that have it (double and
+   ' integer do; string and boolean do not).  Set the property to the empty string if the format
+   ' is to be ignored.  Use "ftmp" to check the current format for a null, which should then
+   ' default to "General".
+   '
+   ftmp = excel.range(outputs(ndx).range).NumberFormat
+   if (outputs(ndx).varType = "double" OR outputs(ndx).varType = "integer") then
+      if (outputs(ndx).ignoreExcel) then
+         avar.format = ""
+      elseif (isNull(ftmp)) then
+         avar.format = "General"
+      else
+         avar.format = excel.range(outputs(ndx).range).NumberFormat
+      end if
+   end if
+   '
+   ' Set the output variable units and upperBound and lowerBound properites for those variable
+   ' types that have it (double and integer do; string and boolean do not).
+   '
+   if (outputs(ndx).varType = "double" OR outputs(ndx).varType = "integer") then
+      avar.units = outputs(ndx).units
+      if (outputs(ndx).upperBound <> 0 AND outputs(ndx).lowerBound <> 0) then
+         avar.upperBound = outputs(ndx).upperBound
+         avar.lowerBound = outputs(ndx).lowerBound
+      end if
+   end if
+   '
+   ' Set the output variable enumValues and enumAliases properties for all types except boolean,
+   ' which does not have that property.
+   '
+   if (outputs(ndx).varType <> "boolean") then
+      avar.enumValues  = outputs(ndx).enumValues
+      avar.enumAliases = outputs(ndx).enumAliases
+   end if
+'
+next
+'
+showHideExcel
+'
+if excelRunOnly then
+   stopExcel
+   end if
+'
+'========'========='========='========='========='========='========='========='========='========='
+'
+' END OF THE CODE EXECUTED AS PART OF THE LOAD OR FIRST COMPONENT RUN
+'
+'========'========='========='========='========='========='========='========='========='========='
+'
+' This is the method called by Analysis Server to run the component; this is separate from the 
+' main (non-subroutine code in this file) that initialized the ccmponent.
+'
+sub run
+   On Error Resume Next
+   '
+   ' First start the Excel application in case it is not running (usually because excelRunOnly is
+   ' true).
+   '
+   if (excel IS NOTHING) then
+      startExcel
+   end if
+   '
+   ' Setup our instance of excel
+   '
+   setupExcel
+   '
+   ' Stop Excel before throwing an error. (PKB: 12135)
+   '
+   dim errString
+   dim errSource
+   dim errNumber
+   errNumber = err.Number
+   errSource = err.Source
+   errString = err.Description
+   '
+   on error goto 0
+   '
+   ' Stop the Excel application if requested.
+   '
+   if excelRunOnly then
+      stopExcel
+   end if
+   '
+   if errNumber <> 0 then
+      err.Raise errNumber, errSource, errString
+   end if
+'
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' This is the method called by Analysis Server to shutdown the component.  If the Excel application
+' is active, this subroutine first calls the user definable PHXEnd macro in the workbook and then
+' stops the Excel application.  Otherwise, it does nothing.
+'
+' NOTE: ModelCenter also calls it as part of the reconnect method/command before it restarts the
+'       component.
+'
+sub onEnd
+   On Error Resume Next
+   if NOT (excel IS NOTHING) then
+      safeInvoke "PHXEnd"
+      stopExcel
+   end if
+end sub
+'
+'========'========='========='========='========='========='========='========='========='========='
+'
+' Subroutines and functions to support the main, "run" method, and "onEnd" method code above.
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+'
+' Set up the variable class for storing the interface variable information that is created in
+' the defineVariable calls above.
+'
+' Define the varialble class used by the defineVariable routine.
+'
+class ExcelVar
+   public name         ' Name.
+   public range        ' Excel range, must be restricted to a single worksheet.
+   public description  ' Description of variable for the client.
+   public units        ' Units.
+   public upperBound   ' Upper bound for numeric variable types.
+   public lowerBound   ' Lower bound for numeric variable types.
+   public enumValues   ' Enumerated (allowed) values list (comma separated list).
+   public enumAliases  ' Aliases displayed by client that correspond to enumerated values.
+                       ' (comma separated list).
+   public numDims      ' Dimension of the local array.  It is allowed to map a 2D Excel range
+                       ' to a 1D client array.
+   public ignoreExcel  ' Do not use the Excel formats in the client.
+   public varType      ' Local and Client variable type.  If set here, may not be the same as
+                       ' the variable type of the corresponding Excel range.
+end class
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Define each input or output variable based on the parameters passed.
+'
+sub defineVariable(index, name, range, isOutput, description, units, upperBound, lowerBound, enumValues, enumAliases, numDims, ignoreExcel, varType)
+   dim newVar
+   set newVar = new ExcelVar
+   newVar.name        = name
+   newVar.range       = range
+   newVar.description = description
+   newVar.units       = units
+   if (upperBound <> "" AND lowerBound <> "") Then
+      newVar.upperBound = upperBound
+      newVar.lowerBound = lowerBound
+   end if
+   newVar.enumValues  = enumValues
+   newVar.enumAliases = enumAliases
+   newVar.numDims     = numDims
+   newVar.ignoreExcel = ignoreExcel
+   newVar.varType     = varType
+   if isOutput then
+      set outputs(index) = newvar
+   else
+      set inputs(index) = newVar
+   end if
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Define an Excel macro in the workbook as a method.
+'
+sub defineMethod(methodName, excelName)
+   wrapper.addMethod excelName, methodName
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Start an Excel session for the "excelFile" file.
+'
+' NOTE:  This is also exposed as a method.
+'
+'
+sub startExcel
+   '
+   ' If excel is alreay assigned, then it is already started and the routine simply returns.
+   '
+   if NOT (excel IS NOTHING) then
+      exit sub
+   end if
+   '
+   ' Share the Excel instances if the user so requests.
+   ' NOTE: Phoenix Integration does not recommend sharing Excel Instances.
+   '
+   if (excelShare = "TRUE" OR excelShare = "AUTO") Then
+      On error resume Next
+      set excel = GetObject( ,"Excel.Application")
+      if (err.Number = 429) Then
+         '
+         ' Maybe Excel was busy, so lets create a new instance
+         '
+          err.Number = 0
+          On Error Goto 0
+          set excel = CreateObject("Excel.Application")
+      else
+          '
+          ' Instead of attempting to re-throw, just re-call the same method outside the resume next
+          ' so that the error is reported out.
+          '
+          err.Number = 0
+          On Error Goto 0
+          set excel = GetObject( ,"Excel.Application")
+      end if
+      '
+      ' Since we are sharing the instances, we need to make sure that the Excel file itself is 
+      ' unique.
+      '
+      excelFile = copyToUnique(excelFile)
+   else
+      '
+      ' Always create an Excel Application Object for this component.
+      '
+      set excel = CreateObject("Excel.Application")
+   end if
+   '
+   ' Load the workbook
+   '
+   excel.displayAlerts = false
+   excel.workbooks.open workbookFileName, 3, , , , , true, , , , false
+   '
+   ' Load the solver add-in
+   '
+   on error resume next
+   excel.Workbooks( "Solver.xla" ).RunAutoMacros 1 ' xlAutoOpen
+   on error goto 0
+   '
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Setup our instance of excel with the proper inputs.
+'
+sub setupExcel
+   On Error Goto 0
+   '
+   ' The Excel workbook should not carry out it calculations until after it recieves all of the
+   ' inputs, so we first set the calculation method to manual.
+   '
+   dim oldMode
+   oldMode = excel.Calculation
+   excel.Calculation = -4135 ' xlCalculationManual
+   '
+   ' When the propmtUser variable is "true", then the user should be told what is starting.
+   '
+   if (promptUser <> "null") Then
+      excel.Application.visible = true
+      msgbox "Wrapper: " & excelFile & vbCrLf & vbCrLf & promptUser, VBOKOnly, "Analysis Server ( " & excelFile & " )"
+      excel.Application.visible = false
+   end if
+   '
+   ' When we are going to check to see if the inputs changed, we first need reload them.
+   '
+   if (checkInputs) Then
+      reloadInputs()
+   end if
+   '
+   ' Load the inputs into the Excel workbook.
+   '
+   for ndx = lbound(inputs) to ubound(inputs)
+      '
+      ' Arrays and simple variables are handled differently.
+      '
+      if IsArray(excel.Range(inputs(ndx).range).value) Then
+         if (inputs(ndx).numDims = 1) Then
+            '
+            ' A 1D array (vector) can either be a row or column in Excel.  The loading of an array
+            ' in Excel distinquishes these cases by using a 2D array with a collapsed dimension;
+            ' first index for rows, second index for columns.
+            '
+            rows = excel.Range(inputs(ndx).Range).Rows.Count
+            cols = excel.Range(inputs(ndx).Range).Columns.Count
+            '
+            if (rows = 1) Then
+               '
+               ' This fills a row vector in Excel
+               '
+               ReDim workingArray(0,wrapper.getVariable(inputs(ndx).name).length)
+               for i = 0 to wrapper.getVariable(inputs(ndx).name).length-1
+                  workingArray(0,i) = wrapper.getVariable(inputs(ndx).name).value(i)
+               next
+            else
+               '
+               ' This fills a column vector in Excel
+               '
+               ReDim workingArray(wrapper.getVariable(inputs(ndx).name).length, 0)
+               for i = 0 to wrapper.getVariable(inputs(ndx).name).length-1
+                  workingArray(i,0) = wrapper.getVariable(inputs(ndx).name).value(i)
+               next
+            end if
+            excel.range(inputs(ndx).range).value = workingArray
+         else
+            '
+            ' Normal 2D array
+            '
+            excel.range(inputs(ndx).range).value = wrapper.getVariable(inputs(ndx).name).getArray()
+         end if
+      else
+         '
+         ' Simple variables
+         '
+         excel.range(inputs(ndx).range).value = wrapper.getVariable(inputs(ndx).name).value
+      end if
+   '
+   next
+   '
+   ' The setup is now complete, so we can reset the calculation mode to the old value.
+   '
+   excel.Calculation = oldMode
+   '
+   ' This call to a user definable macro is part of the published Analysis Server interface for
+   ' Excel.
+   '
+   safeInvoke "PHXExecute"
+   '
+   ' Get the outputs from Excel if we haven't encountered an error in PHXExecute
+   '
+   if err.Number = 0 then
+      reloadOutputs()
+   end if
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Stop the Excel application.
+' Since this is usually not run interactively, prevent the "would you like to save changes"
+' dialog, quit Excel and free the object (required to actually remove the process).
+'
+' NOTE:  This is also exposed as a method.
+'
+sub stopExcel
+   if (excel IS NOTHING) then
+      exit sub
+   end if
+   excel.displayAlerts = false
+   excel.quit
+   set excel = Nothing
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Sets the excelRunOnly variable so that the Excel application is only active during the run.
+'
+' NOTE:  This is also exposed as a method.
+'
+sub setExcelRunOnlyTrue
+   excelRunOnly = true
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Sets the excelRunOnly variable so that the Excel application is always active.
+'
+' NOTE:  This is also exposed as a method.
+'
+sub setExcelRunOnlyFalse
+   excelRunOnly = false
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Load and initialize the local output variables using the corresponding Excel workbook cells.
+'
+' NOTE: There are not parameters passed to this subroutine.  All variables accessed are global,
+'       including the index variable "ndx", so this subroutine should only be called from inside of
+'       loop using ndx as the index variable spanning the outputs list.
+'
+sub initializeOutputElement
+   '
+   'check if variable is an array and handle it accordingly
+   '
+   if IsArray(excel.Range(outputs(ndx).range).value) Then
+      '
+      'find the number of rows and columns in the range
+      '
+      rows = excel.Range(outputs(ndx).Range).Rows.Count
+      cols = excel.Range(outputs(ndx).Range).Columns.Count
+      '
+      ' Need to treat 1D and 2D cases separately.
+      '
+      if (outputs(ndx).numDims = 1) Then
+         '
+         ' 1D Array case
+         '
+         excelArray = excel.Range(outputs(ndx).range).value
+         ReDim oneDArray(rows*cols-1)
+         if (rows = 1) Then
+            '
+            ' Copy a 1D array which is row collapsed into a 1D array
+            '
+            for index = 1 to cols
+               oneDArray(index-1) = excelArray(1,index)
+               if (IsDate(oneDArray(index-1)))Then
+                  oneDArray(index-1) = formatDate(oneDArray(index-1))
+               end if
+            next
+         elseif (cols = 1) Then
+            '
+            ' Copy a 1D array which is column collapsed into a 1D array
+            '
+            for index = 1 to rows
+               oneDArray(index-1) = excelArray(index,1)
+               if (IsDate(oneDArray(index-1))) Then
+                  oneDArray(index-1) = formatDate(oneDArray(index-1))
+               end if
+            next
+         else
+            '
+            ' Copy a 2D range into a 1D array.
+            '
+            index = 1
+            for i = 1 to rows
+               for j = 1 to cols
+                  oneDArray(index-1) = excelArray(i,j)
+                  if (IsDate(oneDArray(index-1))) Then
+                     oneDArray(index-1) = formatDate(oneDArray(index-1))
+                  end if
+                  index = index + 1
+               next
+            next
+         end if
+         '
+         ' Set the data from the transfer array defined above for the various 1D cases.  The
+         ' date formating was handled when the oneDArray was filled.
+         '
+         set avar = wrapper.addVariable(outputs(ndx).name, outputs(ndx).varType & "[" & rows*cols & "]", false)
+         avar.setArray(oneDArray)
+         '
+      elseif (outputs(ndx).numDims = 2) Then
+         '
+         ' 2D array case
+         '
+         set avar = _
+            wrapper.addVariable(outputs(ndx).name, outputs(ndx).varType & "[" & rows & "][" & cols & "]", false)
+         avar.setArray(excel.Range(outputs(ndx).range).Value)
+         dim arr
+         arr = avar.getArray()
+         if (IsDate(arr(0,0))) Then
+            ReDim tmpArray(rows, cols)
+            tmpArray = excel.Range(outputs(ndx).range).Value
+            avar.setArray(formatDateArray(tmpArray))
+         end if
+      else
+         '
+         ' Raise an error if someone attempts to initialize an array with more than two dimensions
+         ' and tie it to an Excel array.
+         '
+         err.Raise 1, "initializeOutputElement", "Only 1D or 2D arrays allowed"
+      end if
+   else
+      '
+      ' Simple variable (not an array).
+      '
+      set avar = wrapper.addVariable(outputs(ndx).name, outputs(ndx).varType, false)
+      avar.value = excel.range(outputs(ndx).range).value
+      if (IsDate(avar.value)) Then
+         avar.value = formatDate(avar.value)
+      end if
+   end if
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Load and initialize the local input variables using the corresponding Excel workbook cells.
+'
+' NOTE: There are no parameters passed to this subroutine.  All variables accessed are global,
+'       including the index variable "ndx", so this subroutine should only be called from inside of
+'       loop using ndx as the index variable spanning the inputs list.
+'
+sub initializeInputElement
+   '
+   'check if variable is an array and handle it accordingly
+   '
+   if IsArray(excel.Range(inputs(ndx).range).value) Then
+      '
+      'find the number of rows and columns in the range
+      '
+      rows = excel.Range(inputs(ndx).Range).Rows.Count
+      cols = excel.Range(inputs(ndx).Range).Columns.Count
+      '
+      ' Need to treat 1D and 2D cases separately.
+      '
+      if (inputs(ndx).numDims = 1) Then
+         '
+         ' 1D Array case
+         '
+         excelArray = excel.Range(inputs(ndx).range).value
+         ReDim oneDArray(rows*cols-1)
+         if (rows = 1) Then
+            '
+            ' Copy a 1D array which is row collapsed into a 1D array
+            '
+            for index = 1 to cols
+               oneDArray(index-1) = excelArray(1,index)
+               if (IsDate(oneDArray(index-1)))Then
+                  oneDArray(index-1) = formatDate(oneDArray(index-1))
+               end if
+            next
+         elseif (cols = 1) Then
+            '
+            ' Copy a 1D array which is column collapsed into a 1D array
+            '
+            for index = 1 to rows
+               oneDArray(index-1) = excelArray(index,1)
+               if (IsDate(oneDArray(index-1))) Then
+                  oneDArray(index-1) = formatDate(oneDArray(index-1))
+               end if
+            next
+         else
+            '
+            ' Copy a 2D range into a 1D array.
+            '
+            index = 1
+            for i = 1 to rows
+               for j = 1 to cols
+                  oneDArray(index-1) = excelArray(i,j)
+                  if (IsDate(oneDArray(index-1))) Then
+                     oneDArray(index-1) = formatDate(oneDArray(index-1))
+                  end if
+                  index = index + 1
+               next
+            next
+         end if
+         '
+         ' Set the data from the transfer array defined above for the various 1D cases.  The
+         ' date formating was handled when the oneDArray was filled.
+         '
+         set avar = wrapper.addVariable(inputs(ndx).name, inputs(ndx).varType & "[" & rows*cols & "]", true)
+         avar.setArray(oneDArray)
+         '
+      elseif (inputs(ndx).numDims = 2) Then
+         '
+         ' 2D array case
+         '
+         set avar = _
+            wrapper.addVariable(inputs(ndx).name, inputs(ndx).varType & "[" & rows & "][" & cols & "]", true)
+         avar.setArray(excel.Range(inputs(ndx).range).Value)
+         dim arr
+         arr = avar.getArray()
+         if (IsDate(arr(0,0))) Then
+            ReDim tmpArray(rows, cols)
+            tmpArray = excel.Range(inputs(ndx).range).Value
+            avar.setArray(formatDateArray(tmpArray))
+         end if
+      else
+         '
+         ' Raise an error if someone attempts to initialize an array with more than two dimensions
+         ' and tie it to an Excel array.
+         '
+         err.Raise 1, "initializeInputElement", "Only 1D or 2D arrays allowed"
+      end if
+   else
+      '
+      ' Simple variable (not an array).
+      '
+      set avar = wrapper.addVariable(inputs(ndx).name, inputs(ndx).varType, true)
+      avar.value = excel.range(inputs(ndx).range).value
+      if (IsDate(avar.value)) Then
+         avar.value = formatDate(avar.value)
+      end if
+   end if
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Reload the input variables from the Excel workbook.
+'
+' NOTE:  This is also exposed as a method.
+'
+sub reloadInputs
+   '
+   ' If the Excel application is not active (usually because excelRunOnly is true and the reload
+   ' was called as a method from ModelCenter), then the variables can not be reloaded, so just 
+   ' exit.
+   '
+   ' QUESTION: Should this routine instead start the Excel application, reload the inputs, and
+   '           stop the Excel application, if it was not active when the routine was called?
+   '
+   if (excel IS NOTHING) then
+      Exit Sub
+   end if
+   '
+   ' Reload in the inputs
+   '
+   for ndx = lbound(inputs) to ubound(inputs)
+      '
+      ' Arrays and simple variables must be handled separately.
+      '
+      if IsArray(excel.Range(inputs(ndx).range).value) Then
+         '
+         ' Because Excel treats all arrays as 2D, we will always need the rows and columns for
+         ' both the 1D and 2D cases.
+         '
+         rows = excel.Range(inputs(ndx).Range).Rows.Count
+         cols = excel.Range(inputs(ndx).Range).Columns.Count
+         '
+         ' Since Excel always treats arrays and 2D (vectors have two dimensions, but a lenght of
+         ' one in one of the dimensions), we need to handle 1D local arrays differently than the
+         ' 2D local arrays.
+         '
+         if (inputs(ndx).numDims = 1) Then
+            '
+            ' Get the 2D Excel array
+            '
+            excelArray = excel.Range(inputs(ndx).range).value
+            '
+            ' Setup the 1D target array
+            '
+            ReDim oneDArray(rows*cols-1)
+            '
+            ' Row vectors and Column vectors need to be handled separately; and it may also be
+            ' the case that our client (usually ModelCenter) would prefer that an entire 2D
+            ' Excel array with non-collapsed dimensions be put in a 1D vector (rows, then
+            ' columns).
+            '
+            if (rows = 1) Then
+               '
+               ' Excel rows to 1D vector
+               '
+               for index = 1 to cols
+                  oneDArray(index-1) = excelArray(1,index)
+                  if (IsDate(oneDArray(index-1))) Then
+                     oneDArray(index-1) = formatDate(oneDArray(index-1))
+                  end if
+               next
+            elseif (cols = 1) Then
+               '
+               ' Excel columns to 1D vector
+               '
+               for index = 1 to rows
+                  oneDArray(index-1) = excelArray(index,1)
+                  if (IsDate(oneDArray(index-1))) Then
+                     oneDArray(index-1) = formatDate(oneDArray(index-1))
+                  end if
+               next
+            else
+               '
+               ' Excel 2D array to 1D vector, grouping by rows.
+               '
+               index = 1
+               for i = 1 to rows
+                  for j = 1 to cols
+                     oneDArray(index-1) = excelArray(i,j)
+                     if (IsDate(oneDArray(index-1))) Then
+                        oneDArray(index-1) = formatDate(oneDArray(index-1))
+                     end if
+                     index = index + 1
+                  next
+               next
+            end if
+            '
+            ' Set the data from the transfer array defined above for the various 1D cases.  The
+            ' date formating was handled when the oneDArray was filled.
+            '
+            wrapper.getVariable(inputs(ndx).name).setArray(oneDArray)
+         '
+         elseif (inputs(ndx).numDims = 2) Then
+            '
+            ' 2D to 2D Case
+            '
+            wrapper.getVariable(inputs(ndx).name).setArray(excel.Range(inputs(ndx).range).value)
+            if (IsDate(wrapper.getVariable(inputs(ndx).name).value(0,0))) Then
+               ReDim tmpArray(rows, cols)
+               tmpArray = excel.Range(inputs(ndx).range).Value
+               wrapper.getVariable(inputs(ndx).name).setArray(formatDateArray(tmpArray))
+            end if
+         else
+            '
+            ' Raise an error if someone attempts to reload an array with more than two dimensions
+            ' and tie it to an Excel array.
+            '
+            ' NOTE: This case should not occur as this should have already been caught in
+            '       initializeInputElement.
+            '
+            err.Raise 1, "reloadInputs", "Only 1D or 2D arrays allowed"
+         end if
+      else
+         '
+         ' Simple variable
+         '
+         wrapper.getVariable(inputs(ndx).name).value(excel.range(inputs(ndx).range).value)
+         if (IsDate(wrapper.getVariable(inputs(ndx).name).value)) Then
+            wrapper.getVariable(inputs(ndx).name).value(formatDate(wrapper.getVariable(inputs(ndx).name).value))
+         end if
+      end if
+   Next
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Reload the output variables from the Excel workbook.
+'
+sub reloadOutputs
+   for ndx = lbound(outputs) to ubound(outputs)
+      '
+      ' Arrays and simple variables must be handled separately.
+      '
+      if IsArray(excel.Range(outputs(ndx).range).value) Then
+         '
+         ' Because Excel treats all arrays as 2D, we will always need the rows and columns for
+         ' both the 1D and 2D cases.
+         '
+         rows = excel.Range(outputs(ndx).Range).Rows.Count
+         cols = excel.Range(outputs(ndx).Range).Columns.Count
+         '
+         ' Since Excel always treats arrays and 2D (vectors have two dimensions, but a lenght of
+         ' one in one of the dimensions), we need to handle 1D local arrays differently than the
+         ' 2D local arrays.
+         '
+         if (outputs(ndx).numDims = 1) Then
+            '
+            ' Get the 2D Excel array
+            '
+            excelArray = excel.Range(outputs(ndx).range).value
+            '
+            ' Setup the 1D target array
+            '
+            ReDim oneDArray(rows*cols-1)
+            '
+            ' Row vectors and Column vectors need to be handled separately; and it may also be
+            ' the case that our client (usually ModelCenter) would prefer that an entire 2D
+            ' Excel array with non-collapsed dimensions be put in a 1D vector (rows, then
+            ' columns).
+            '
+            if (rows = 1) Then
+               '
+               ' Excel rows to 1D vector
+               '
+               for index = 1 to cols
+                  oneDArray(index-1) = excelArray(1,index)
+                  if (IsDate(oneDArray(index-1)))Then
+                     oneDArray(index-1) = formatDate(oneDArray(index-1))
+                  end if
+               next
+            elseif (cols = 1) Then
+               '
+               ' Excel rows to 1D vector
+               '
+               for index = 1 to rows
+                  oneDArray(index-1) = excelArray(index,1)
+                  if (IsDate(oneDArray(index-1))) Then
+                     oneDArray(index-1) = formatDate(oneDArray(index-1))
+                  end if
+               next
+            else
+               '
+               ' Excel 2D array to 1D vector, grouping by rows.
+               '
+               index = 1
+               for i = 1 to rows
+                  for j = 1 to cols
+                     oneDArray(index-1) = excelArray(i,j)
+                     if (IsDate(oneDArray(index-1))) Then
+                        oneDArray(index-1) = formatDate(oneDArray(index-1))
+                     end if
+                     index = index + 1
+                  next
+               next
+            end if
+            '
+            ' Set the data from the transfer array defined above for the various 1D cases.  The
+            ' date formating was handled when the oneDArray was filled.
+            '
+            wrapper.getVariable(outputs(ndx).name).setArray(oneDArray)
+         '
+         elseif (outputs(ndx).numDims = 2) Then
+            '
+            ' 2D to 2D Case
+            '
+            wrapper.getVariable(outputs(ndx).name).setArray(excel.Range(outputs(ndx).range).value)
+            if (IsDate(wrapper.getVariable(outputs(ndx).name).value(0,0))) Then
+               ReDim tmpArray(rows, cols)
+               tmpArray = excel.Range(outputs(ndx).range).Value
+               wrapper.getVariable(outputs(ndx).name).setArray(formatDateArray(tmpArray))
+            end if
+            '
+         else
+            '
+            ' Raise an error if someone attempts to reload an array with more than two dimensions
+            ' and tie it to an Excel array.
+            '
+            ' NOTE: This case should not occur as this should have already been caught in
+            '       initializeOutputElement.
+            '
+            err.Raise 1, "reloadOutputs", "Only 1D or 2D arrays allowed"
+            '
+         end if
+      else
+         '
+         ' Simple variable
+         '
+         wrapper.getVariable(outputs(ndx).name).value(excel.range(outputs(ndx).range).value)
+         if (IsDate(wrapper.getVariable(outputs(ndx).name).value)) Then
+            wrapper.getVariable(outputs(ndx).name).value(formatDate(wrapper.getVariable(outputs(ndx).name).value))
+         end if
+      end if
+   Next
+end sub
+
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Toggles the showing or hiding of Excel.  Used primarily as a method from ModelCenter.
+'
+sub showHideExcel
+   if (excel IS NOTHING) then
+      Exit Sub
+   end if
+   excel.Application.visible = excelVisible
+   excelVisible = Not excelVisible
+end sub
+'
+'--------'---------'---------'---------'---------'----------'---------'---------'---------'---------'
+'
+' Shows (makes visible) Excel when called.  Used primarily as a method from ModelCenter.
+'
+sub showExcel
+   if (excel IS NOTHING) then
+      Exit Sub
+   end if
+   excel.Application.visible = true
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Hides Execl when called.  Used primarily as a method from ModelCenter.
+'
+sub hideExcel
+   if (excel IS NOTHING) then
+      Exit Sub
+   end if
+   excel.Application.visible = false
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Allows a macro in an Excel workbook to be invoked, but does not raise an error if the macro does
+' not exist.
+'
+sub safeInvoke( macro )
+   if (excel IS NOTHING) then
+      Exit Sub
+   end if
+   '
+   ' Ignore error code 1004: Cannot find the specified macro.
+   '
+   on error resume next
+   excel.run macro
+   '
+   if err.Number = 1004 then
+      err.Clear
+   end if
+   '
+   if err.Number <> 0 then
+      dim desc
+      dim source
+      dim number
+      desc = err.Description
+      source = "Microsoft Office Excel Macro: " & macro
+      number = err.Number
+      err.Raise number, source, desc
+   end if
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Checks the variable type by reading it from Excel and then sets the variable type accordingly.
+' Used when a type is not specified in the defineVariable statement.  Excel can only return 
+' vbDouble, vbCurrency, vbDate, vbString, vbBoolean and those values with the vbArray bit set.  
+' Currency is treated as double.
+'
+sub checkVarType(checkVariable)
+   Select Case VarType(excel.range(checkVariable.range).value)
+   Case 2
+      checkVariable.varType = "integer"
+   Case 3
+      checkVariable.varType = "integer"
+   Case 5
+      checkVariable.varType = "double"
+   Case 6
+      checkVariable.varType = "double"
+   Case 7
+      checkVariable.varType = "string"
+   Case 8
+      checkVariable.varType = "string"
+   Case 11
+      checkVariable.varType = "boolean"
+   Case 8194
+      checkVariable.varType = "integer"
+   Case 8195
+      checkVariable.varType = "integer"
+   Case 8197
+      checkVariable.varType = "double"
+   Case 8200
+      checkVariable.varType = "string"
+   Case 8201
+      checkVariable.varType = "boolean"
+   Case 8204
+      'checkVariable.varType = "double"
+      Dim cell
+      For Each cell in excel.range(checkVariable.range).value
+         if ((VarType(cell) = 5) or (VarType(cell) = 6)) Then
+            checkVariable.varType = "double"
+         else
+            checkVariable.varType = "string"
+            Exit For
+         end if
+      Next
+   Case Else
+      checkVariable.varType = "double"
+   End Select
+end sub
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Given a file path, this function will copy the file to a unique name
+'
+function copyToUnique( fileName )
+   '
+   Dim addPart, newFileName, basePart, fso
+   '
+   ' Use addPart as a sequence number and keep increasing (below) until it is unique (i.e. does not
+   ' exist.
+   '
+   addPart = 0
+   '
+   if(Not(isAbsolute)) Then
+      fileName = wrapper.directory & "\" & fileName
+   end if
+   '
+   ' Create new filenames in sequence and test until one does not exist, then use it.
+   '
+   basePart = Left(fileName, len(fileName)-4)
+   basePart = basePart & "_phxtmp"
+   newFileName = basePart & addPart & ".xls"
+   set fso = CreateObject("Scripting.FileSystemObject")
+   while (fso.FileExists(newFileName))
+      addPart = addPart + 1
+      newFileName = basePart & addPart & ".xls"
+   WEnd
+   '
+   ' Return the unique name.
+   '
+   copyToUnique = newFileName
+end function
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Changes dates to the format Month Day, Year (i.e. Jan 1, 2008).  Using this format will prevent
+' Excel from being confused during input and output.
+'
+' QUESTION: What happens when this code is run on a machine with a local language setting in Excel?
+'
+function formatDate( fDate )
+   '
+   Dim fMonth, fDay, fYear
+   '
+   fMonth = MonthName(Month(fDate), true)
+   fDay   = Day(fDate)
+   fYear  = Year(fDate)
+   '
+   formatDate = fMonth & " " & fDay & ", " & fYear
+   '
+end function
+'
+'--------'---------'---------'---------'---------'---------'---------'---------'---------'---------'
+'
+' Uses formatDate (above) to handle arrays of dates by stepping through each element.
+'
+function formatDateArray( fDateArray )
+   '
+   dim i, j
+   '
+   for i = LBound(fDateArray,1) to UBound(fDateArray,1)
+      for j = LBound(fDateArray,2) to UBound(fDateArray,2)
+         fDateArray(i,j) = formatDate(fDateArray(i,j))
+      Next
+   Next
+   '
+   formatDateArray = fDateArray
+   '
+end function

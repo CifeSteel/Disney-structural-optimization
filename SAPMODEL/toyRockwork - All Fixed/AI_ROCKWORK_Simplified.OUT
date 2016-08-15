@@ -1,0 +1,34 @@
+ SAP2000 v16.1.1 Ultimate (Analysis Build 9194/32)                              
+ File: C:\Users\Filippo\AppDat...Rockwork - All Fixed\AI_ROCKWORK_Simplified.OUT
+                                                                     
+                                                                       
+
+ D I S P L A C E M E N T   D E G R E E S   O F   F R E E D O M
+
+         (A) = Active DOF, equilibrium equation
+         (-) = Restrained DOF, reaction computed
+         (+) = Constrained DOF
+         (>) = External substructure DOF
+         ( ) = Null DOF
+
+  JOINTS              UX  UY  UZ  RX  RY  RZ
+    ~753 TO P010000    A   A   A   A   A   A
+ P000007 TO P000000    -   -   -   -   -   -
+    ~800 TO P010100    A   A   A   A   A   A
+ P000107 TO P000100    -   -   -   -   -   -
+    ~801 TO P010200    A   A   A   A   A   A
+ P000207 TO P000200    -   -   -   -   -   -
+    ~802 TO P010300    A   A   A   A   A   A
+ P000307 TO P000300    -   -   -   -   -   -
+    ~798 TO P010400    A   A   A   A   A   A
+ P000407 TO P000400    -   -   -   -   -   -
+    ~799 TO P010500    A   A   A   A   A   A
+ P000507 TO P000500    -   -   -   -   -   -
+    ~794 TO P010601    A   A   A   A   A   A
+ P000607 TO P000601    -   -   -   -   -   -
+    ~787 TO P010702    A   A   A   A   A   A
+ P000706 TO P000702    -   -   -   -   -   -
+    ~788 TO P010802    A   A   A   A   A   A
+ P000805 TO P000801    -   -   -   -   -   -
+    ~707 TO P010901    A   A   A   A   A   A
+ P000906 TO P000901    -   -   -   -   -   -

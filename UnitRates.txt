@@ -1,0 +1,14 @@
+Rate,Value
+ShopLaborRate,391.2
+ShopSawingRate,0.000052
+ShopFilletWeldingRate,0.00026378
+FieldLaborRate,586.8
+FieldFilletWeldingRate,0.000028
+FieldHoistingRate,1
+FieldWeldMaterialCost,55710.98652
+PlateMaterialUnitCost,8293.75
+HoleDrillingRate,0.0333
+FieldBoltingRate,0.03
+PlateCuttingRate,0.000052
+BoltMaterialUnitCost,27500
+PlateHandlingAndLayoutRate,0.4167

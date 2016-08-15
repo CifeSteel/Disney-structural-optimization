@@ -1,0 +1,11 @@
+#
+# This ScriptWrapper reads the model cost.
+#
+variable: startVar Boolean input default=False
+script: 
+option explicit
+sub run
+
+startVar.Value = False
+
+end sub

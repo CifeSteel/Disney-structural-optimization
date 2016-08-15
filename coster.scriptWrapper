@@ -1,0 +1,68 @@
+#
+# @description: Example Python 3.4 scriptWrapper with error handling. Calls main.py with input.txt and output.txt files for getting data in/out of ModelCenter.
+# @author: abaines@phoenix-int.com
+# @icon: py.ico
+# @keywords: python 3, example, error handling, invoke method, batch file, vbscript, file input/output
+#
+# define variables 
+
+variable: inputFile		file		input
+variable: outputFile	file		output
+
+# used to check success of script
+# gives epoch of python cathcer.py completion
+variable: success			string 	output
+
+# remove all of the .txt files associated with this script
+# aka error, success, input, output .txt files
+method: clearfiles "Remove .txt Files"
+
+# anything after the following line is interpreted as the script 
+script: 
+option explicit 
+
+
+' remove all of the .txt files associated with this script
+' aka error, success, input, output .txt files
+sub clearfiles
+	dim sfso
+	Set sfso = CreateObject("Scripting.FileSystemObject") 'Calls the File System Object
+	
+end sub
+
+
+' method called when running the .scriptWrapper component from ModelCenter
+sub run
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+''' Put your input file exports below this line
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+	
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+''' Put your input file exports above this line
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+	' Run a command as if you were running from the command line
+	' trying to delete all of the environmental variables Analysis Server uses for python 2.5.4
+	dim objShell
+	Set objShell = CreateObject("WScript.Shell")
+	dim env: set env =  objShell.Environment("process")
+	env.item("PATH") = ""
+	objShell.CurrentDirectory = wrapper.directory
+	objShell.Run "parse_coster.bat", 0, 1
+	Set objShell = Nothing
+	
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+''' Put your output file import below this line
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+	
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+''' Put your output file import above this line
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+	
+end sub
+
+

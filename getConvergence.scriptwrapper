@@ -1,0 +1,21 @@
+#
+# This ScriptWrapper reads the model cost.
+#
+variable: converged Boolean output default=False
+variable: path string input
+script: 
+option explicit
+ Dim fso, file, content, line
+sub run
+ Set fso = CreateObject("Scripting.FileSystemObject")
+ Set file = fso.OpenTextFile(path.Value, 1)
+
+If Not file.AtEndOfStream Then
+	converged.Value = True
+Else
+	converged.Value = False
+End If
+
+file.Close
+
+end sub

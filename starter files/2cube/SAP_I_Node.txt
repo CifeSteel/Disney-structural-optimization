@@ -1,0 +1,13 @@
+node_ID,X,Y,Z,member_ID,ground?,load_bearing?,U1,U2,U3,R1,R2,R3,remove?,add_back?
+P000802,5000,-16000,0,CO0023,True,False,True,True,True,True,True,True,False,False
+P000803,7000,-16000,0,CO0033,True,False,True,True,True,True,True,True,False,False
+P000804,9000,-16000,0,CO0043,True,False,True,True,True,True,True,True,False,False
+P000902,5000,-18000,0,CO0024,True,False,True,True,True,True,True,True,False,False
+P000903,7000,-18000,0,CO0034,True,False,True,True,True,True,True,True,False,False
+P000904,9000,-18000,0,CO0044,True,False,True,True,True,True,True,True,False,False
+P010802,5000,-16000,2000,0,False,False,False,False,False,False,False,False,False,False
+P010803,7000,-16000,2000,0,False,False,False,False,False,False,False,False,False,False
+P010804,9000,-16000,2000,0,False,False,False,False,False,False,False,False,False,False
+P010902,5000,-18000,2000,0,False,True,False,False,False,False,False,False,False,False
+P010903,7000,-18000,2000,0,False,True,False,False,False,False,False,False,False,False
+P010904,9000,-18000,2000,0,False,True,False,False,False,False,False,False,False,False
