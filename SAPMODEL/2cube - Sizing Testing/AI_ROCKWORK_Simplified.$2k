@@ -1,4 +1,4 @@
-File C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAPMODEL\2cube - Sizing Testing\AI_ROCKWORK_Simplified.$2k was saved on 8/15/16 at 14:22:59
+File C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAPMODEL\2cube - Sizing Testing\AI_ROCKWORK_Simplified.$2k was saved on 8/15/16 at 16:39:00
  
 TABLE:  "ACTIVE DEGREES OF FREEDOM"
    UX=Yes   UY=Yes   UZ=Yes   RX=Yes   RY=Yes   RZ=Yes
@@ -13,10 +13,8 @@ TABLE:  "AUTO COMBINATION OPTION DATA 01 - GENERAL"
  
 TABLE:  "AUTO COMBINATION OPTION DATA 02 - USER DATA"
    DesignType=Concrete   LSType=Strength   LCName=DEAD
-   DesignType=Concrete   LSType=Strength   LCName=WL-Y
    DesignType=Concrete   LSType=Strength   LCName=LIVE
    DesignType=Concrete   LSType=Strength   LCName=DEAD
-   DesignType=Concrete   LSType=Strength   LCName=WL-Y
    DesignType=Concrete   LSType=Strength   LCName=LIVE
  
 TABLE:  "AUTO WAVE 3 - WAVE CHARACTERISTICS - GENERAL"
@@ -27,13 +25,13 @@ TABLE:  "CASE - MODAL 1 - GENERAL"
  
 TABLE:  "CASE - STATIC 1 - LOAD ASSIGNMENTS"
    Case=DEAD   LoadType="Load pattern"   LoadName=DEAD   LoadSF=1
-   Case=WL-Y   LoadType="Load pattern"   LoadName=WL-Y   LoadSF=8
+   Case="X-Y-Dead Combo"   LoadType="Load pattern"   LoadName=WL-Y   LoadSF=6
+   Case="X-Y-Dead Combo"   LoadType="Load pattern"   LoadName=WL-X   LoadSF=2
+   Case="X-Y-Dead Combo"   LoadType="Load pattern"   LoadName=DEAD   LoadSF=1
    Case=LIVE   LoadType="Load pattern"   LoadName=Live   LoadSF=1
  
 TABLE:  "COMBINATION DEFINITIONS"
-   ComboName="Wind Y"   ComboType="Linear Add"   AutoDesign=No   CaseName=DEAD   ScaleFactor=1.4   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=e793ae9a-062d-4840-a28b-bc7f99dbb82f
-   ComboName="Wind Y"   CaseName=LIVE   ScaleFactor=0.5
-   ComboName="Wind Y"   CaseName=WL-Y   ScaleFactor=1
+   ComboName="XYD Combo"   ComboType="Linear Add"   AutoDesign=No   CaseName="X-Y-Dead Combo"   ScaleFactor=1   SteelDesign=Strength   ConcDesign=None   AlumDesign=None   ColdDesign=None   GUID=e793ae9a-062d-4840-a28b-bc7f99dbb82f
  
 TABLE:  "CONNECTIVITY - FRAME"
    Frame=BE0044   JointI=P000802   JointJ=P000902   IsCurved=No
@@ -2062,15 +2060,21 @@ TABLE:  "JOINT COORDINATES"
    Joint=P010904   CoordSys=GLOBAL   CoordType=Cartesian   XorR=9000   Y=-18000   Z=2000   SpecialJt=No
  
 TABLE:  "JOINT LOADS - FORCE"
+   Joint=P010802   LoadPat=DEAD   CoordSys=GLOBAL   F1=10000   F2=0   F3=0   M1=0   M2=0   M3=0
+   Joint=P010803   LoadPat=DEAD   CoordSys=GLOBAL   F1=10000   F2=0   F3=0   M1=0   M2=0   M3=0
+   Joint=P010804   LoadPat=DEAD   CoordSys=GLOBAL   F1=10000   F2=0   F3=0   M1=0   M2=0   M3=0
    Joint=P010902   LoadPat=WL-Y   CoordSys=GLOBAL   F1=0   F2=10000   F3=0   M1=0   M2=0   M3=0
    Joint=P010902   LoadPat=DEAD   CoordSys=GLOBAL   F1=0   F2=0   F3=-10000   M1=0   M2=0   M3=0
    Joint=P010902   LoadPat=Live   CoordSys=GLOBAL   F1=0   F2=0   F3=-10000   M1=0   M2=0   M3=0
+   Joint=P010902   LoadPat=DEAD   CoordSys=GLOBAL   F1=10000   F2=0   F3=0   M1=0   M2=0   M3=0
    Joint=P010903   LoadPat=WL-Y   CoordSys=GLOBAL   F1=0   F2=10000   F3=0   M1=0   M2=0   M3=0
    Joint=P010903   LoadPat=DEAD   CoordSys=GLOBAL   F1=0   F2=0   F3=-10000   M1=0   M2=0   M3=0
    Joint=P010903   LoadPat=Live   CoordSys=GLOBAL   F1=0   F2=0   F3=-10000   M1=0   M2=0   M3=0
+   Joint=P010903   LoadPat=DEAD   CoordSys=GLOBAL   F1=10000   F2=0   F3=0   M1=0   M2=0   M3=0
    Joint=P010904   LoadPat=WL-Y   CoordSys=GLOBAL   F1=0   F2=10000   F3=0   M1=0   M2=0   M3=0
    Joint=P010904   LoadPat=DEAD   CoordSys=GLOBAL   F1=0   F2=0   F3=-10000   M1=0   M2=0   M3=0
    Joint=P010904   LoadPat=Live   CoordSys=GLOBAL   F1=0   F2=0   F3=-10000   M1=0   M2=0   M3=0
+   Joint=P010904   LoadPat=DEAD   CoordSys=GLOBAL   F1=10000   F2=0   F3=0   M1=0   M2=0   M3=0
  
 TABLE:  "JOINT LOCAL AXES ASSIGNMENTS 1 - TYPICAL"
    Joint=P000802   AngleA=-4.75064295439302E-15   AngleB=0   AngleC=0
@@ -2126,7 +2130,7 @@ TABLE:  "JOINT RESTRAINT ASSIGNMENTS"
 TABLE:  "LOAD CASE DEFINITIONS"
    Case=DEAD   Type=LinStatic   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=DEAD   DesActOpt="Prog Det"   DesignAct=Non-Composite   AutoType=None   RunCase=Yes
    Case=MODAL   Type=LinModal   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=OTHER   DesActOpt="Prog Det"   DesignAct=Other   AutoType=None   RunCase=Yes
-   Case=WL-Y   Type=LinStatic   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=WIND   DesActOpt="Prog Det"   DesignAct="Short-Term Composite"   AutoType=None   RunCase=Yes
+   Case="X-Y-Dead Combo"   Type=LinStatic   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=OTHER   DesActOpt="Prog Det"   DesignAct="Short-Term Composite"   AutoType=None   RunCase=Yes
    Case=LIVE   Type=LinStatic   InitialCond=Zero   DesTypeOpt="Prog Det"   DesignType=LIVE   DesActOpt="Prog Det"   DesignAct="Short-Term Composite"   AutoType=None   RunCase=Yes
  
 TABLE:  "LOAD PATTERN DEFINITIONS"

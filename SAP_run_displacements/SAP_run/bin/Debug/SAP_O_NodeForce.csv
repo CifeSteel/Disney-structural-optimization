@@ -1,0 +1,7 @@
+Node_ID,Member_ID,Section,Load_Combination,vertical_reaction_at_Column_Base,horizontal_reaction_x_at_Column_Base,horizontal_reaction_y_at_Column_Base
+P000802,CO0023,HSS4X4X3/8,Wind Y,,,
+P000803,CO0033,HSS4X4X3/8,Wind Y,,,
+P000804,CO0043,HSS4X4X3/8,Wind Y,,,
+P000902,CO0024,HSS4X4X3/8,Wind Y,,,
+P000903,CO0034,HSS4X4X3/8,Wind Y,,,
+P000904,CO0044,HSS4X4X3/8,Wind Y,,,
