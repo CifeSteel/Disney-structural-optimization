@@ -1,0 +1,42 @@
+BE0044,
+BE0045,
+BE0046,
+BE0063,
+BE0064,
+BE0065,
+BE0082,
+BE0161,
+BE0162,
+BE0163,
+BE0180,
+BE0181,
+BE0182,
+BE0199,
+BR0118,yes yes
+BR0120,yes yes
+BR0121,yes yes
+BR0122,yes yes
+BR0124,yes yes
+BR0125,yes yes
+BR0173,yes yes
+BR0174,yes yes
+BR0176,yes yes
+BR0177,yes yes
+BR0178,yes yes
+BR0179,yes yes
+BR0180,yes yes
+BR0181,yes yes
+BR0229,yes yes
+BR0231,yes yes
+BR0234,yes yes
+BR0235,yes yes
+BR0460,yes yes
+BR0464,yes yes
+BR0515,yes yes
+BR0520,yes yes
+CO0023,
+CO0024,
+CO0033,
+CO0034,
+CO0043,
+CO0044,
