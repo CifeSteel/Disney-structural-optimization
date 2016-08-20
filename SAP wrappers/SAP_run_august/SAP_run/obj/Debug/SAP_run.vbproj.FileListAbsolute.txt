@@ -1,0 +1,46 @@
+C:\dev\SAP_run\SAP_run\bin\Debug\SAP_run.exe.config
+C:\dev\SAP_run\SAP_run\obj\Debug\SAP_run.vbproj.ResolveComReference.cache
+C:\dev\SAP_run\SAP_run\bin\Debug\SAP_run.exe
+C:\dev\SAP_run\SAP_run\bin\Debug\SAP_run.pdb
+C:\dev\SAP_run\SAP_run\bin\Debug\SAP_run.xml
+C:\dev\SAP_run\SAP_run\obj\Debug\SAP_run.Resources.resources
+C:\dev\SAP_run\SAP_run\obj\Debug\SAP_run.vbproj.GenerateResource.Cache
+C:\dev\SAP_run\SAP_run\obj\Debug\SAP_run.exe
+C:\dev\SAP_run\SAP_run\obj\Debug\SAP_run.xml
+C:\dev\SAP_run\SAP_run\obj\Debug\SAP_run.pdb
+C:\dev\SAP_run\SAP_run\obj\Debug\SAP_run.vbprojResolveAssemblyReference.cache
+C:\Users\Filippo\Downloads\SAP_run\SAP_run\bin\Debug\SAP_run.exe.config
+C:\Users\Filippo\Downloads\SAP_run\SAP_run\obj\Debug\SAP_run.vbproj.ResolveComReference.cache
+C:\Users\Filippo\Downloads\SAP_run\SAP_run\obj\Debug\SAP_run.exe
+C:\Users\Filippo\Downloads\SAP_run\SAP_run\obj\Debug\SAP_run.xml
+C:\Users\Filippo\Downloads\SAP_run\SAP_run\obj\Debug\SAP_run.pdb
+C:\Users\Filippo\Downloads\SAP_run\SAP_run\bin\Debug\SAP_run.exe
+C:\Users\Filippo\Downloads\SAP_run\SAP_run\bin\Debug\SAP_run.pdb
+C:\Users\Filippo\Downloads\SAP_run\SAP_run\bin\Debug\SAP_run.xml
+C:\Users\Filippo\Downloads\SAP_run\SAP_run\obj\Debug\SAP_run.vbprojResolveAssemblyReference.cache
+C:\Users\Filippo\Downloads\SAP_run\SAP_run\obj\Debug\SAP_run.Resources.resources
+C:\Users\Filippo\Downloads\SAP_run\SAP_run\obj\Debug\SAP_run.vbproj.GenerateResource.Cache
+C:\Users\Filippo\Desktop\SAP_run\SAP_run\bin\Debug\SAP_run.exe.config
+C:\Users\Filippo\Desktop\SAP_run\SAP_run\obj\Debug\SAP_run.vbproj.ResolveComReference.cache
+C:\Users\Filippo\Desktop\SAP_run\SAP_run\obj\Debug\SAP_run.exe
+C:\Users\Filippo\Desktop\SAP_run\SAP_run\obj\Debug\SAP_run.xml
+C:\Users\Filippo\Desktop\SAP_run\SAP_run\obj\Debug\SAP_run.pdb
+C:\Users\Filippo\Desktop\SAP_run_displacements\SAP_run\bin\Debug\SAP_run.exe.config
+C:\Users\Filippo\Desktop\SAP_run_displacements\SAP_run\obj\Debug\SAP_run.vbproj.ResolveComReference.cache
+C:\Users\Filippo\Desktop\SAP_run_displacements\SAP_run\obj\Debug\SAP_run.exe
+C:\Users\Filippo\Desktop\SAP_run_displacements\SAP_run\obj\Debug\SAP_run.xml
+C:\Users\Filippo\Desktop\SAP_run_displacements\SAP_run\obj\Debug\SAP_run.pdb
+C:\Users\Filippo\Desktop\SAP_run_displacements\SAP_run\obj\Debug\SAP_run.vbprojResolveAssemblyReference.cache
+C:\Users\Filippo\Desktop\SAP_run_displacements\SAP_run\obj\Debug\SAP_run.Resources.resources
+C:\Users\Filippo\Desktop\SAP_run_displacements\SAP_run\obj\Debug\SAP_run.vbproj.GenerateResource.Cache
+C:\Users\Filippo\Desktop\SAP_run_displacements\SAP_run\bin\Debug\SAP_run.exe
+C:\Users\Filippo\Desktop\SAP_run_displacements\SAP_run\bin\Debug\SAP_run.pdb
+C:\Users\Filippo\Desktop\SAP_run_displacements\SAP_run\bin\Debug\SAP_run.xml
+C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAP wrappers\SAP_run_august\SAP_run\bin\Debug\SAP_run.exe.config
+C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAP wrappers\SAP_run_august\SAP_run\obj\Debug\SAP_run.vbproj.ResolveComReference.cache
+C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAP wrappers\SAP_run_august\SAP_run\obj\Debug\SAP_run.exe
+C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAP wrappers\SAP_run_august\SAP_run\obj\Debug\SAP_run.xml
+C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAP wrappers\SAP_run_august\SAP_run\obj\Debug\SAP_run.pdb
+C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAP wrappers\SAP_run_august\SAP_run\obj\Debug\SAP_run.vbprojResolveAssemblyReference.cache
+C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAP wrappers\SAP_run_august\SAP_run\obj\Debug\SAP_run.Resources.resources
+C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAP wrappers\SAP_run_august\SAP_run\obj\Debug\SAP_run.vbproj.GenerateResource.Cache

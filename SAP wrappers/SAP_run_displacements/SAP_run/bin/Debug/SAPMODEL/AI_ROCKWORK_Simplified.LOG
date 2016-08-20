@@ -1,0 +1,225 @@
+
+
+ SAP2000 v16.1.1 Ultimate (Analysis Build 9194/32)
+ File: C:\dev\SAP_run\SAP_run\bin\Debug\SAPMODEL\AI_ROCKWORK_Simplified.LOG
+
+
+
+
+ B E G I N   A N A L Y S I S                                2016/03/22  10:29:50
+
+
+ RUNNING ANALYSIS WITHIN THE GUI PROCESS
+ USING THE ADVANCED SOLVER (PROVIDES LIMITED INSTABILITY INFORMATION)
+
+ NUMBER OF JOINTS                          =          23
+    WITH RESTRAINTS                        =           6
+ NUMBER OF FRAME/CABLE/TENDON ELEMENTS     =          64
+ NUMBER OF LOAD PATTERNS                   =           4
+ NUMBER OF ACCELERATION LOADS              =           6
+ NUMBER OF LOAD CASES                      =           4
+
+
+ E L E M E N T   F O R M A T I O N                                      10:29:50
+
+
+
+ L I N E A R   E Q U A T I O N   S O L U T I O N                        10:29:50
+
+ FORMING STIFFNESS AT ZERO (UNSTRESSED) INITIAL CONDITIONS
+
+ TOTAL NUMBER OF EQUILIBRIUM EQUATIONS     =         102
+ NUMBER OF NON-ZERO STIFFNESS TERMS        =        1401
+
+ NUMBER OF EIGENVALUES BELOW SHIFT         =           0
+
+
+ E I G E N   M O D A L   A N A L Y S I S                                10:29:50
+
+ CASE: MODAL
+
+ USING STIFFNESS AT ZERO (UNSTRESSED) INITIAL CONDITIONS
+
+ NUMBER OF STIFFNESS DEGREES OF FREEDOM    =         102
+ NUMBER OF MASS DEGREES OF FREEDOM         =          51
+ MAXIMUM NUMBER OF EIGEN MODES SOUGHT      =          50
+ MINIMUM NUMBER OF EIGEN MODES SOUGHT      =           1
+ NUMBER OF RESIDUAL-MASS MODES SOUGHT      =           0
+ NUMBER OF SUBSPACE VECTORS USED           =          24
+ RELATIVE CONVERGENCE TOLERANCE            =    1.00E-09
+
+ FREQUENCY SHIFT  (CENTER) (CYC/TIME)      =     .000000
+ FREQUENCY CUTOFF (RADIUS) (CYC/TIME)      =  -INFINITY-
+ ALLOW AUTOMATIC FREQUENCY SHIFTING        =         YES
+
+
+ Original stiffness at shift : EV= 0.0000000E+00, f=     .000000, T=  -INFINITY-
+ Number of eigenvalues below shift =      0
+ Found mode      1 of     50:  EV= 4.1281729E+03, f=   10.225842, T=    0.097791
+ Found mode      2 of     50:  EV= 4.1932915E+03, f=   10.306178, T=    0.097029
+ Found mode      3 of     50:  EV= 6.8185203E+03, f=   13.142113, T=    0.076091
+ Found mode      4 of     50:  EV= 1.0304474E+04, f=   16.155970, T=    0.061897
+ Found mode      5 of     50:  EV= 1.2191669E+04, f=   17.573235, T=    0.056905
+ Found mode      6 of     50:  EV= 1.6368035E+04, f=   20.361905, T=    0.049111
+ Found mode      7 of     50:  EV= 1.7791258E+04, f=   21.228703, T=    0.047106
+ Found mode      8 of     50:  EV= 1.9996510E+04, f=   22.505944, T=    0.044433
+ Found mode      9 of     50:  EV= 3.3856074E+04, f=   29.284542, T=    0.034148
+ Found mode     10 of     50:  EV= 3.4053327E+04, f=   29.369727, T=    0.034049
+ Found mode     11 of     50:  EV= 3.5381185E+04, f=   29.936865, T=    0.033404
+ Found mode     12 of     50:  EV= 3.8487082E+04, f=   31.223215, T=    0.032027
+ Found mode     13 of     50:  EV= 3.9225594E+04, f=   31.521356, T=    0.031725
+ Found mode     14 of     50:  EV= 4.1416351E+04, f=   32.389635, T=    0.030874
+ Found mode     15 of     50:  EV= 4.1563434E+04, f=   32.447097, T=    0.030819
+ Found mode     16 of     50:  EV= 4.1892866E+04, f=   32.575431, T=    0.030698
+ Found mode     17 of     50:  EV= 4.5162191E+04, f=   33.822650, T=    0.029566
+ Found mode     18 of     50:  EV= 4.5177736E+04, f=   33.828471, T=    0.029561
+ Found mode     19 of     50:  EV= 4.5177736E+04, f=   33.828471, T=    0.029561
+ Found mode     20 of     50:  EV= 4.5179831E+04, f=   33.829255, T=    0.029560
+ Found mode     21 of     50:  EV= 1.2207774E+06, f=  175.848378, T=    0.005687
+ Found mode     22 of     50:  EV= 2.0804964E+06, f=  229.563914, T=    0.004356
+ Found mode     23 of     50:  EV= 2.4770466E+06, f=  250.488172, T=    0.003992
+ Found mode     24 of     50:  EV= 2.4798582E+06, f=  250.630290, T=    0.003990
+ Found mode     25 of     50:  EV= 2.4812123E+06, f=  250.698709, T=    0.003989
+ Found mode     26 of     50:  EV= 2.6252172E+06, f=  257.871145, T=    0.003878
+ Found mode     27 of     50:  EV= 3.1889369E+06, f=  284.212446, T=    0.003518
+ Found mode     28 of     50:  EV= 3.4134794E+06, f=  294.048371, T=    0.003401
+ Found mode     29 of     50:  EV= 4.8695817E+06, f=  351.209262, T=    0.002847
+ Found mode     30 of     50:  EV= 1.0212361E+07, f=  508.608021, T=    0.001966
+ Found mode     31 of     50:  EV= 1.0213818E+07, f=  508.644311, T=    0.001966
+ Found mode     32 of     50:  EV= 1.0214468E+07, f=  508.660499, T=    0.001966
+ Found mode     33 of     50:  EV= 1.0214908E+07, f=  508.671455, T=    0.001966
+ Found mode     34 of     50:  EV= 1.0214908E+07, f=  508.671455, T=    0.001966
+ Found mode     35 of     50:  EV= 1.0214908E+07, f=  508.671455, T=    0.001966
+ Found mode     36 of     50:  EV= 1.0214908E+07, f=  508.671455, T=    0.001966
+ Found mode     37 of     50:  EV= 1.0215073E+07, f=  508.675550, T=    0.001966
+ Found mode     38 of     50:  EV= 1.0216475E+07, f=  508.710455, T=    0.001966
+ Found mode     39 of     50:  EV= 1.0218382E+07, f=  508.757927, T=    0.001966
+ Found mode     40 of     50:  EV= 1.0222514E+07, f=  508.860799, T=    0.001965
+ Found mode     41 of     50:  EV= 1.0223005E+07, f=  508.873008, T=    0.001965
+ Found mode     42 of     50:  EV= 1.0223371E+07, f=  508.882113, T=    0.001965
+ Found mode     43 of     50:  EV= 1.1118604E+07, f=  530.695322, T=    0.001884
+ Found mode     44 of     50:  EV= 1.1140628E+07, f=  531.220685, T=    0.001882
+ Found mode     45 of     50:  EV= 1.1140947E+07, f=  531.228279, T=    0.001882
+ Found mode     46 of     50:  EV= 1.1143442E+07, f=  531.287750, T=    0.001882
+ Found mode     47 of     50:  EV= 1.1413598E+07, f=  537.689332, T=    0.001860
+ Found mode     48 of     50:  EV= 1.2783367E+07, f=  569.039964, T=    0.001757
+ Found mode     49 of     50:  EV= 1.3176601E+07, f=  577.725893, T=    0.001731
+ Found mode     50 of     50:  EV= 1.4431972E+07, f=  604.620636, T=    0.001654
+
+ NUMBER OF EIGEN MODES FOUND               =          50
+ NUMBER OF ITERATIONS PERFORMED            =          14
+ NUMBER OF STIFFNESS SHIFTS                =           0
+
+
+ N O N L I N E A R   S T A T I C   A N A L Y S I S                      10:29:50
+
+ CASE: DEAD
+ STARTING FROM ZERO (UNSTRESSED) INITIAL CONDITIONS
+ LOAD CONTROL TYPE                         =       FORCE
+ NUMBER OF STAGES                          =           0
+ STAGES ARE CONTINUOUS OR INDEPENDENT      =  CONTINUOUS
+ TYPE OF GEOMETRIC NONLINEARITY            =     P-DELTA
+ INCLUDE ELASTIC MATERIAL NONLINEARITY     =         YES
+ INCLUDE INELASTIC MATERIAL NONLINEARITY   =         YES
+ METHOD TO USE WHEN HINGES DROP LOAD       = UNLOAD ENTIRE STRUCTURE
+ SAVE POSITIVE INCREMENTS ONLY             =         YES
+ RELATIVE FORCE CONVERGENCE TOLERANCE      =    0.000100
+ RELATIVE EVENT TOLERANCE                  =    0.010000
+
+  Saved    Null   Total  Iteration   Relative  Curr Step   Curr Sum    Max Sum
+  Steps   Steps   Steps  this Step  Unbalance       Size   of Steps   of Steps
+ (    1      50     200      10/40   1.000000   1.000000   1.000000   1.000000)
+
+      0       0       1          1 122.416630   1.000000    .000000    .000000
+      0       0       1          2   5.044428   1.000000    .000000    .000000
+      0       0       1  Conv    3   0.199523   1.000000   1.000000   1.000000
+
+ TIME FOR INITIALIZING ANALYSIS            =        0.01
+ TIME FOR CONTROLLING ANALYSIS             =        0.02
+ TIME FOR UPDATING LOADS AND STATE         =        0.01
+ TIME FOR FORMING STIFFNESS MATRIX         =        0.00
+ TIME FOR SOLVING STIFFNESS MATRIX         =        0.01
+ TIME FOR CALCULATING DISPLACEMENTS        =        0.00
+ TIME FOR DETERMINING EVENTS               =        0.00
+ TIME FOR SAVING RESULTS                   =        0.00
+                                               ----------
+ TOTAL TIME FOR THIS ANALYSIS              =        0.05
+
+
+ N O N L I N E A R   S T A T I C   A N A L Y S I S                      10:29:50
+
+ CASE: LIVE
+ CONTINUING FROM THE END OF CASE: DEAD
+ LOAD CONTROL TYPE                         =       FORCE
+ NUMBER OF STAGES                          =           0
+ STAGES ARE CONTINUOUS OR INDEPENDENT      =  CONTINUOUS
+ TYPE OF GEOMETRIC NONLINEARITY            =     P-DELTA
+ INCLUDE ELASTIC MATERIAL NONLINEARITY     =         YES
+ INCLUDE INELASTIC MATERIAL NONLINEARITY   =         YES
+ METHOD TO USE WHEN HINGES DROP LOAD       = UNLOAD ENTIRE STRUCTURE
+ SAVE POSITIVE INCREMENTS ONLY             =         YES
+ RELATIVE FORCE CONVERGENCE TOLERANCE      =    0.000100
+ RELATIVE EVENT TOLERANCE                  =    0.010000
+
+  Saved    Null   Total  Iteration   Relative  Curr Step   Curr Sum    Max Sum
+  Steps   Steps   Steps  this Step  Unbalance       Size   of Steps   of Steps
+ (    1      50     200      10/40   1.000000   1.000000   1.000000   1.000000)
+
+      0       0       1          1 447.192547   1.000000    .000000    .000000
+      0       0       1          2  10.628983   1.000000    .000000    .000000
+      0       0       1  Conv    3   0.278600   1.000000   1.000000   1.000000
+
+ TIME FOR INITIALIZING ANALYSIS            =        0.01
+ TIME FOR CONTROLLING ANALYSIS             =        0.01
+ TIME FOR UPDATING LOADS AND STATE         =        0.00
+ TIME FOR FORMING STIFFNESS MATRIX         =        0.00
+ TIME FOR SOLVING STIFFNESS MATRIX         =        0.03
+ TIME FOR CALCULATING DISPLACEMENTS        =        0.01
+ TIME FOR DETERMINING EVENTS               =        0.00
+ TIME FOR SAVING RESULTS                   =        0.00
+                                               ----------
+ TOTAL TIME FOR THIS ANALYSIS              =        0.06
+
+
+ N O N L I N E A R   S T A T I C   A N A L Y S I S                      10:29:50
+
+ CASE: WL-Y
+ CONTINUING FROM THE END OF CASE: LIVE
+ LOAD CONTROL TYPE                         =       FORCE
+ NUMBER OF STAGES                          =           0
+ STAGES ARE CONTINUOUS OR INDEPENDENT      =  CONTINUOUS
+ TYPE OF GEOMETRIC NONLINEARITY            =     P-DELTA
+ INCLUDE ELASTIC MATERIAL NONLINEARITY     =         YES
+ INCLUDE INELASTIC MATERIAL NONLINEARITY   =         YES
+ METHOD TO USE WHEN HINGES DROP LOAD       = UNLOAD ENTIRE STRUCTURE
+ SAVE POSITIVE INCREMENTS ONLY             =         YES
+ RELATIVE FORCE CONVERGENCE TOLERANCE      =    0.000100
+ RELATIVE EVENT TOLERANCE                  =    0.010000
+
+  Saved    Null   Total  Iteration   Relative  Curr Step   Curr Sum    Max Sum
+  Steps   Steps   Steps  this Step  Unbalance       Size   of Steps   of Steps
+ (    1      50     200      10/40   1.000000   1.000000   1.000000   1.000000)
+
+      0       0       1          1   3334.098   1.000000    .000000    .000000
+      0       0       1          2 375.216670   1.000000    .000000    .000000
+      0       0       1          3 140.313019   1.000000    .000000    .000000
+      0       0       1          4  29.170981   1.000000    .000000    .000000
+      0       0       1          5  15.006149   1.000000    .000000    .000000
+      0       0       1          6   5.409785   1.000000    .000000    .000000
+      0       0       1          7   2.307998   1.000000    .000000    .000000
+      0       0       1          8   1.057858   1.000000    .000000    .000000
+      0       0       1  Conv    9   0.417235   1.000000   1.000000   1.000000
+
+ TIME FOR INITIALIZING ANALYSIS            =        0.02
+ TIME FOR CONTROLLING ANALYSIS             =        0.02
+ TIME FOR UPDATING LOADS AND STATE         =        0.01
+ TIME FOR FORMING STIFFNESS MATRIX         =        0.01
+ TIME FOR SOLVING STIFFNESS MATRIX         =        0.00
+ TIME FOR CALCULATING DISPLACEMENTS        =        0.02
+ TIME FOR DETERMINING EVENTS               =        0.00
+ TIME FOR SAVING RESULTS                   =        0.01
+                                               ----------
+ TOTAL TIME FOR THIS ANALYSIS              =        0.09
+
+
+ A N A L Y S I S   C O M P L E T E                          2016/03/22  10:29:50
