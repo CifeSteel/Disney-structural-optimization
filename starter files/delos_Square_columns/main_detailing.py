@@ -394,7 +394,6 @@ for memb in membList:
 		startKey = conSta.primary + conSta.secondary + str(conSta.angle)
 		if startKey in connectionDictID:
 			if(output.loc[memb,'connection_ID_list'] == ''):
-				print 1
 				output.set_value(memb,'connection_ID_list',connectionDictID[startKey])
 			else:
 				current = output.loc[memb,'connection_ID_list']
@@ -404,7 +403,6 @@ for memb in membList:
 		endKey = conEnd.primary + conEnd.secondary + str(conEnd.angle)
 		if endKey in connectionDictID:
 			if(output.loc[memb,'connection_ID_list'] == ''):
-				print 2
 				output.set_value(memb,'connection_ID_list',connectionDictID[endKey])
 			else:
 				current = output.loc[memb,'connection_ID_list']
@@ -414,7 +412,6 @@ for memb in membList:
 		midKey = conMid.primary + conMid.secondary + str(conMid.angle)
 		if midKey in connectionDictID:
 			if(output.loc[memb,'connection_ID_list'] == ''):
-				print 2
 				output.set_value(memb,'connection_ID_list',connectionDictID[midKey])
 			else:
 				current = output.loc[memb,'connection_ID_list']
