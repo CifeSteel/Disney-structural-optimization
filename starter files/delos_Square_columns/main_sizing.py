@@ -263,7 +263,7 @@ def read_section_data():
     #sec_info_W = pd.merge(sec_info,sec_price).drop_duplicates().reset_index(drop=True)
      
     A=np.array(sec_info_W.A)
-    W=np.array(sec_info_W.W)
+    W=np.array(sec_info_W['W'])
     Ix=np.array(sec_info_W['Ix / 106'])*10**6
     Iy=np.array(sec_info_W['Iy / 106'])*10**6
     Zx=np.array(sec_info_W['Zx / 103'])*10**3
@@ -289,7 +289,7 @@ def read_section_data():
     sec_info_W=pd.DataFrame({'AISC_W_Data [metric]':sec_info_W["AISC_Manual_Label"],'W':W,'FW_s':F_web,                              'FF_s':F_flange,'CW_s':C_web,'CF_s':C_flange,                             'tw':tw,'tf':tf,'rx':rx, "ry":ry, 'd':d,'b_t':b_t,'bf':bf,'h_tw':h_tw,                             'Sx':Sx,'Sy':Sy,'J':J,'rts':rts,'Ix':Ix,'Iy':Iy,'Zx':Zx,'Zy':Zy,'A':A,'W':sec_info_W.W,                             'unit_price':sec_info_W.unit_price})
     
     A=np.array(sec_info_HSS.A)
-    W=np.array(sec_info_HSS.W)
+    W=np.array(sec_info_HSS['W'])
     I=np.array(sec_info_HSS['Ix / 106'])*10**6
     Z=np.array(sec_info_HSS['Zx / 103'])*10**3
     S = np.array(sec_info_HSS['Sx / 103'])*10**3
@@ -341,8 +341,8 @@ def read_member_data():
     mem_info['DC_Ratio_manual']=DC_manual
     
     # drop the duplicated
-    mem_info=mem_info.sort_values(by=['member_ID','DC_Ratio_manual'],                                          ascending=[True,False]).drop_duplicates(subset=['member_ID'], keep='first').reset_index(drop=True)
-     
+    mem_info=mem_info.sort_values(by=['member_ID','DC_Ratio_manual'],ascending=[True,False]).drop_duplicates(subset=['member_ID'], keep='first').reset_index(drop=True)
+    
     # elimite the number of member according to the continuity constraints
     mem_info_compacted=mem_info.copy(deep=True)
     mem_info_compacted=elimite_member_info(mem_info_compacted,continuity_root)
@@ -690,8 +690,8 @@ def find_upper_bound(mem_id):
 # part 2: FUNCTION -- randomized Binary search to find the feasible - infeasible point
 def find_optimal_section_for_member(mem_id,upper_bound_cs=None,lower_bound_cs=None):
     global sec_info,mem_info_compacted,num_all_sec
-    
-    if mem_info_compacted.group[mem_id]==3:
+
+    if mem_info_compacted.group[mem_id] == 3:
         sec_type="HSS"
     else:
         sec_type="W"
@@ -715,14 +715,14 @@ def find_optimal_section_for_member(mem_id,upper_bound_cs=None,lower_bound_cs=No
         if feasibility==1:
             break;
             
-    optimal_cs=sec_info_sliced.index[new_sec_ind]
+    optimal_cs=sec_info_sliced.index[new_sec_ind]   
         
     # back_jumping part
     if feasibility!=1 and num_choice!=num_all_sec[sec_type]:
         #print ('back_jumping **',mem_id)
         (optimal_cs,feasibility,pc,mcx,mcy,util)=find_optimal_section_for_member(mem_id);
         back_jumping_updating(mem_id,optimal_cs)
-
+ 
     return (optimal_cs,feasibility,pc,mcx,mcy,util) # return the index
 
 def back_jumping_updating(mem_id,sec):
@@ -758,9 +758,13 @@ def back_jumping_updating(mem_id,sec):
 
 def calculate_cost():
     global mem_info,sec_info
+
     member_cost=[]
     for i in mem_info.index:
+        #print i
         size=mem_info.cross_section[i]
+        #print size
+        #print mem_info.group[i]
         if mem_info.group[i] == 3:
             c=sec_info["HSS"].unit_price[size]*sec_info["HSS"].W[size]*mem_info.L[i]/1000000
         else:

@@ -19,10 +19,12 @@ Summary: This script is divided in 4 sections
 '''
 import math
 import pandas as pd
-membGeomFile = open("member_geometry.txt", "r")
-membForcesFile = open("SAP_O_MemberForce.txt", "r")
-nodeGeomFile = open("node_geometry.txt", "r")
-hierConsFile = open("hierarchical_constraints_list.txt", "r+")
+import numpy as np
+import math
+#membGeomFile = open("member_geometry.txt", "r")
+#membForcesFile = open("SAP_O_MemberForce.txt", "r")
+#nodeGeomFile = open("node_geometry.txt", "r")
+#hierConsFile = open("hierarchical_constraints_list.txt", "r+")
 dataMembCur = pd.read_csv('SAP_O_MemberForce.txt').drop_duplicates(subset = ['member_ID']).set_index('member_ID')
 dataMemb = pd.read_csv('member_geometry.txt').set_index('member_ID')
 dataNode = pd.read_csv('node_geometry.txt').set_index('node_ID')
@@ -36,6 +38,7 @@ from joint_class import Joint as jt
 # User Inputs
 ## Preferable Direction - choose between X and Y
 preDir = 'Y'
+rotationAngle = 3*np.pi/180
 
 # Define Constants
 incomingDir = ['-X','+X','-Y','+Y','-Z','+Z',
@@ -49,8 +52,10 @@ incomingDir = ['-X','+X','-Y','+Y','-Z','+Z',
 # Create Directory of Nodes Location based on the Grid System
 nodeGrid = dict()
 for nodeID in nodeList:
-	nodeGrid[nodeID] = [int(nodeID[5:7]),int(nodeID[3:5]),int(nodeID[1:3])]
-
+	#nodeGrid[nodeID] = [int(nodeID[5:7]),int(nodeID[3:5]),int(nodeID[1:3])]
+	x_rotated = dataNode.x_coord[nodeID]*math.cos(rotationAngle) - dataNode.y_coord[nodeID]*math.sin(rotationAngle)
+	y_rotated = dataNode.x_coord[nodeID]*math.sin(rotationAngle) + dataNode.y_coord[nodeID]*math.cos(rotationAngle)
+	nodeGrid[nodeID] = [math.ceil(x_rotated),math.ceil(y_rotated),math.ceil(dataNode.z_coord[nodeID])]
 # Label a member for it's start & end nodes
 def classifyMember (member, dataMemb):
 	staGrid = nodeGrid[str(dataMemb.at[member,'start_node'])]
@@ -114,7 +119,6 @@ joints = dict()
 for node in nodeList:
 	currJt = jt(node, conData.loc[node,:])
 	joints[node] = currJt
-
 
 '''
 (3) DEFINE FUNCTIONS TO CREATE CONSTRAINT LIST
@@ -182,6 +186,7 @@ def getConstraintWithTwoIncomingColumns (joint, orthoElts):
 			for memb in eltList:
 				cons.append([joint.mY, memb])
 				cons.append([joint.pY, memb])
+	#print cont
 	return [cons,cont]
 
 # Case w/ 1 column
@@ -291,6 +296,8 @@ def getConstraintWithOneIncomingColumn (joint, orthoElts):
 				eltList.discard(joint.pY)
 				for memb in eltList:
 					cons.append([joint.pY, memb])
+
+
 		return [cons,cont]
 
 # Case w/ 0 column
@@ -384,6 +391,7 @@ def getConstraintWithNoIncomingColumn (joint, orthoElts):
 			eltList.discard(joint.pY)
 			for memb in eltList:
 				cons.append([joint.pY, memb])
+
 	return [cons,cont]
 
 # General Function to define functions for in-plane Braces
@@ -699,7 +707,7 @@ def getConstraintAtJoint (joint):
 
 	# Defining Constraint for Braces
 	## Looking at Braces in the XY Plane
-	"""gridEltsXY = [joint.pX,joint.pY,joint.mX,joint.mY,joint.pZ,joint.pZ]
+	gridEltsXY = [joint.pX,joint.pY,joint.mX,joint.mY,joint.pZ,joint.pZ]
 	diagEltsXY = [joint.pXpY,joint.mXmY,joint.mXpY,joint.pXmY]
 	[consXY, contXY] = getConstraintInPlaneBraces(gridEltsXY, diagEltsXY)
 	## Looking at Braces in the XZ Plane
@@ -709,16 +717,16 @@ def getConstraintAtJoint (joint):
 	## Looking at Braces in the YZ Plane
 	gridEltsYZ = [joint.pY,joint.pZ,joint.mY,joint.mZ,joint.pX,joint.pX]
 	diagEltsYZ = [joint.pYpZ,joint.mYmZ,joint.mYpZ,joint.pYmZ]
-	[consYZ, contYZ] = getConstraintInPlaneBraces(gridEltsYZ, diagEltsYZ)"""
+	[consYZ, contYZ] = getConstraintInPlaneBraces(gridEltsYZ, diagEltsYZ)
 
 	if (consGrid != None):
 		nodeCons += consGrid
-	"""if (consXY != None):
+	if (consXY != None):
 		nodeCons += consXY
 	if (consXZ != None):
 		nodeCons += consXZ
 	if (consYZ != None):
-		nodeCons += consYZ"""
+		nodeCons += consYZ
 
 	if (contGrid != None):
 		membCont += contGrid
@@ -782,7 +790,7 @@ print joints[nodeList[0]]
 print getConstraintAtJoint(joints[nodeList[0]])
 '''
 
-membGeomFile.close()
-membForcesFile.close()
-nodeGeomFile.close()
-hierConsFile.close()
+#membGeomFile.close()
+#membForcesFile.close()
+#nodeGeomFile.close()
+#hierConsFile.close()
