@@ -814,7 +814,7 @@ def find_optimal_section_for_member(mem_id,upper_bound_cs=None,lower_bound_cs=No
  
     return (optimal_cs,feasibility,pc,mcx,mcy,util) # return the index
 
-
+"""For current use, needs to be extend later"""
 def find_nearest_smaller_sec(sec,convert_to_type,geo):
     global sec_info,geo_corresponding
 
@@ -832,6 +832,7 @@ def find_nearest_smaller_sec(sec,convert_to_type,geo):
                 break
 
         return near_sec
+
 def get_sec_type(sec):
     if sec[0]=='W':
         return "W"
@@ -844,23 +845,16 @@ def back_jumping_updating(mem_id,sec):
     global cs,sec_info,mem_info
     global graph_parents,type_corresponding
     
-    if mem_info_compacted.group[mem_id] == 3:
-        sec_type="Round"
-        Width = "D"
-    elif mem_info_compacted.group[mem_id] == 1:
-        sec_type="Square"
-        Width = "B"
-    else:
-        sec_type="W"
-        Width = "bf"
 
-    print "back0",sec
+    sec_type=type_corresponding[mem_info_compacted.group[mem_id]]
+    Width = geo_corresponding["Width"][sec_type]
+
+
+
     if type_corresponding[mem_info.group[mem_id]] != get_sec_type(sec):
-        print "back",sec,mem_info.group[mem_id]
         sec=find_nearest_smaller_sec(sec,type_corresponding[mem_info.group[mem_id]],"Width")
     
     if mem_id in cs.index:   # mem_id has been assigned before
-        print 'mem_id and section: ',mem_id,sec
         if sec_info[sec_type][Width][sec]>sec_info[sec_type][Width][cs.cross_section[mem_id]] : # the children node has larger cross section
             (feasibility,pc,mcx,mcy,util)=check_feasibility(mem_id,sec,1)
             if feasibility !=1:
@@ -874,7 +868,6 @@ def back_jumping_updating(mem_id,sec):
             #print ('bj',mem_id,' updated section size',sec)
         
     if mem_id in graph_parents: # m,mem_id is not a root node, then find its parents
-        print('bj, find par',mem_id,sec)
         for mem_pa in graph_parents[mem_id]:
             back_jumping_updating(mem_pa,sec);
 
