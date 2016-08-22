@@ -19,9 +19,15 @@ Summary: This script is divided in 4 sections
 '''
 import math
 import pandas as pd
+import numpy as np
+import math
+#membGeomFile = open("member_geometry.txt", "r")
+#membForcesFile = open("SAP_O_MemberForce.txt", "r")
+#nodeGeomFile = open("node_geometry.txt", "r")
+#hierConsFile = open("hierarchical_constraints_list.txt", "r+")
 dataMembCur = pd.read_csv('SAP_O_MemberForce.txt').drop_duplicates(subset = ['member_ID']).set_index('member_ID')
-dataMemb = pd.read_csv('member_geometry.txt',sep=',', encoding='utf-16').set_index('member_ID')
-dataNode = pd.read_csv('node_geometry.txt',sep=',', encoding='utf-16').set_index('node_ID')
+dataMemb = pd.read_csv('member_geometry.txt',encoding='utf-16').set_index('member_ID')
+dataNode = pd.read_csv('node_geometry.txt',encoding='utf-16').set_index('node_ID')
 nodeList = dataNode.index.values
 
 # Changes at each iteration:
@@ -32,6 +38,7 @@ from joint_class import Joint as jt
 # User Inputs
 ## Preferable Direction - choose between X and Y
 preDir = 'Y'
+rotationAngle = 3*np.pi/180
 
 # Define Constants
 incomingDir = ['-X','+X','-Y','+Y','-Z','+Z',
@@ -45,8 +52,10 @@ incomingDir = ['-X','+X','-Y','+Y','-Z','+Z',
 # Create Directory of Nodes Location based on the Grid System
 nodeGrid = dict()
 for nodeID in nodeList:
-	nodeGrid[nodeID] = [int(nodeID[5:7]),int(nodeID[3:5]),int(nodeID[1:3])]
-
+	#nodeGrid[nodeID] = [int(nodeID[5:7]),int(nodeID[3:5]),int(nodeID[1:3])]
+	x_rotated = dataNode.x_coord[nodeID]*math.cos(rotationAngle) - dataNode.y_coord[nodeID]*math.sin(rotationAngle)
+	y_rotated = dataNode.x_coord[nodeID]*math.sin(rotationAngle) + dataNode.y_coord[nodeID]*math.cos(rotationAngle)
+	nodeGrid[nodeID] = [math.ceil(x_rotated),math.ceil(y_rotated),math.ceil(dataNode.z_coord[nodeID])]
 # Label a member for it's start & end nodes
 def classifyMember (member, dataMemb):
 	staGrid = nodeGrid[str(dataMemb.at[member,'start_node'])]
@@ -110,7 +119,6 @@ joints = dict()
 for node in nodeList:
 	currJt = jt(node, conData.loc[node,:])
 	joints[node] = currJt
-
 
 '''
 (3) DEFINE FUNCTIONS TO CREATE CONSTRAINT LIST
@@ -178,6 +186,7 @@ def getConstraintWithTwoIncomingColumns (joint, orthoElts):
 			for memb in eltList:
 				cons.append([joint.mY, memb])
 				cons.append([joint.pY, memb])
+	#print cont
 	return [cons,cont]
 
 # Case w/ 1 column
@@ -287,6 +296,8 @@ def getConstraintWithOneIncomingColumn (joint, orthoElts):
 				eltList.discard(joint.pY)
 				for memb in eltList:
 					cons.append([joint.pY, memb])
+
+
 		return [cons,cont]
 
 # Case w/ 0 column
@@ -380,6 +391,7 @@ def getConstraintWithNoIncomingColumn (joint, orthoElts):
 			eltList.discard(joint.pY)
 			for memb in eltList:
 				cons.append([joint.pY, memb])
+
 	return [cons,cont]
 
 # General Function to define functions for in-plane Braces
@@ -718,12 +730,12 @@ def getConstraintAtJoint (joint):
 
 	if (contGrid != None):
 		membCont += contGrid
-	if (contXY != None):
+	"""if (contXY != None):
 		membCont += contXY
 	if (contXZ != None):
 		membCont += contXZ
 	if (contYZ != None):
-		membCont += contYZ
+		membCont += contYZ"""
 
 	return [nodeCons, membCont]
 
@@ -745,7 +757,15 @@ for node in nodeList:
 structureConstraint = pd.DataFrame(struCons, columns=['Larger', 'Smaller'])
 structureContinuity = pd.DataFrame(struCont, columns=['Member_A', 'Member_B'])
 
-structureConstraint = structureConstraint[structureConstraint.Larger != ''] 
+
+# eliminating braces from prioritizing rules
+for i in range(0,len(structureConstraint)):
+	if (structureConstraint.Larger[i] != '' and structureConstraint.Smaller[i] != ''):
+		if (dataMemb.member_type[structureConstraint.Larger[i]] == 3 or dataMemb.member_type[structureConstraint.Smaller[i]] == 3):
+			structureConstraint.Larger[i] = ''
+			structureConstraint.Smaller[i] = ''
+
+structureConstraint = structureConstraint[structureConstraint.Larger != '' ]
 structureConstraint = structureConstraint[structureConstraint.Smaller != '']
 structureContinuity = structureContinuity[structureContinuity.Member_A != '']
 structureContinuity = structureContinuity[structureContinuity.Member_B != '']
@@ -753,16 +773,14 @@ structureContinuity = structureContinuity[structureContinuity.Member_B != '']
 structureConstraint.index = range(0,len(structureConstraint))
 structureContinuity.index = range(0,len(structureContinuity))
 
-print (structureConstraint[350:360])
-
 structureConstraint.to_csv('hierarchical_constraints_list.txt', index_label = False)
 structureContinuity.to_csv('continuity_constraints_list.txt', index_label = False)
 
 blop = pd.read_csv('hierarchical_constraints_list.txt')
-print (blop[350:370])
 for i in range(0,len(blop)):
 	if (blop.loc[i,'Larger'] != blop.loc[i,'Larger']):
-		print (blop[i:i+1])
+		aqqq = 5
+		#print blop[i:i+1]
 
 ''' Testing
 print len(structureConstraint)
@@ -771,3 +789,8 @@ print conData.loc[nodeList[2],:]
 print joints[nodeList[0]]
 print getConstraintAtJoint(joints[nodeList[0]])
 '''
+
+#membGeomFile.close()
+#membForcesFile.close()
+#nodeGeomFile.close()
+#hierConsFile.close()
