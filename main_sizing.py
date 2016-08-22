@@ -15,7 +15,7 @@ hierConsFile = open("hierarchical_constraints_list.txt", "r")
 
 '''
 we should list out all the global variables
-everything should communicated through index of (HSS406.4X406.4X15.9) or member_id, besides the binary search
+everything should communicated through index of (Round406.4X406.4X15.9) or member_id, besides the binary search
 The sections infomation will be proccessed by ascending first
 '''
 global Fy,K,E
@@ -82,31 +82,80 @@ def check_feasibility(mem_id,sec,flag):
         mrx=mem_info_compacted.Mx[mem_id]
         mry=mem_info_compacted.My[mem_id]
         l=mem_info_compacted.L[mem_id]
+        section_type=mem_info.group[mem_id]
     elif flag==2: # for mapping back
         pr=abs(mem_info.P[mem_id])
         mrx=abs(mem_info.Mx[mem_id])
         mry=abs(mem_info.My[mem_id])
         l=abs(mem_info.L[mem_id])
+        section_type=mem_info.group[mem_id]
     elif flag==3: # for mapping back
         mem_id=mem_info.index[mem_id]
         pr=abs(mem_info.P[mem_id])
         mrx=abs(mem_info.Mx[mem_id])
         mry=abs(mem_info.My[mem_id])
         l=abs(mem_info.member_length[mem_id])
-        
-    # Round HSS Feasibility    
-    if sec[0] == ("H"):  
-        A=sec_info["HSS"].A[sec]
-        I=sec_info["HSS"].I[sec]
-        Z=sec_info["HSS"].Z[sec]
-        D=sec_info["HSS"].D[sec]
-        S=sec_info["HSS"].S[sec]
-        d_t=sec_info["HSS"].d_t[sec]
-        r = sec_info["HSS"].r[sec]
+        section_type=mem_info.member_type[mem_id]
+    
+    # Check Square HSS Feasibility
+    if section_type == 1:		#Columns only are Wideflange sections
+    	A=sec_info["Square"].A[sec]
+        I=sec_info["Square"].I[sec]
+        Z=sec_info["Square"].Z[sec]
+        B=sec_info["Square"].B[sec]
+        S=sec_info["Square"].S[sec]
+        b_t=sec_info["Square"].b_t[sec]
+        r = sec_info["Square"].r[sec]
+        t = sec_info["Square"].t[sec]
+        h_t = sec_info["Square"].h_t[sec]
+        b = sec_info["Square"].b[sec]
+        # Pc
+        Q = 1.0
+        if sec_info["Square"].C_s[sec] == "S":
+            be=min(b,1.92*t*np.sqrt(E/Fy)*(1 - 0.38/b_t * np.sqrt(E/Fy)))
+            Be=be+2*t
+            Ae=Be*t*2 + (Be-(2*t))*t*2
+            Q= min(1,A/Ae)
+            
+        fe=np.pi**2*E/(K*l/r)**2
+        if (Q*Fy/fe)<=2.25:
+            fcr=Q*Fy*[0.658]**(Q*Fy/fe)
+        else:
+            fcr=0.877*fe
+        pc=(fcr*A)*0.9
+
+        # Mcx & Mcy
+        if sec_info["Square"].FF_s[sec] == "C":		# Compact Flange
+            mcx = mcy = 0.9*Z*Fy
+        elif sec_info["Square"].FF_s[sec] == "NC":	# Non-Compact Flange
+        	mp = Z*Fy
+        	mcx = mcy = 0.9* min(mp, mp-(mp-Fy*S)*(3.57*b_t*np.sqrt(Fy/E)-4.0))
+        	#print 'TEST',mcx
+        elif sec_info["Square"].FF_s[sec] == "S":	# Slender Flange
+        	be = min(b,1.92*t*np.sqrt(E/Fy)*(1 - 0.38/b_t * np.sqrt(E/Fy)))
+        	Be=be+2*t
+        	Se = ((Be**4)/12.0 - (be**4)/12.0)*2/Be
+        	mcx = mcy = 0.9 *Fy*Se
+        if sec_info["Square"].FW_s[sec] == "NC":	# Check Web after flange
+        	mp = Z*Fy
+        	mcx = mcy = 0.9 * min(mcx,mp-(mp-Fy*S)*(0.305*h_t*np.sqrt(Fy/E)-0.738))
+
+
+   # if section_type == 1:
+    	#print 'mem_id',mem_id,'sec',sec,'mcx',mcx,'mcx',mcx,'mcy',mcy
+    # Check Round HSS Feasibility
+    if section_type == 3:  #Braces only are round HSS
+        A=sec_info["Round"].A[sec]
+        I=sec_info["Round"].I[sec]
+        Z=sec_info["Round"].Z[sec]
+        D=sec_info["Round"].D[sec]
+        S=sec_info["Round"].S[sec]
+        d_t=sec_info["Round"].d_t[sec]
+        r = sec_info["Round"].r[sec]
     
         # Pc
         Q = 1.0
-        if sec_info["HSS"].C_s[sec] == "S":
+        if sec_info["Round"].C_s[sec] == "S":
             Q = 0.038*E/(Fy*d_t) + 2/3
             
         fe=np.pi**2*E/(K*l/r)**2
@@ -117,18 +166,18 @@ def check_feasibility(mem_id,sec,flag):
         pc=(fcr*A)*0.9
     
         # Mcx & Mcy
-        if sec_info["HSS"].F_s[sec] == "C":
+        if sec_info["Round"].F_s[sec] == "C":
             mcx = mcy = 0.9*Z*Fy
-        elif sec_info["HSS"].F_s[sec] == "NC":
+        elif sec_info["Round"].F_s[sec] == "NC":
             mcx = mcy = 0.9* min(Z*Fy, (0.021*E/d_t + Fy)*S)      
-        elif sec_info["HSS"].F_s[sec] == "S":
+        elif sec_info["Round"].F_s[sec] == "S":
             mcx = mcy = 0.9* min (Z*Fy, (0.021*E/d_t + Fy)*S, 0.33*E*S/d_t)
             
         # V        
         Vd = 0.9 * 0.78*E/(d_t**(3/2)) * A/2
 
     # Wide Flange Feasibility
-    if sec[0] == ("W"):
+    if section_type == 2:		#Beams only are Wideflange sections
         A=sec_info["W"].A[sec]
         Ix=sec_info["W"].Ix[sec]
         Iy=sec_info["W"].Iy[sec]
@@ -225,10 +274,11 @@ def check_feasibility(mem_id,sec,flag):
         Vd = 0.9* 0.6*Fy*(d-2*tf)*tw*Cv
 
     # strength check
+
     if (pr/pc)>=0.2:
-        util=pr/pc+8.0/9.0*(mrx/mcx+mry/mcy) 
+        util=pr/pc+8.0/9.0*(abs(mrx/mcx)+abs(mry/mcy)) 
     else:
-        util=pr/(2.0*pc)+(mrx/mcx+mry/mcy)  
+        util=pr/(2.0*pc)+(abs(mrx/mcx)+abs(mry/mcy))  
        
     #feasibility return
     if util<=0.95: 
@@ -259,9 +309,10 @@ def read_section_data():
     #sec_price=pd.read_csv('section_price.txt',sep=',', encoding='utf-16')
     # read the section catalog
     sec_info_W = pd.read_csv('W.txt',sep=',')
-    sec_info_HSS = pd.read_csv('HSS.txt',sep=',')
+    sec_info_Round = pd.read_csv('Round.txt',sep=',')
+    sec_info_Square = pd.read_csv('Square.txt',sep=',')
     #sec_info_W = pd.merge(sec_info,sec_price).drop_duplicates().reset_index(drop=True)
-     
+    
     A=np.array(sec_info_W.A)
     W=np.array(sec_info_W['W'])
     Ix=np.array(sec_info_W['Ix / 106'])*10**6
@@ -284,30 +335,43 @@ def read_section_data():
     C_web = np.array(sec_info_W['Web Compression'])
     F_flange = np.array(sec_info_W['Flange Flexure'])
     F_web = np.array(sec_info_W['Web Flexure'])
+    sec_info_W=pd.DataFrame({'AISC_W_Data [metric]':sec_info_W["AISC_Manual_Label"],'W':W,'FW_s':F_web,'FF_s':F_flange,'CW_s':C_web,'CF_s':C_flange,'tw':tw,'tf':tf,'rx':rx, "ry":ry, 'd':d,'b_t':b_t,'bf':bf,'h_tw':h_tw,'Sx':Sx,'Sy':Sy,'J':J,'rts':rts,'Ix':Ix,'Iy':Iy,'Zx':Zx,'Zy':Zy,'A':A,'W':sec_info_W.W,'unit_price':sec_info_W.unit_price})
     
-    # old name: AISC_Manual_Label [metric] - check code for label changes
-    sec_info_W=pd.DataFrame({'AISC_W_Data [metric]':sec_info_W["AISC_Manual_Label"],'W':W,'FW_s':F_web,                              'FF_s':F_flange,'CW_s':C_web,'CF_s':C_flange,                             'tw':tw,'tf':tf,'rx':rx, "ry":ry, 'd':d,'b_t':b_t,'bf':bf,'h_tw':h_tw,                             'Sx':Sx,'Sy':Sy,'J':J,'rts':rts,'Ix':Ix,'Iy':Iy,'Zx':Zx,'Zy':Zy,'A':A,'W':sec_info_W.W,                             'unit_price':sec_info_W.unit_price})
+    A=np.array(sec_info_Round.A)
+    W=np.array(sec_info_Round['W'])
+    I=np.array(sec_info_Round['Ix / 106'])*10**6
+    Z=np.array(sec_info_Round['Zx / 103'])*10**3
+    S = np.array(sec_info_Round['Sx / 103'])*10**3
+    D = np.array(sec_info_Round['OD'])
+    d_t = np.array(sec_info_Round['D/t'])
+    r = np.array(sec_info_Round['rx'])
+    C_slenderness = np.array(sec_info_Round['Compression'])
+    F_slenderness = np.array(sec_info_Round['Flexure'])      
+    sec_info_Round=pd.DataFrame({'AISC_Round_Data [metric]':sec_info_Round["AISC_Manual_Label"],'W':W,'F_s':F_slenderness,'C_s':C_slenderness,'r':r, 'd_t':d_t,'D':D,'I':I,'S':S,'Z':Z,'A':A,'W':sec_info_Round.W,'unit_price':sec_info_Round.unit_price})
     
-    A=np.array(sec_info_HSS.A)
-    W=np.array(sec_info_HSS['W'])
-    I=np.array(sec_info_HSS['Ix / 106'])*10**6
-    Z=np.array(sec_info_HSS['Zx / 103'])*10**3
-    S = np.array(sec_info_HSS['Sx / 103'])*10**3
-    D = np.array(sec_info_HSS['OD'])
-    d_t = np.array(sec_info_HSS['D/t'])
-    r = np.array(sec_info_HSS['rx'])
-    C_slenderness = np.array(sec_info_HSS['Compression'])
-    F_slenderness = np.array(sec_info_HSS['Flexure'])
-    
-        
-    sec_info_HSS=pd.DataFrame({'AISC_HSS_Data [metric]':sec_info_HSS["AISC_Manual_Label"],'W':W,'F_s':F_slenderness,                               'C_s':C_slenderness,'r':r, 'd_t':d_t,'D':D,'I':I,'S':S,'Z':Z,'A':A,'W':sec_info_HSS.W,                               'unit_price':sec_info_HSS.unit_price})
-    sec_info= dict({"W":sec_info_W, "HSS":sec_info_HSS}) 
-    # old sorting: [B,W] - clarify and check the code
-    sec_info["W"]=sec_info_W.sort_values(['d','W'],ascending=True).set_index('AISC_W_Data [metric]')
-    sec_info["HSS"]=sec_info_HSS.sort_values(['D','W'],ascending=True).set_index('AISC_HSS_Data [metric]')
+    A=np.array(sec_info_Square.A)
+    B=np.array(sec_info_Square.B) #outer base width
+    b=np.array(sec_info_Square.b) #inner base width
+    t=np.array(sec_info_Square.tdes)
+    r=np.array(sec_info_Square.rx)
+    b_t=np.array(sec_info_Square['b/tdes'])
+    h_t=np.array(sec_info_Square['h/tdes'])
+    W=np.array(sec_info_Square['W'])
+    I=np.array(sec_info_Square['Ix / 106'])*10**6
+    Z=np.array(sec_info_Square['Zx / 103'])*10**3
+    S = np.array(sec_info_Square['Sx / 103'])*10**3
+    C_s = np.array(sec_info_Square['Compression'])
+    F_flange = np.array(sec_info_Square['Flange Flexure'])
+    F_web = np.array(sec_info_Square['Web Flexure'])
+    sec_info_Square=pd.DataFrame({'AISC_Square_Data [metric]':sec_info_Square["AISC_Manual_Label [metric]"],'A':A,'b':b,'B':B,'W':W,'I':I,'S':S,'Z':Z,'r':r,'t':t,'b_t':b_t,'h_t':h_t,'FW_s':F_web,'FF_s':F_flange,'C_s':C_s,'unit_price':sec_info_Square.unit_price})
 
-    num_all_sec = dict({"W":sec_info_W.count().A, "HSS":sec_info_HSS.count().A})
-    
+    sec_info= dict({"W":sec_info_W, "Round":sec_info_Round, "Square":sec_info_Square})
+    sec_info["W"]=sec_info_W.sort_values(['d','W'],ascending=True).set_index('AISC_W_Data [metric]')
+    sec_info["Round"]=sec_info_Round.sort_values(['D','W'],ascending=True).set_index('AISC_Round_Data [metric]')
+    sec_info["Square"]=sec_info_Square.sort_values(['B','W'],ascending=True).set_index('AISC_Square_Data [metric]')
+
+    num_all_sec = dict({"W":sec_info_W.count().A, "Round":sec_info_Round.count().A, "Square":sec_info_Square.count().A})
+
     return sec_info;
 
 
@@ -330,12 +394,17 @@ def read_member_data():
     mem_info=pd.merge(mem_force,mem_geo).drop_duplicates().reset_index(drop=True)
     
     # calculate the DC-ratio manually
-    dummy_section='HSS63.5X6.4'
     num_mem=mem_info.count().P
     DC_manual=np.zeros(num_mem)
     
     for i in range(num_mem):
         mem_id=mem_info.index[i]
+        if mem_info.member_type[mem_id] == 1:	# Columns
+    		dummy_section = 'HSS50.8X50.8X3.2'
+    	elif mem_info.member_type[mem_id] == 2:	# Beams
+    		dummy_section = 'W100X19.3'
+    	else:							# Braces
+    		dummy_section = 'HSS42.2X3.6'
         (feasibility,pc,mcx,mcy,util)=check_feasibility(mem_id,dummy_section,3)
         DC_manual[i]=util
     mem_info['DC_Ratio_manual']=DC_manual
@@ -365,7 +434,7 @@ def read_member_data():
 
     # aggregate the data
     mem_info_compacted=pd.DataFrame({'member_ID':mem_info_compacted.member_ID,'P': P_compacted,'Mx':Mx_compacted,'My':My_compacted,'L':L_compacted,'group':mem_info_compacted.member_type,'DC':DC_compacted})
-    mem_info=pd.DataFrame({'member_ID':mem_info.member_ID,'P': P,'Mx':Mx,'My':My,                           'L':L,'group':mem_info.member_type,'DC':DC})
+    mem_info=pd.DataFrame({'member_ID':mem_info.member_ID,'P': P,'Mx':Mx,'My':My,'L':L,'group':mem_info.member_type,'DC':DC})
     
     mem_info=mem_info.set_index('member_ID')
     mem_info_compacted=mem_info_compacted.set_index('member_ID')
@@ -664,13 +733,16 @@ def find_optimal_section_for_structure():
             cs_new=pd.DataFrame({'member_ID':mem_id,'cross_section':s,'feasibility':f,'Pc':pc,'Mcx':mcx,'Mcy':mcy,'util':util},index=[mem_id]).set_index('member_ID')
             cs=cs.append(cs_new) 
         
-# this returns an cross section (e.g. HSS406.4X406.4X15.9) that sets the upper bond size for argument index
+# this returns an cross section (e.g. Round406.4X406.4X15.9) that sets the upper bond size for argument index
 def find_upper_bound(mem_id):
     global graph_parents,sec_info
     global cs
 
-    if mem_info_compacted.group[mem_id] == 3:
-        return sec_info['HSS'].index[-1]
+    if mem_info_compacted.group[mem_id] == 3:	# Round braces have no limits on the upper bound
+        return sec_info['Round'].index[-1]
+
+    if mem_info_compacted.group[mem_id] == 1:	# Square columns have no limits on the upper bound
+        return sec_info['Square'].index[-1]
     
     upper_bound_cs=sec_info['W'].index[-1]
     if mem_id in graph_parents: # if mem_id has parents
@@ -678,9 +750,18 @@ def find_upper_bound(mem_id):
             if pa_id in active_member_list:
                 pa_cs=cs.cross_section[pa_id]; # find its cross section
                 """This takes care of both web-flange and flange-flange connections, 
-                    needs to be fixed after the member orientation info added"""
-                if (sec_info['W'].d[upper_bound_cs]>sec_info['W'].d[pa_cs] - 2*sec_info['W'].tf[pa_cs] or sec_info['W'].bf[upper_bound_cs]>sec_info['W'].bf[pa_cs]): # find the smallest width of the parents' cross section
-                    upper_bound_cs=pa_cs
+                    needs to be fixed after the member orientation info added - now it is conservative"""
+                #if (pa_cs[0] == "W" and (sec_info['W'].d[upper_bound_cs]>sec_info['W'].d[pa_cs] - 2*sec_info['W'].tf[pa_cs] or sec_info['W'].bf[upper_bound_cs]>sec_info['W'].bf[pa_cs])): # find the smallest width of the parents' cross section
+                #   upper_bound_cs=pa_cs
+                """This takes care of Square columns to Wide-flange beam connections """
+                if (pa_cs[0] == "H"):
+                	for i in range(len(sec_info['W'].index)):
+                		if sec_info['W'].bf[sec_info['W'].index[i]] > sec_info['Square'].B[pa_cs] and i>0:
+                			upper_bound_cs = sec_info['W'].index[i-1]
+                			return upper_bound_cs
+                		elif sec_info['W'].bf[sec_info['W'].index[i]] > sec_info['Square'].B[pa_cs] and i==0:
+                			print "The smallest W section is larger than the column section"
+
                 
     return upper_bound_cs 
 
@@ -692,17 +773,19 @@ def find_optimal_section_for_member(mem_id,upper_bound_cs=None,lower_bound_cs=No
     global sec_info,mem_info_compacted,num_all_sec
 
     if mem_info_compacted.group[mem_id] == 3:
-        sec_type="HSS"
+        sec_type="Round"
+    elif mem_info_compacted.group[mem_id] == 1:
+    	sec_type="Square"
     else:
         sec_type="W"
     
     if upper_bound_cs is None:    
-        upper_bound_cs= sec_info[sec_type].index[-1]
-                                               
+        upper_bound_cs= sec_info[sec_type].index[-1]                         
     if lower_bound_cs is None:
 
         lower_bound_cs= sec_info[sec_type].index[0]
 
+   # print "mem_id:",mem_id, " lower bound:",lower_bound_cs, " upper bound:", upper_bound_cs, " sec type:",sec_type
     # we first sort the section accoridng to area, and then find the smallest section that makes it feasible
     sec_info_sliced=(sec_info[sec_type].loc[lower_bound_cs:upper_bound_cs]).sort_values(by='A',ascending=True)
     
@@ -710,7 +793,6 @@ def find_optimal_section_for_member(mem_id,upper_bound_cs=None,lower_bound_cs=No
 
     # the determinist way
     for new_sec_ind in range(0,num_choice):
-
         (feasibility,pc,mcx,mcy,util)=check_feasibility(mem_id,sec_info_sliced.index[new_sec_ind],1)
         if feasibility==1:
             break;
@@ -720,6 +802,7 @@ def find_optimal_section_for_member(mem_id,upper_bound_cs=None,lower_bound_cs=No
     # back_jumping part
     if feasibility!=1 and num_choice!=num_all_sec[sec_type]:
         #print ('back_jumping **',mem_id)
+        print 'mem_id',mem_id,'upper_bound',upper_bound_cs,'section',optimal_cs
         (optimal_cs,feasibility,pc,mcx,mcy,util)=find_optimal_section_for_member(mem_id);
         back_jumping_updating(mem_id,optimal_cs)
  
@@ -730,13 +813,17 @@ def back_jumping_updating(mem_id,sec):
     global graph_parents
     
     if mem_info_compacted.group[mem_id] == 3:
-        sec_type="HSS"
+        sec_type="Round"
         Width = "D"
+    elif mem_info_compacted.group[mem_id] == 1:
+    	sec_type="Square"
+    	Width = "B"
     else:
         sec_type="W"
         Width = "bf"
     
     if mem_id in cs.index:   # mem_id has been assigned before
+    	print 'mem_id and section: ',mem_id,sec
         if sec_info[sec_type][Width][sec]>sec_info[sec_type][Width][cs.cross_section[mem_id]] : # the children node has larger cross section
             (feasibility,pc,mcx,mcy,util)=check_feasibility(mem_id,sec,1)
             if feasibility !=1:
@@ -761,12 +848,11 @@ def calculate_cost():
 
     member_cost=[]
     for i in mem_info.index:
-        #print i
         size=mem_info.cross_section[i]
-        #print size
-        #print mem_info.group[i]
         if mem_info.group[i] == 3:
-            c=sec_info["HSS"].unit_price[size]*sec_info["HSS"].W[size]*mem_info.L[i]/1000000
+            c=sec_info["Round"].unit_price[size]*sec_info["Round"].W[size]*mem_info.L[i]/1000000
+        elif mem_info.group[i] == 1:
+        	c=sec_info["Square"].unit_price[size]*sec_info["Square"].W[size]*mem_info.L[i]/1000000
         else:
             c=sec_info["W"].unit_price[size]*sec_info["W"].W[size]*mem_info.L[i]/1000000
         # if the W is N/mm. L is mm... check this unit assumption!!!!!!!!!!!????
@@ -779,22 +865,21 @@ def calculate_load_per_unit_cost():
     
     member_lpuc=[]
     for i in mem_info.index:
-        
-   #      if mem_info_compacted.group[i]==3:
-   #         sec_type="HSS"
-   #     else:
-   #         sec_type="W"
             
         size=mem_info.cross_section[i]
         
         if mem_info.group[i] == 3:
-            p1=mem_info.P[i]/sec_info["HSS"].A[size]+(mem_info.Mx[i]*sec_info["HSS"].D[size]/sec_info["HSS"].I[size]/2                                                +mem_info.My[i]*sec_info["HSS"].D[size]/sec_info["HSS"].I[size]/2)
+            p1=mem_info.P[i]/sec_info["Round"].A[size]+(mem_info.Mx[i]*sec_info["Round"].D[size]/sec_info["Round"].I[size]/2 +mem_info.My[i]*sec_info["Round"].D[size]/sec_info["Round"].I[size]/2)
             p2=mem_info.Mx[i]/mem_info.Mcx[i]+mem_info.My[i]/mem_info.Mcy[i]
-            lpuc = ((mem_info.P[i]/sec_info["HSS"].A[size]) + (sec_info["HSS"].D[size]/(sec_info["HSS"].I[size]*2.0))                 * (mem_info.My[i] + mem_info.Mx[i])) * sec_info["HSS"].A[size]/1e20
+            lpuc = ((mem_info.P[i]/sec_info["Round"].A[size]) + (sec_info["Round"].D[size]/(sec_info["Round"].I[size]*2.0))* (mem_info.My[i] + mem_info.Mx[i])) * sec_info["Round"].A[size]/1e20
+        elif mem_info.group[i] == 1:
+        	p1=mem_info.P[i]/sec_info["Square"].A[size]+(mem_info.Mx[i]*sec_info["Square"].B[size]/sec_info["Square"].I[size]/2 +mem_info.My[i]*sec_info["Square"].B[size]/sec_info["Square"].I[size]/2)
+        	p2=mem_info.Mx[i]/mem_info.Mcx[i]+mem_info.My[i]/mem_info.Mcy[i]
+        	lpuc = ((mem_info.P[i]/sec_info["Square"].A[size]) + (sec_info["Square"].B[size]/(sec_info["Square"].I[size]*2.0))* (mem_info.My[i] + mem_info.Mx[i])) * sec_info["Square"].A[size]/1e20
         else:
-            p1=mem_info.P[i]/sec_info["W"].A[size]+(mem_info.Mx[i]*sec_info["W"].d[size]/sec_info["W"].Ix[size]/2                                                +mem_info.My[i]*sec_info["W"].d[size]/sec_info["W"].Iy[size]/2)
+            p1=mem_info.P[i]/sec_info["W"].A[size]+(mem_info.Mx[i]*sec_info["W"].d[size]/sec_info["W"].Ix[size]/2+mem_info.My[i]*sec_info["W"].d[size]/sec_info["W"].Iy[size]/2)
             p2=mem_info.Mx[i]/mem_info.Mcx[i]+mem_info.My[i]/mem_info.Mcy[i]
-            lpuc = ((mem_info.P[i]/sec_info["W"].A[size]) + (sec_info["W"].d[size]/(sec_info["W"].Ix[size]*2.0))                 * (mem_info.My[i] + mem_info.Mx[i])) * sec_info["W"].A[size]/1e20
+            lpuc = ((mem_info.P[i]/sec_info["W"].A[size]) + (sec_info["W"].d[size]/(sec_info["W"].Ix[size]*2.0))* (mem_info.My[i] + mem_info.Mx[i])) * sec_info["W"].A[size]/1e20
         
         #lpuc=(mem_info.P[i]/(mem_info.Pc[i]*p1*sec_info.A[size]))+(p2/(p1*sec_info.Ix[size]))
        
