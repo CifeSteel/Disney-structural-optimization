@@ -1,4 +1,4 @@
-File C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAPMODEL\delos_turtle.$2k was saved on 8/21/16 at 16:51:29
+File C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAPMODEL\delos_turtle.$2k was saved on 9/3/16 at 12:52:23
  
 TABLE:  "ACTIVE DEGREES OF FREEDOM"
    UX=Yes   UY=Yes   UZ=Yes   RX=Yes   RY=Yes   RZ=Yes
@@ -46,56 +46,12 @@ TABLE:  "COMBINATION DEFINITIONS"
    ComboName="0.3 Wind X + Wind -Y"   CaseName="Wind -Y"   ScaleFactor=1
  
 TABLE:  "CONNECTIVITY - FRAME"
-   Frame=BE0001   JointI=P001115   JointJ=P001116   IsCurved=No
-   Frame=BE0002   JointI=P001116   JointJ=P001117   IsCurved=No
-   Frame=BE0003   JointI=P001117   JointJ=P001217   IsCurved=No
-   Frame=BE0004   JointI=P001117   JointJ=P001118   IsCurved=No
-   Frame=BE0005   JointI=P001118   JointJ=P001218   IsCurved=No
-   Frame=BE0006   JointI=P001118   JointJ=P001119   IsCurved=No
-   Frame=BE0007   JointI=P001119   JointJ=P001219   IsCurved=No
-   Frame=BE0008   JointI=P001119   JointJ=P001120   IsCurved=No
-   Frame=BE0009   JointI=P001120   JointJ=P001220   IsCurved=No
-   Frame=BE0010   JointI=P001120   JointJ=P001121   IsCurved=No
-   Frame=BE0011   JointI=P001121   JointJ=P001221   IsCurved=No
-   Frame=BE0012   JointI=P001121   JointJ=P001122   IsCurved=No
-   Frame=BE0013   JointI=P001122   JointJ=P001222   IsCurved=No
-   Frame=BE0014   JointI=P001122   JointJ=P001123   IsCurved=No
-   Frame=BE0015   JointI=P001123   JointJ=P001223   IsCurved=No
-   Frame=BE0016   JointI=P001123   JointJ=P001124   IsCurved=No
-   Frame=BE0017   JointI=P001124   JointJ=P001224   IsCurved=No
-   Frame=BE0018   JointI=P001217   JointJ=P001218   IsCurved=No
-   Frame=BE0019   JointI=P001218   JointJ=P001219   IsCurved=No
-   Frame=BE0020   JointI=P001219   JointJ=P001319   IsCurved=No
-   Frame=BE0021   JointI=P001219   JointJ=P001220   IsCurved=No
-   Frame=BE0022   JointI=P001220   JointJ=P001320   IsCurved=No
-   Frame=BE0023   JointI=P001220   JointJ=P001221   IsCurved=No
-   Frame=BE0024   JointI=P001221   JointJ=P001321   IsCurved=No
-   Frame=BE0025   JointI=P001221   JointJ=P001222   IsCurved=No
-   Frame=BE0026   JointI=P001222   JointJ=P001322   IsCurved=No
-   Frame=BE0027   JointI=P001222   JointJ=P001223   IsCurved=No
-   Frame=BE0028   JointI=P001223   JointJ=P001323   IsCurved=No
-   Frame=BE0029   JointI=P001223   JointJ=P001224   IsCurved=No
-   Frame=BE0030   JointI=P001224   JointJ=P001324   IsCurved=No
-   Frame=BE0031   JointI=P001224   JointJ=P001225   IsCurved=No
-   Frame=BE0032   JointI=P001319   JointJ=P001320   IsCurved=No
-   Frame=BE0033   JointI=P001320   JointJ=P001321   IsCurved=No
-   Frame=BE0034   JointI=P001321   JointJ=P001322   IsCurved=No
-   Frame=BE0035   JointI=P001322   JointJ=P001323   IsCurved=No
-   Frame=BE0036   JointI=P001323   JointJ=P001324   IsCurved=No
    Frame=BE0037   JointI=P011115   JointJ=P011116   IsCurved=No
    Frame=BE0038   JointI=P011116   JointJ=P011117   IsCurved=No
    Frame=BE0039   JointI=P011117   JointJ=P011217   IsCurved=No
-   Frame=BE0040   JointI=P011117   JointJ=P011118   IsCurved=No
-   Frame=BE0041   JointI=P011118   JointJ=P011218   IsCurved=No
-   Frame=BE0042   JointI=P011118   JointJ=P011119   IsCurved=No
    Frame=BE0043   JointI=P011119   JointJ=P011219   IsCurved=No
-   Frame=BE0044   JointI=P011119   JointJ=P011120   IsCurved=No
    Frame=BE0045   JointI=P011120   JointJ=P011220   IsCurved=No
-   Frame=BE0046   JointI=P011120   JointJ=P011121   IsCurved=No
-   Frame=BE0047   JointI=P011121   JointJ=P011221   IsCurved=No
-   Frame=BE0048   JointI=P011121   JointJ=P011122   IsCurved=No
    Frame=BE0049   JointI=P011122   JointJ=P011222   IsCurved=No
-   Frame=BE0050   JointI=P011122   JointJ=P011123   IsCurved=No
    Frame=BE0051   JointI=P011123   JointJ=P011223   IsCurved=No
    Frame=BE0052   JointI=P011123   JointJ=P011124   IsCurved=No
    Frame=BE0053   JointI=P011124   JointJ=P011224   IsCurved=No
@@ -106,14 +62,11 @@ TABLE:  "CONNECTIVITY - FRAME"
    Frame=BE0058   JointI=P011220   JointJ=P011320   IsCurved=No
    Frame=BE0059   JointI=P011220   JointJ=P011221   IsCurved=No
    Frame=BE0060   JointI=P011221   JointJ=P011321   IsCurved=No
-   Frame=BE0061   JointI=P011221   JointJ=P011222   IsCurved=No
    Frame=BE0062   JointI=P011222   JointJ=P011322   IsCurved=No
    Frame=BE0063   JointI=P011222   JointJ=P011223   IsCurved=No
    Frame=BE0064   JointI=P011223   JointJ=P011323   IsCurved=No
    Frame=BE0065   JointI=P011223   JointJ=P011224   IsCurved=No
    Frame=BE0066   JointI=P011224   JointJ=P011324   IsCurved=No
-   Frame=BE0067   JointI=P011224   JointJ=P011225   IsCurved=No
-   Frame=BE0068   JointI=P011319   JointJ=P011320   IsCurved=No
    Frame=BE0069   JointI=P011320   JointJ=P011321   IsCurved=No
    Frame=BE0070   JointI=P011321   JointJ=P011322   IsCurved=No
    Frame=BE0071   JointI=P011322   JointJ=P011323   IsCurved=No
@@ -122,28 +75,19 @@ TABLE:  "CONNECTIVITY - FRAME"
    Frame=BE0074   JointI=P021116   JointJ=P021117   IsCurved=No
    Frame=BE0075   JointI=P021117   JointJ=P021118   IsCurved=No
    Frame=BE0076   JointI=P021118   JointJ=P021218   IsCurved=No
-   Frame=BE0077   JointI=P021118   JointJ=P021119   IsCurved=No
    Frame=BE0078   JointI=P021119   JointJ=P021219   IsCurved=No
-   Frame=BE0079   JointI=P021119   JointJ=P021120   IsCurved=No
    Frame=BE0080   JointI=P021120   JointJ=P021220   IsCurved=No
-   Frame=BE0081   JointI=P021120   JointJ=P021121   IsCurved=No
    Frame=BE0082   JointI=P021121   JointJ=P021221   IsCurved=No
-   Frame=BE0083   JointI=P021121   JointJ=P021122   IsCurved=No
    Frame=BE0084   JointI=P021122   JointJ=P021222   IsCurved=No
-   Frame=BE0085   JointI=P021122   JointJ=P021123   IsCurved=No
    Frame=BE0086   JointI=P021123   JointJ=P021223   IsCurved=No
    Frame=BE0087   JointI=P021218   JointJ=P021219   IsCurved=No
    Frame=BE0088   JointI=P021219   JointJ=P021220   IsCurved=No
    Frame=BE0089   JointI=P021220   JointJ=P021221   IsCurved=No
    Frame=BE0090   JointI=P021221   JointJ=P021321   IsCurved=No
-   Frame=BE0091   JointI=P021221   JointJ=P021222   IsCurved=No
    Frame=BE0092   JointI=P021222   JointJ=P021322   IsCurved=No
-   Frame=BE0093   JointI=P021222   JointJ=P021223   IsCurved=No
    Frame=BE0094   JointI=P021223   JointJ=P021323   IsCurved=No
    Frame=BE0095   JointI=P021321   JointJ=P021322   IsCurved=No
    Frame=BE0096   JointI=P021322   JointJ=P021323   IsCurved=No
-   Frame=BE0097   JointI=P031119   JointJ=P031120   IsCurved=No
-   Frame=BE0098   JointI=P031120   JointJ=P031121   IsCurved=No
    Frame=BR0001   JointI=P001115   JointJ=X00111502   IsCurved=No
    Frame=BR0002   JointI=P011116   JointJ=X00111502   IsCurved=No
    Frame=BR0003   JointI=P001116   JointJ=X00111606   IsCurved=No
@@ -580,7 +524,6 @@ TABLE:  "CONNECTIVITY - FRAME"
    Frame=CO0016   JointI=P001222   JointJ=P011222   IsCurved=No
    Frame=CO0017   JointI=P001223   JointJ=P011223   IsCurved=No
    Frame=CO0018   JointI=P001224   JointJ=P011224   IsCurved=No
-   Frame=CO0019   JointI=P001225   JointJ=P011225   IsCurved=No
    Frame=CO0020   JointI=P001319   JointJ=P011319   IsCurved=No
    Frame=CO0021   JointI=P001320   JointJ=P011320   IsCurved=No
    Frame=CO0022   JointI=P001321   JointJ=P011321   IsCurved=No
@@ -618,56 +561,12 @@ TABLE:  "DATABASE FORMAT TYPES"
    UnitsCurr=Yes   OverrideE=No
  
 TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
-   Frame=BE0001   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0002   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0003   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0004   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0005   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0006   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0007   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0008   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0009   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0010   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0011   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0012   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0013   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0014   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0015   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0016   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0017   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0018   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0019   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0020   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0021   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0022   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0023   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0024   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0025   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0026   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0027   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0028   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0029   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0030   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0031   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0032   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0033   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0034   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0035   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0036   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0037   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0038   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0039   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0040   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0041   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0042   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0043   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0044   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0045   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0046   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0047   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0048   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0049   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0050   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0051   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0052   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0053   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
@@ -678,14 +577,11 @@ TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
    Frame=BE0058   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0059   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0060   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0061   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0062   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0063   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0064   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0065   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0066   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0067   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0068   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0069   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0070   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0071   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
@@ -694,28 +590,19 @@ TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
    Frame=BE0074   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0075   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0076   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0077   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0078   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0079   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0080   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0081   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0082   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0083   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0084   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0085   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0086   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0087   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0088   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0089   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0090   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0091   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0092   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0093   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0094   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0095   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BE0096   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0097   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BE0098   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0001   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0002   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0003   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
@@ -1152,7 +1039,6 @@ TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
    Frame=CO0016   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0017   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0018   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=CO0019   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0020   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0021   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0022   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
@@ -1182,56 +1068,12 @@ TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
    Frame=CO0046   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
  
 TABLE:  "FRAME DESIGN PROCEDURES"
-   Frame=BE0001   DesignProc="From Material"
-   Frame=BE0002   DesignProc="From Material"
-   Frame=BE0003   DesignProc="From Material"
-   Frame=BE0004   DesignProc="From Material"
-   Frame=BE0005   DesignProc="From Material"
-   Frame=BE0006   DesignProc="From Material"
-   Frame=BE0007   DesignProc="From Material"
-   Frame=BE0008   DesignProc="From Material"
-   Frame=BE0009   DesignProc="From Material"
-   Frame=BE0010   DesignProc="From Material"
-   Frame=BE0011   DesignProc="From Material"
-   Frame=BE0012   DesignProc="From Material"
-   Frame=BE0013   DesignProc="From Material"
-   Frame=BE0014   DesignProc="From Material"
-   Frame=BE0015   DesignProc="From Material"
-   Frame=BE0016   DesignProc="From Material"
-   Frame=BE0017   DesignProc="From Material"
-   Frame=BE0018   DesignProc="From Material"
-   Frame=BE0019   DesignProc="From Material"
-   Frame=BE0020   DesignProc="From Material"
-   Frame=BE0021   DesignProc="From Material"
-   Frame=BE0022   DesignProc="From Material"
-   Frame=BE0023   DesignProc="From Material"
-   Frame=BE0024   DesignProc="From Material"
-   Frame=BE0025   DesignProc="From Material"
-   Frame=BE0026   DesignProc="From Material"
-   Frame=BE0027   DesignProc="From Material"
-   Frame=BE0028   DesignProc="From Material"
-   Frame=BE0029   DesignProc="From Material"
-   Frame=BE0030   DesignProc="From Material"
-   Frame=BE0031   DesignProc="From Material"
-   Frame=BE0032   DesignProc="From Material"
-   Frame=BE0033   DesignProc="From Material"
-   Frame=BE0034   DesignProc="From Material"
-   Frame=BE0035   DesignProc="From Material"
-   Frame=BE0036   DesignProc="From Material"
    Frame=BE0037   DesignProc="From Material"
    Frame=BE0038   DesignProc="From Material"
    Frame=BE0039   DesignProc="From Material"
-   Frame=BE0040   DesignProc="From Material"
-   Frame=BE0041   DesignProc="From Material"
-   Frame=BE0042   DesignProc="From Material"
    Frame=BE0043   DesignProc="From Material"
-   Frame=BE0044   DesignProc="From Material"
    Frame=BE0045   DesignProc="From Material"
-   Frame=BE0046   DesignProc="From Material"
-   Frame=BE0047   DesignProc="From Material"
-   Frame=BE0048   DesignProc="From Material"
    Frame=BE0049   DesignProc="From Material"
-   Frame=BE0050   DesignProc="From Material"
    Frame=BE0051   DesignProc="From Material"
    Frame=BE0052   DesignProc="From Material"
    Frame=BE0053   DesignProc="From Material"
@@ -1242,14 +1084,11 @@ TABLE:  "FRAME DESIGN PROCEDURES"
    Frame=BE0058   DesignProc="From Material"
    Frame=BE0059   DesignProc="From Material"
    Frame=BE0060   DesignProc="From Material"
-   Frame=BE0061   DesignProc="From Material"
    Frame=BE0062   DesignProc="From Material"
    Frame=BE0063   DesignProc="From Material"
    Frame=BE0064   DesignProc="From Material"
    Frame=BE0065   DesignProc="From Material"
    Frame=BE0066   DesignProc="From Material"
-   Frame=BE0067   DesignProc="From Material"
-   Frame=BE0068   DesignProc="From Material"
    Frame=BE0069   DesignProc="From Material"
    Frame=BE0070   DesignProc="From Material"
    Frame=BE0071   DesignProc="From Material"
@@ -1258,28 +1097,19 @@ TABLE:  "FRAME DESIGN PROCEDURES"
    Frame=BE0074   DesignProc="From Material"
    Frame=BE0075   DesignProc="From Material"
    Frame=BE0076   DesignProc="From Material"
-   Frame=BE0077   DesignProc="From Material"
    Frame=BE0078   DesignProc="From Material"
-   Frame=BE0079   DesignProc="From Material"
    Frame=BE0080   DesignProc="From Material"
-   Frame=BE0081   DesignProc="From Material"
    Frame=BE0082   DesignProc="From Material"
-   Frame=BE0083   DesignProc="From Material"
    Frame=BE0084   DesignProc="From Material"
-   Frame=BE0085   DesignProc="From Material"
    Frame=BE0086   DesignProc="From Material"
    Frame=BE0087   DesignProc="From Material"
    Frame=BE0088   DesignProc="From Material"
    Frame=BE0089   DesignProc="From Material"
    Frame=BE0090   DesignProc="From Material"
-   Frame=BE0091   DesignProc="From Material"
    Frame=BE0092   DesignProc="From Material"
-   Frame=BE0093   DesignProc="From Material"
    Frame=BE0094   DesignProc="From Material"
    Frame=BE0095   DesignProc="From Material"
    Frame=BE0096   DesignProc="From Material"
-   Frame=BE0097   DesignProc="From Material"
-   Frame=BE0098   DesignProc="From Material"
    Frame=BR0001   DesignProc="From Material"
    Frame=BR0002   DesignProc="From Material"
    Frame=BR0003   DesignProc="From Material"
@@ -1716,7 +1546,6 @@ TABLE:  "FRAME DESIGN PROCEDURES"
    Frame=CO0016   DesignProc="From Material"
    Frame=CO0017   DesignProc="From Material"
    Frame=CO0018   DesignProc="From Material"
-   Frame=CO0019   DesignProc="From Material"
    Frame=CO0020   DesignProc="From Material"
    Frame=CO0021   DesignProc="From Material"
    Frame=CO0022   DesignProc="From Material"
@@ -1746,56 +1575,12 @@ TABLE:  "FRAME DESIGN PROCEDURES"
    Frame=CO0046   DesignProc="From Material"
  
 TABLE:  "FRAME LOAD TRANSFER OPTIONS"
-   Frame=BE0001   Transfer=Yes
-   Frame=BE0002   Transfer=Yes
-   Frame=BE0003   Transfer=Yes
-   Frame=BE0004   Transfer=Yes
-   Frame=BE0005   Transfer=Yes
-   Frame=BE0006   Transfer=Yes
-   Frame=BE0007   Transfer=Yes
-   Frame=BE0008   Transfer=Yes
-   Frame=BE0009   Transfer=Yes
-   Frame=BE0010   Transfer=Yes
-   Frame=BE0011   Transfer=Yes
-   Frame=BE0012   Transfer=Yes
-   Frame=BE0013   Transfer=Yes
-   Frame=BE0014   Transfer=Yes
-   Frame=BE0015   Transfer=Yes
-   Frame=BE0016   Transfer=Yes
-   Frame=BE0017   Transfer=Yes
-   Frame=BE0018   Transfer=Yes
-   Frame=BE0019   Transfer=Yes
-   Frame=BE0020   Transfer=Yes
-   Frame=BE0021   Transfer=Yes
-   Frame=BE0022   Transfer=Yes
-   Frame=BE0023   Transfer=Yes
-   Frame=BE0024   Transfer=Yes
-   Frame=BE0025   Transfer=Yes
-   Frame=BE0026   Transfer=Yes
-   Frame=BE0027   Transfer=Yes
-   Frame=BE0028   Transfer=Yes
-   Frame=BE0029   Transfer=Yes
-   Frame=BE0030   Transfer=Yes
-   Frame=BE0031   Transfer=Yes
-   Frame=BE0032   Transfer=Yes
-   Frame=BE0033   Transfer=Yes
-   Frame=BE0034   Transfer=Yes
-   Frame=BE0035   Transfer=Yes
-   Frame=BE0036   Transfer=Yes
    Frame=BE0037   Transfer=Yes
    Frame=BE0038   Transfer=Yes
    Frame=BE0039   Transfer=Yes
-   Frame=BE0040   Transfer=Yes
-   Frame=BE0041   Transfer=Yes
-   Frame=BE0042   Transfer=Yes
    Frame=BE0043   Transfer=Yes
-   Frame=BE0044   Transfer=Yes
    Frame=BE0045   Transfer=Yes
-   Frame=BE0046   Transfer=Yes
-   Frame=BE0047   Transfer=Yes
-   Frame=BE0048   Transfer=Yes
    Frame=BE0049   Transfer=Yes
-   Frame=BE0050   Transfer=Yes
    Frame=BE0051   Transfer=Yes
    Frame=BE0052   Transfer=Yes
    Frame=BE0053   Transfer=Yes
@@ -1806,14 +1591,11 @@ TABLE:  "FRAME LOAD TRANSFER OPTIONS"
    Frame=BE0058   Transfer=Yes
    Frame=BE0059   Transfer=Yes
    Frame=BE0060   Transfer=Yes
-   Frame=BE0061   Transfer=Yes
    Frame=BE0062   Transfer=Yes
    Frame=BE0063   Transfer=Yes
    Frame=BE0064   Transfer=Yes
    Frame=BE0065   Transfer=Yes
    Frame=BE0066   Transfer=Yes
-   Frame=BE0067   Transfer=Yes
-   Frame=BE0068   Transfer=Yes
    Frame=BE0069   Transfer=Yes
    Frame=BE0070   Transfer=Yes
    Frame=BE0071   Transfer=Yes
@@ -1822,28 +1604,19 @@ TABLE:  "FRAME LOAD TRANSFER OPTIONS"
    Frame=BE0074   Transfer=Yes
    Frame=BE0075   Transfer=Yes
    Frame=BE0076   Transfer=Yes
-   Frame=BE0077   Transfer=Yes
    Frame=BE0078   Transfer=Yes
-   Frame=BE0079   Transfer=Yes
    Frame=BE0080   Transfer=Yes
-   Frame=BE0081   Transfer=Yes
    Frame=BE0082   Transfer=Yes
-   Frame=BE0083   Transfer=Yes
    Frame=BE0084   Transfer=Yes
-   Frame=BE0085   Transfer=Yes
    Frame=BE0086   Transfer=Yes
    Frame=BE0087   Transfer=Yes
    Frame=BE0088   Transfer=Yes
    Frame=BE0089   Transfer=Yes
    Frame=BE0090   Transfer=Yes
-   Frame=BE0091   Transfer=Yes
    Frame=BE0092   Transfer=Yes
-   Frame=BE0093   Transfer=Yes
    Frame=BE0094   Transfer=Yes
    Frame=BE0095   Transfer=Yes
    Frame=BE0096   Transfer=Yes
-   Frame=BE0097   Transfer=Yes
-   Frame=BE0098   Transfer=Yes
    Frame=BR0001   Transfer=Yes
    Frame=BR0002   Transfer=Yes
    Frame=BR0003   Transfer=Yes
@@ -2280,7 +2053,6 @@ TABLE:  "FRAME LOAD TRANSFER OPTIONS"
    Frame=CO0016   Transfer=Yes
    Frame=CO0017   Transfer=Yes
    Frame=CO0018   Transfer=Yes
-   Frame=CO0019   Transfer=Yes
    Frame=CO0020   Transfer=Yes
    Frame=CO0021   Transfer=Yes
    Frame=CO0022   Transfer=Yes
@@ -2328,7 +2100,6 @@ TABLE:  "FRAME LOCAL AXES ASSIGNMENTS 1 - TYPICAL"
    Frame=CO0016   Angle=93
    Frame=CO0017   Angle=93
    Frame=CO0018   Angle=93
-   Frame=CO0019   Angle=93
    Frame=CO0020   Angle=93
    Frame=CO0021   Angle=93
    Frame=CO0022   Angle=93
@@ -2358,56 +2129,12 @@ TABLE:  "FRAME LOCAL AXES ASSIGNMENTS 1 - TYPICAL"
    Frame=CO0046   Angle=93
  
 TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
-   Frame=BE0001   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0002   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0003   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0004   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0005   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0006   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0007   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0008   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0009   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0010   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0011   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0012   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0013   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0014   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0015   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0016   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0017   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0018   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0019   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0020   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0021   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0022   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0023   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0024   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0025   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0026   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0027   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0028   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0029   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0030   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0031   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0032   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0033   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0034   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0035   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0036   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0037   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0038   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0039   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0040   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0041   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0042   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0043   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0044   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0045   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0046   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0047   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0048   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0049   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0050   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0051   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0052   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0053   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
@@ -2418,14 +2145,11 @@ TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
    Frame=BE0058   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0059   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0060   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0061   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0062   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0063   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0064   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0065   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0066   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0067   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0068   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0069   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0070   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0071   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
@@ -2434,28 +2158,19 @@ TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
    Frame=BE0074   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0075   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0076   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0077   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0078   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0079   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0080   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0081   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0082   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0083   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0084   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0085   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0086   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0087   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0088   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0089   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0090   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0091   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0092   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0093   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0094   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0095   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BE0096   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0097   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BE0098   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0001   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0002   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0003   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
@@ -2892,7 +2607,6 @@ TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
    Frame=CO0016   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0017   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0018   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=CO0019   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0020   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0021   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0022   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
@@ -2922,104 +2636,48 @@ TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
    Frame=CO0046   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
  
 TABLE:  "FRAME SECTION ASSIGNMENTS"
-   Frame=BE0001   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0002   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0003   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0004   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0005   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0006   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0007   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0008   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0009   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0010   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0011   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0012   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0013   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0014   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0015   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0016   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0017   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0018   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0019   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0020   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0021   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0022   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0023   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0024   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0025   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0026   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0027   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0028   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0029   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0030   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0031   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0032   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0033   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0034   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0035   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0036   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
    Frame=BE0037   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0038   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0039   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0040   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0041   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0042   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0043   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0044   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0045   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0046   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0047   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0048   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0049   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0050   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0051   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0052   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0053   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
+   Frame=BE0038   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0039   AutoSelect=N.A.   AnalSect=W150X22.5   MatProp=Default
+   Frame=BE0043   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0045   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0049   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0051   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0052   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0053   AutoSelect=N.A.   AnalSect=W150X22.5   MatProp=Default
    Frame=BE0054   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
    Frame=BE0055   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
    Frame=BE0056   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
    Frame=BE0057   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0058   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
+   Frame=BE0058   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
    Frame=BE0059   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0060   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0061   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0062   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
+   Frame=BE0060   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0062   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
    Frame=BE0063   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0064   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0065   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0066   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0067   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0068   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
+   Frame=BE0064   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0065   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0066   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
    Frame=BE0069   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
    Frame=BE0070   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
    Frame=BE0071   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
    Frame=BE0072   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0073   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0074   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0075   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0076   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0077   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0078   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0079   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0080   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0081   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0082   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0083   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0084   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0085   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0086   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0087   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0088   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0089   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0090   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0091   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0092   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0093   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0094   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0095   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0096   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0097   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
-   Frame=BE0098   AutoSelect=N.A.   AnalSect=W100X19.3   MatProp=Default
+   Frame=BE0073   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0074   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0075   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0076   AutoSelect=N.A.   AnalSect=W150X22.5   MatProp=Default
+   Frame=BE0078   AutoSelect=N.A.   AnalSect=W150X22.5   MatProp=Default
+   Frame=BE0080   AutoSelect=N.A.   AnalSect=W150X18   MatProp=Default
+   Frame=BE0082   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0084   AutoSelect=N.A.   AnalSect=W150X22.5   MatProp=Default
+   Frame=BE0086   AutoSelect=N.A.   AnalSect=W150X22.5   MatProp=Default
+   Frame=BE0087   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0088   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0089   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0090   AutoSelect=N.A.   AnalSect=W150X22.5   MatProp=Default
+   Frame=BE0092   AutoSelect=N.A.   AnalSect=W150X22.5   MatProp=Default
+   Frame=BE0094   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0095   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
+   Frame=BE0096   AutoSelect=N.A.   AnalSect=W150X13   MatProp=Default
    Frame=BR0001   AutoSelect=N.A.   AnalSect=HSS42.2X3.6   MatProp=Default
    Frame=BR0002   AutoSelect=N.A.   AnalSect=HSS42.2X3.6   MatProp=Default
    Frame=BR0003   AutoSelect=N.A.   AnalSect=HSS42.2X3.6   MatProp=Default
@@ -3438,52 +3096,51 @@ TABLE:  "FRAME SECTION ASSIGNMENTS"
    Frame=BR0416   AutoSelect=N.A.   AnalSect=HSS42.2X3.6   MatProp=Default
    Frame=BR0417   AutoSelect=N.A.   AnalSect=HSS42.2X3.6   MatProp=Default
    Frame=BR0418   AutoSelect=N.A.   AnalSect=HSS42.2X3.6   MatProp=Default
-   Frame=CO0001   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0002   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0003   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0004   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0005   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0006   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0007   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0008   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0009   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0010   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0011   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0012   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0013   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0014   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0015   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0016   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0017   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0018   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0019   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0020   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0021   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0022   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0023   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0024   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0025   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0026   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0027   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0028   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0029   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0030   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0031   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0032   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0033   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0034   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0035   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0036   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0037   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0038   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0039   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0040   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0041   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0042   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0043   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0044   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0045   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
-   Frame=CO0046   AutoSelect=N.A.   AnalSect=HSS50.8X50.8X3.2   MatProp=Default
+   Frame=CO0001   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0002   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0003   AutoSelect=N.A.   AnalSect=HSS152.4X152.4X15.9   MatProp=Default
+   Frame=CO0004   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0005   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0006   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0007   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0008   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0009   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0010   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0011   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0012   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0013   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0014   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0015   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0016   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0017   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0018   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0020   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0021   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0022   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0023   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0024   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0025   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0026   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0027   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0028   AutoSelect=N.A.   AnalSect=HSS152.4X152.4X15.9   MatProp=Default
+   Frame=CO0029   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0030   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0031   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0032   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0033   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0034   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0035   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0036   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0037   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0038   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0039   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0040   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0041   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0042   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0043   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0044   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X3.2   MatProp=Default
+   Frame=CO0045   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0046   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
  
 TABLE:  "FRAME SECTION PROPERTIES 01 - GENERAL"
    SectionName=HSS101.6X101.6X12.7   Material=Q345   Shape=Box/Tube   t3=102   t2=102   tf=11.8000001907349   tw=11.8000001907349   Area=3880   TorsConst=8740000   I33=4950000   I22=4950000   I23=0   AS2=2407.19995117188 _
