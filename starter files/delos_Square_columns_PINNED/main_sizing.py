@@ -836,12 +836,21 @@ def find_nearest_smaller_sec(sec,convert_to_type,geo):
 
         return near_sec
 
-def get_sec_type(sec):
+'''def get_sec_type(sec):
     if sec[0]=='W':
         return "W"
     if sec[0]=='R':
         return "Round"
     if sec[0]=='S':
+        return "Square"'''
+
+def get_sec_type(sec):
+    global sec_info
+    if sec in sec_info['W'].index:
+        return "W"
+    if sec in sec_info['Round'].index:
+        return "Round"
+    if sec in sec_info['Square'].index:
         return "Square"
 
 def back_jumping_updating(mem_id,sec):
@@ -882,12 +891,17 @@ def calculate_cost():
     member_cost=[]
     for i in mem_info.index:
         size=mem_info.cross_section[i]
-        if mem_info.group[i] == 3:
-            c=sec_info["Round"].unit_price[size]*sec_info["Round"].W[size]*mem_info.L[i]/1000000
-        elif mem_info.group[i] == 1:
-            c=sec_info["Square"].unit_price[size]*sec_info["Square"].W[size]*mem_info.L[i]/1000000
-        else:
-            c=sec_info["W"].unit_price[size]*sec_info["W"].W[size]*mem_info.L[i]/1000000
+        if mem_info.group[i] == 3:	# brace
+        	c = 2*250 + 1300*mem_info.L[i]*sec_info["Round"].W[size]/1000
+        # c=sec_info["Round"].unit_price[size]*sec_info["Round"].W[size]*mem_info.L[i]/1000000 # real member cost
+           
+        elif mem_info.group[i] == 1:	# column
+        	c = 3500 + 1300*mem_info.L[i]*sec_info["Square"].W[size]/1000
+        #  c=sec_info["Square"].unit_price[size]*sec_info["Square"].W[size]*mem_info.L[i]/1000000 # real member cost
+           
+        else:	# beam
+        	c = 2*250 + 1000*mem_info.L[i]*sec_info["W"].W[size]/1000
+        #  c=sec_info["W"].unit_price[size]*sec_info["W"].W[size]*mem_info.L[i]/1000000   # real member cost
         # if the W is N/mm. L is mm... check this unit assumption!!!!!!!!!!!????
         member_cost.append(c)
 
