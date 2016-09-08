@@ -281,7 +281,7 @@ for i in range(0, len(loadedNodes)):
             nodeToMems[thisNode].append(memberIDs[j])
             if memberIDs[j] in memberIDsRemaining:	# members that have not been removed
                 membersLoaded.append(memberIDs[j])
-    if len(membersLoaded) <= 2:
+    if len(membersLoaded) <= 3:
         for j in range(len(membersConsidered)-1, -1, -1):	# range(start,stop,step)
             if membersConsidered[j] in nodeToMems[thisNode]:
                 memberToAdd = membersConsidered[j]	# do not remove any members that have a loaded node

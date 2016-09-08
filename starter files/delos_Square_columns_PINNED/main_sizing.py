@@ -12,6 +12,7 @@ membForcesFile = open("SAP_O_MemberForce.txt", "r")
 continConsFile = open("continuity_constraints_list.txt", "r")
 hierConsFile = open("hierarchical_constraints_list.txt", "r")
 
+
 '''
 we should list out all the global variables
 everything should communicated through index of (Round406.4X406.4X15.9) or member_id, besides the binary search
@@ -26,10 +27,13 @@ global continuity_list,cycle_list
 global continuity_root,cycle_root
 global num_all_sec
 global type_corresponding, geo_corresponding
+global geomData
 
-
+geomData = pd.read_csv("member_geometry.txt")
 type_corresponding={1:"Square",2:"W",3:"Round"}
 geo_corresponding={"Width":{"Square":"B","W":"bf","Round":"D"}}
+
+print geomData
 
 Fy=345;
 E=200000;
@@ -143,8 +147,6 @@ def check_feasibility(mem_id,sec,flag):
             mcx = mcy = 0.9 * min(mcx,mp-(mp-Fy*S)*(0.305*h_t*np.sqrt(Fy/E)-0.738))
 
 
-    if mem_id == 'CO0046':
-        print 'sec',sec,'mcx',mcx,'mcy',mcy
     # Check Round HSS Feasibility
     if section_type == 3:  #Braces only are round HSS
         A=sec_info["Round"].A[sec]
@@ -282,8 +284,6 @@ def check_feasibility(mem_id,sec,flag):
     else:
         util=pr/(2.0*pc)+(abs(mrx/mcx)+abs(mry/mcy))  
     
-    if mem_id == 'CO0046':
-    	print 'util',util 
     #feasibility return
     if util<=0.95: 
         return 1,pc,mcx,mcy,util
@@ -407,11 +407,11 @@ def read_member_data():
     for i in range(num_mem):
         mem_id=mem_info.index[i]
         if mem_info.member_type[mem_id] == 1:   # Columns
-            dummy_section = 'HSS114.3X114.3X3.2'
+            dummy_section = 'HSS101.6X101.6X3.2'
         elif mem_info.member_type[mem_id] == 2: # Beams
-            dummy_section = 'W100X19.3'
+            dummy_section = 'W200X15'
         else:                           # Braces
-            dummy_section = 'HSS42.2X3.6'
+            dummy_section = 'HSS76.2X3.2'
         (feasibility,pc,mcx,mcy,util)=check_feasibility(mem_id,dummy_section,3)
         DC_manual[i]=util
     mem_info['DC_Ratio_manual']=DC_manual
@@ -790,7 +790,11 @@ def find_optimal_section_for_member(mem_id,upper_bound_cs=None,lower_bound_cs=No
     if upper_bound_cs is None:    
         upper_bound_cs= sec_info[sec_type].index[-1]                        
     if lower_bound_cs is None and sec_type == 'Square':
-    	lower_bound_cs = 'HSS114.3X114.3X3.2'
+    	lower_bound_cs = 'HSS101.6X101.6X3.2'
+    elif lower_bound_cs is None and sec_type == 'Round':
+    	lower_bound_cs = 'HSS76.2X3.2'
+    #elif lower_bound_cs is None and sec_type == 'W':
+    #	lower_bound_cs = 'W200X15'
     elif lower_bound_cs is None:
     	lower_bound_cs= sec_info[sec_type].index[0]
 
@@ -800,7 +804,7 @@ def find_optimal_section_for_member(mem_id,upper_bound_cs=None,lower_bound_cs=No
     
     num_choice=sec_info_sliced.count().A
 
-    # the determinist way
+    # the deterministic way
     for new_sec_ind in range(0,num_choice):
         (feasibility,pc,mcx,mcy,util)=check_feasibility(mem_id,sec_info_sliced.index[new_sec_ind],1)
         if feasibility==1:
@@ -891,17 +895,15 @@ def calculate_cost():
     member_cost=[]
     for i in mem_info.index:
         size=mem_info.cross_section[i]
-        if mem_info.group[i] == 3:	# brace
-        	c = 2*250 + 1300*mem_info.L[i]*sec_info["Round"].W[size]/1000
-        # c=sec_info["Round"].unit_price[size]*sec_info["Round"].W[size]*mem_info.L[i]/1000000 # real member cost
-           
-        elif mem_info.group[i] == 1:	# column
-        	c = 3500 + 1300*mem_info.L[i]*sec_info["Square"].W[size]/1000
-        #  c=sec_info["Square"].unit_price[size]*sec_info["Square"].W[size]*mem_info.L[i]/1000000 # real member cost
-           
-        else:	# beam
-        	c = 2*250 + 1000*mem_info.L[i]*sec_info["W"].W[size]/1000
-        #  c=sec_info["W"].unit_price[size]*sec_info["W"].W[size]*mem_info.L[i]/1000000   # real member cost
+        if mem_info.group[i] == 3:
+           # c=sec_info["Round"].unit_price[size]*sec_info["Round"].W[size]*mem_info.L[i]/1000000 # real member cost
+           c = 2*250*0 + 1300/1000*mem_info.L[i]/1000*sec_info["Round"].W[size]	# 1000 ton/kg and 1000 m/mm
+        elif mem_info.group[i] == 1:
+          #  c=sec_info["Square"].unit_price[size]*sec_info["Square"].W[size]*mem_info.L[i]/1000000 # real member cost
+          c = 3500*0 + 1300/1000*mem_info.L[i]/1000*sec_info["Square"].W[size]
+        else:
+          #  c=sec_info["W"].unit_price[size]*sec_info["W"].W[size]*mem_info.L[i]/1000000   # real member cost
+          c = 2*250*0 + 1000/1000*mem_info.L[i]/1000*sec_info["W"].W[size]
         # if the W is N/mm. L is mm... check this unit assumption!!!!!!!!!!!????
         member_cost.append(c)
 

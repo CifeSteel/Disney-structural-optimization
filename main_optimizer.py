@@ -74,7 +74,7 @@ def writeToFile(memberList, addBack):
     else:
     	listFalses = [False] * len(sapIMember["member_ID"])
     	sapIMember["add_back?"] = listFalses
-    sapIMember.to_csv("SAP_I_Member.txt", index = False)
+    #sapIMember.to_csv("SAP_I_Member.txt", index = False)
 
     inputStartNodes = sapIMember["start_node"]
     inputEndNodes = sapIMember["end_node"]
@@ -110,7 +110,7 @@ def writeToFile(memberList, addBack):
                     else:
                         sapINode.ix[j, "member_ID"] == "0"	# remove ground nodes that have no attached members
 
-    sapINode.to_csv("SAP_I_Node.txt", index = False)
+    #sapINode.to_csv("SAP_I_Node.txt", index = False)
 
     forcesOutput = pd.read_csv("SAP_O_MemberForce.txt")	# use DC ratios from sizing instead
 
@@ -281,7 +281,7 @@ for i in range(0, len(loadedNodes)):
             nodeToMems[thisNode].append(memberIDs[j])
             if memberIDs[j] in memberIDsRemaining:	# members that have not been removed
                 membersLoaded.append(memberIDs[j])
-    if len(membersLoaded) <= 2:
+    if len(membersLoaded) <= 3:
         for j in range(len(membersConsidered)-1, -1, -1):	# range(start,stop,step)
             if membersConsidered[j] in nodeToMems[thisNode]:
                 memberToAdd = membersConsidered[j]	# do not remove any members that have a loaded node
@@ -299,6 +299,42 @@ for i in range(0, len(loadedNodes)):
                 membersRemaining = membersRemaining[membersRemaining["member_ID"] != memberToRemove]
                 membersRemaining = membersRemaining.reset_index(drop = True)
                 break
+                
+# avoiding free-end mechanisms within membersRemaining
+for i in range(0,len(membersRemaining['member_ID'])):
+	currentMember = membersRemaining.get_value(i,'member_ID')
+	membersConnectedtoStart = 0
+	membersConnectedtoEnd = 0
+	start_node = membersRemaining.get_value(i,'start_node')
+	end_node = membersRemaining.get_value(i,'end_node')
+	for j in range(0,len(membersRemaining['member_ID'])):
+		if currentMember != membersRemaining.get_value(j,'member_ID'):
+			if membersRemaining.get_value(j,'start_node') == start_node or membersRemaining.get_value(j,'end_node') == start_node:
+				membersConnectedtoStart = membersConnectedtoStart + 1
+			if membersRemaining.get_value(j,'start_node')==end_node or membersRemaining.get_value(j,'end_node')==end_node:
+				membersConnectedtoEnd = membersConnectedtoEnd + 1
+	
+	if currentMember=="BR0178":
+		print currentMember,start_node,end_node,"start #:",membersConnectedtoStart,"end #:", membersConnectedtoEnd
+		print currentMember, "before:",sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J']
+
+	if membersConnectedtoStart == 0:
+		sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'] = True 	# true = fixed
+		sapIMember = sapIMember.reset_index(drop = True)
+		sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J'] = True
+		sapIMember = sapIMember.reset_index(drop = True)
+	if membersConnectedtoEnd == 0:
+		sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'] = True
+		sapIMember = sapIMember.reset_index(drop = True)
+		sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'] = True
+		sapIMember = sapIMember.reset_index(drop = True)
+	if currentMember=="BR0178":
+		print currentMember, "after:",sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J']
+#print sapIMember
+
+
+
+# updating logs
 emptyD = {"member_ID": [], "checked?": [], "cross_section": []}
 lastRemovedNew = pd.DataFrame(data  = emptyD)
 for i in range(0, len(membersRemoved["member_ID"])):
@@ -315,7 +351,7 @@ for i in range(0, len(membersRemaining["member_ID"])):
 d = {"member_ID": membersRemaining["member_ID"], "cross_section": membersRemaining["cross_section"]}
 newMemberList = pd.DataFrame(data = d)
 
-if totalCost <= 1.05 *float(lastCost.get_value(0, "last_cost")) and not membersRemoved.empty:
+if totalCost <= 1.00 *float(lastCost.get_value(0, "last_cost")) and not membersRemoved.empty:
     d = {"member_ID": membersRemoved["member_ID"], "cross_section": ["0"] * len(membersRemoved["member_ID"])}
     newMemberList = newMemberList.append(pd.DataFrame(data = d))
     newMemberList = newMemberList.reset_index(drop = True)
