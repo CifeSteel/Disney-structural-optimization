@@ -314,23 +314,61 @@ for i in range(0,len(membersRemaining['member_ID'])):
 			if membersRemaining.get_value(j,'start_node')==end_node or membersRemaining.get_value(j,'end_node')==end_node:
 				membersConnectedtoEnd = membersConnectedtoEnd + 1
 	
-	if currentMember=="BR0178":
-		print currentMember,start_node,end_node,"start #:",membersConnectedtoStart,"end #:", membersConnectedtoEnd
-		print currentMember, "before:",sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J']
+	#if currentMember=="BR0178":
+		#print currentMember,start_node,end_node,"start #:",membersConnectedtoStart,"end #:", membersConnectedtoEnd
+		#print currentMember, "before:",sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J']
 
 	if membersConnectedtoStart == 0:
-		sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'] = True 	# true = fixed
-		sapIMember = sapIMember.reset_index(drop = True)
-		sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J'] = True
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2J'] = True 	# true = fixed
+		#sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J'] = True
+		#sapIMember = sapIMember.reset_index(drop = True)
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3J'] = True
+		#sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J'] = True
 		sapIMember = sapIMember.reset_index(drop = True)
 	if membersConnectedtoEnd == 0:
-		sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'] = True
-		sapIMember = sapIMember.reset_index(drop = True)
-		sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'] = True
-		sapIMember = sapIMember.reset_index(drop = True)
-	if currentMember=="BR0178":
-		print currentMember, "after:",sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J']
-#print sapIMember
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2I'] = True
+		#sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'] = True
+		#sapIMember = sapIMember.reset_index(drop = True)
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3I'] = True
+		#sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'] = True
+		#sapIMember = sapIMember.reset_index(drop = True)
+	#if currentMember=="BR0178":
+		#print currentMember, "after:",sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J']
+
+# avoiding vertical mechanisms within membersRemaining
+verticalElements = []
+for i in range(0,len(membersRemaining['member_ID'])):	# finding all vertical elements
+	start_node = membersRemaining.get_value(i,'start_node')
+	end_node = membersRemaining.get_value(i,'end_node')
+	start_node_Z = sapINode[sapINode['node_ID'] == start_node].iloc[0]['Z']
+	end_node_Z = sapINode[sapINode['node_ID'] == end_node].iloc[0]['Z']
+	if start_node_Z != end_node_Z:
+		verticalElements.append(membersRemaining.get_value(i,'member_ID'))
+#print verticalElements
+
+for i in range(0,len(sapINode['node_ID'])):
+	currentNode = sapINode.get_value(i,'node_ID')
+	membersConnected = []
+	for j in range(0,len(membersRemaining['member_ID'])):
+		if membersRemaining.get_value(j,'start_node')==currentNode or membersRemaining.get_value(j,'end_node')==currentNode:
+			membersConnected.append(membersRemaining.get_value(j,'member_ID'))
+	flag = True 	# no vertical elements connected to the node
+	for element in membersConnected:
+		if element in verticalElements:
+			flag = False
+	if flag:
+		for member in membersConnected:	# fix all of them and test, for now
+			sapIMember.loc[sapIMember['member_ID'] == member,'M2J'] = True
+			sapIMember.loc[sapIMember['member_ID'] == member,'M3J'] = True
+			sapIMember.loc[sapIMember['member_ID'] == member,'M2I'] = True
+			sapIMember.loc[sapIMember['member_ID'] == member,'M3I'] = True
+
+
+
+
+
+#	print currentNode, membersConnected
+
 
 
 

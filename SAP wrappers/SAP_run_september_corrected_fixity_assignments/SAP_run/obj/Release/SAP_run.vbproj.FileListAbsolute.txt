@@ -1,0 +1,11 @@
+C:\dev\SAP_run\SAP_run\bin\Release\SAP_run.exe.config
+C:\dev\SAP_run\SAP_run\obj\Release\SAP_run.vbproj.ResolveComReference.cache
+C:\dev\SAP_run\SAP_run\obj\Release\SAP_run.vbprojResolveAssemblyReference.cache
+C:\dev\SAP_run\SAP_run\obj\Release\SAP_run.Resources.resources
+C:\dev\SAP_run\SAP_run\obj\Release\SAP_run.vbproj.GenerateResource.Cache
+C:\dev\SAP_run\SAP_run\obj\Release\SAP_run.xml
+C:\dev\SAP_run\SAP_run\bin\Release\SAP_run.exe
+C:\dev\SAP_run\SAP_run\bin\Release\SAP_run.pdb
+C:\dev\SAP_run\SAP_run\bin\Release\SAP_run.xml
+C:\dev\SAP_run\SAP_run\obj\Release\SAP_run.exe
+C:\dev\SAP_run\SAP_run\obj\Release\SAP_run.pdb

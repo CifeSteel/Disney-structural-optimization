@@ -1,0 +1,149 @@
+
+
+ SAP2000 v16.1.1 Ultimate (Analysis Build 9194/32)
+ File: C:\Users\Filippo\AppDat...\Debug\SAPMODEL\delos_turtle_20160909032658.LOG
+
+
+
+
+ B E G I N   A N A L Y S I S                                2016/09/09  03:27:00
+
+
+ RUNNING ANALYSIS WITHIN THE GUI PROCESS
+ USING THE ADVANCED SOLVER (PROVIDES LIMITED INSTABILITY INFORMATION)
+
+ NUMBER OF JOINTS                          =         187
+    WITH RESTRAINTS                        =          25
+ NUMBER OF FRAME/CABLE/TENDON ELEMENTS     =         457
+ NUMBER OF LOAD PATTERNS                   =           6
+ NUMBER OF ACCELERATION LOADS              =           6
+ NUMBER OF LOAD CASES                      =           7
+
+
+ E L E M E N T   F O R M A T I O N                                      03:27:00
+
+
+
+ L I N E A R   E Q U A T I O N   S O L U T I O N                        03:27:00
+
+ FORMING STIFFNESS AT ZERO (UNSTRESSED) INITIAL CONDITIONS
+
+ TOTAL NUMBER OF EQUILIBRIUM EQUATIONS     =         972
+ NUMBER OF NON-ZERO STIFFNESS TERMS        =       14454
+
+ * * * W A R N I N G * * *
+ THE STRUCTURE IS UNSTABLE OR ILL-CONDITIONED !!
+ CHECK THE STRUCTURE CAREFULLY FOR:
+ - INADEQUATE SUPPORT CONDITIONS, OR
+ - ONE OR MORE INTERNAL MECHANISMS, OR
+ - ZERO OR NEGATIVE STIFFNESS PROPERTIES, OR
+ - EXTREMELY LARGE STIFFNESS PROPERTIES, OR
+ - BUCKLING DUE TO P-DELTA OR GEOMETRIC NONLINEARITY, OR
+ - A FREQUENCY SHIFT (IF ANY) ONTO A NATURAL FREQUENCY
+
+ TO OBTAIN FURTHER INFORMATION:
+ - USE THE STANDARD SOLVER, OR
+ - RUN AN EIGEN ANALYSIS USING AUTO FREQUENCY SHIFTING (WITH
+   ADDITIONAL MASS IF NEEDED) AND INVESTIGATE THE MODE SHAPES
+
+
+ NUMBER OF EIGENVALUES BELOW SHIFT         =           1
+
+
+ L I N E A R   S T A T I C   C A S E S                                  03:27:00
+
+ USING STIFFNESS AT ZERO (UNSTRESSED) INITIAL CONDITIONS
+
+ TOTAL NUMBER OF CASES TO SOLVE            =           6
+ NUMBER OF CASES TO SOLVE PER BLOCK        =           6
+
+ LINEAR STATIC CASES TO BE SOLVED:
+
+ CASE: DEAD
+ CASE: LIVE
+ CASE: WIND +X
+ CASE: WIND +Y
+ CASE: WIND -X
+ CASE: WIND -Y
+
+
+ E I G E N   M O D A L   A N A L Y S I S                                03:27:00
+
+ CASE: MODAL
+
+ USING STIFFNESS AT ZERO (UNSTRESSED) INITIAL CONDITIONS
+
+ NUMBER OF STIFFNESS DEGREES OF FREEDOM    =         972
+ NUMBER OF MASS DEGREES OF FREEDOM         =         486
+ MAXIMUM NUMBER OF EIGEN MODES SOUGHT      =          12
+ MINIMUM NUMBER OF EIGEN MODES SOUGHT      =           1
+ NUMBER OF RESIDUAL-MASS MODES SOUGHT      =           0
+ NUMBER OF SUBSPACE VECTORS USED           =          24
+ RELATIVE CONVERGENCE TOLERANCE            =    1.00E-09
+
+ FREQUENCY SHIFT  (CENTER) (CYC/TIME)      =     .000000
+ FREQUENCY CUTOFF (RADIUS) (CYC/TIME)      =  -INFINITY-
+ ALLOW AUTOMATIC FREQUENCY SHIFTING        =         YES
+
+
+ Original stiffness at shift : EV= 0.0000000E+00, f=     .000000, T=  -INFINITY-
+ Number of eigenvalues below shift =      1
+ Found mode      1 of     12:  EV= 2.2178454E-11, f=    7.50E-07, T=  1.3342E+06
+
+ Forming stiffness, new shift: EV= 1.3903884E+03, f=    5.934556, T=    0.168505
+ Number of eigenvalues below shift =      2
+ Found mode      2 of     12:  EV= 1.4635832E+03, f=    6.088760, T=    0.164237
+ Found mode      3 of     12:  EV= 4.4662122E+03, f=   10.636281, T=    0.094018
+ Found mode      4 of     12:  EV= 7.8242574E+03, f=   14.078024, T=    0.071033
+
+ Iteration    Approximations to next 5 eigenvalues, from shift EV= 1.3903884E+03
+      12   1.7744636E+04 2.3707109E+04 2.3746558E+04 2.3988528E+04 2.4058970E+04
+      13   1.7733786E+04 2.3687114E+04 2.3727511E+04 2.3977368E+04 2.4054370E+04
+
+ Forming stiffness, new shift: EV= 1.8237484E+04, f=   21.493275, T=    0.046526
+ Number of eigenvalues below shift =      5
+
+ Forming stiffness, new shift: EV= 1.9067635E+04, f=   21.977007, T=    0.045502
+ Number of eigenvalues below shift =      5
+
+ Found mode      5 of     12:  EV= 1.9111327E+04, f=   22.002172, T=    0.045450
+
+ Forming stiffness, new shift: EV= 2.4300744E+04, f=   24.810180, T=    0.040306
+ Number of eigenvalues below shift =      6
+
+ Forming stiffness, new shift: EV= 2.4471789E+04, f=   24.897343, T=    0.040165
+ Number of eigenvalues below shift =      6
+ Found mode      6 of     12:  EV= 2.4480790E+04, f=   24.901921, T=    0.040158
+ Found mode      7 of     12:  EV= 2.4558723E+04, f=   24.941526, T=    0.040094
+
+ Forming stiffness, new shift: EV= 2.4853762E+04, f=   25.090897, T=    0.039855
+ Number of eigenvalues below shift =      8
+ Found mode      8 of     12:  EV= 2.4873865E+04, f=   25.101043, T=    0.039839
+ Found mode      9 of     12:  EV= 2.4951812E+04, f=   25.140342, T=    0.039777
+
+ Forming stiffness, new shift: EV= 2.5193581E+04, f=   25.261846, T=    0.039585
+ Number of eigenvalues below shift =     10
+ Found mode     10 of     12:  EV= 2.5211466E+04, f=   25.270811, T=    0.039571
+ Found mode     11 of     12:  EV= 2.5267128E+04, f=   25.298692, T=    0.039528
+ Found mode     12 of     12:  EV= 2.5317049E+04, f=   25.323672, T=    0.039489
+
+ * * * W A R N I N G * * *
+ ZERO OR NEGATIVE MODAL-MASS VALUES WERE DETECTED DURING ITERATION,
+ THE RESULTING EIGEN-MODES MAY NOT BE VALID - CHECK THEM CAREFULLY !!
+
+ THE STRUCTURE IS UNSTABLE OR ILL-CONDITIONED !!
+ CHECK THE STRUCTURE CAREFULLY FOR:
+ - INADEQUATE SUPPORT CONDITIONS, OR
+ - ONE OR MORE INTERNAL MECHANISMS, OR
+ - ZERO OR NEGATIVE STIFFNESS PROPERTIES, OR
+ - EXTREMELY LARGE STIFFNESS PROPERTIES, OR
+ - BUCKLING DUE TO P-DELTA OR GEOMETRIC NONLINEARITY, OR
+ - A FREQUENCY SHIFT (IF ANY) ONTO A NATURAL FREQUENCY
+
+
+ NUMBER OF EIGEN MODES FOUND               =          12
+ NUMBER OF ITERATIONS PERFORMED            =          45
+ NUMBER OF STIFFNESS SHIFTS                =           7
+
+
+ A N A L Y S I S   C O M P L E T E                          2016/09/09  03:27:01

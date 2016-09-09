@@ -1,3 +1,2 @@
 checked?,cross_section,member_ID
-False,HSS76.2X3.2,BR0215
-True,HSS114.3X114.3X4.8,CO0014
+True,HSS76.2X3.2,BR0277

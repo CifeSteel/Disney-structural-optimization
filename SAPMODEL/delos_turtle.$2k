@@ -1,4 +1,4 @@
-File C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAPMODEL\delos_turtle.$2k was saved on 9/8/16 at 0:38:58
+File C:\Users\Filippo\AppData\Roaming\Phoenix Integration\AServer7.7\analyses\wrappers\MDOIntegration\Debug\SAPMODEL\delos_turtle.$2k was saved on 9/9/16 at 3:59:54
  
 TABLE:  "ACTIVE DEGREES OF FREEDOM"
    UX=Yes   UY=Yes   UZ=Yes   RX=Yes   RY=Yes   RZ=Yes
@@ -46,36 +46,22 @@ TABLE:  "COMBINATION DEFINITIONS"
    ComboName="0.3 Wind X + Wind -Y"   CaseName="Wind -Y"   ScaleFactor=1
  
 TABLE:  "CONNECTIVITY - FRAME"
-   Frame=BR0017   JointI=P001118   JointJ=X00111826   IsCurved=No
    Frame=BR0018   JointI=P011218   JointJ=X00111826   IsCurved=No
-   Frame=BR0094   JointI=P011118   JointJ=X00111826   IsCurved=No
-   Frame=BR0111   JointI=P001220   JointJ=X001219132   IsCurved=No
-   Frame=BR0112   JointI=P011219   JointJ=X001219132   IsCurved=No
    Frame=BR0120   JointI=P011321   JointJ=X001221158   IsCurved=No
    Frame=BR0143   JointI=P001223   JointJ=X001223188   IsCurved=No
    Frame=BR0144   JointI=P011323   JointJ=X001223188   IsCurved=No
    Frame=BR0146   JointI=P011224   JointJ=X001223190   IsCurved=No
    Frame=BR0159   JointI=P001224   JointJ=X001223190   IsCurved=No
    Frame=BR0160   JointI=P011223   JointJ=X001223190   IsCurved=No
-   Frame=BR0177   JointI=P001320   JointJ=X001220143   IsCurved=No
    Frame=BR0178   JointI=P011220   JointJ=X001220143   IsCurved=No
    Frame=BR0183   JointI=P001321   JointJ=X001221158   IsCurved=No
    Frame=BR0184   JointI=P011221   JointJ=X001221158   IsCurved=No
-   Frame=BR0185   JointI=P001322   JointJ=X001322242   IsCurved=No
-   Frame=BR0186   JointI=P011323   JointJ=X001322242   IsCurved=No
-   Frame=BR0187   JointI=P001322   JointJ=X001321234   IsCurved=No
-   Frame=BR0188   JointI=P011321   JointJ=X001321234   IsCurved=No
-   Frame=BR0194   JointI=P011322   JointJ=X001322242   IsCurved=No
+   Frame=BR0191   JointI=P001323   JointJ=X001323250   IsCurved=No
    Frame=BR0195   JointI=P001323   JointJ=X001223188   IsCurved=No
    Frame=BR0196   JointI=P011223   JointJ=X001223188   IsCurved=No
    Frame=BR0197   JointI=P001324   JointJ=X001323250   IsCurved=No
    Frame=BR0198   JointI=P011323   JointJ=X001323250   IsCurved=No
    Frame=BR0206   JointI=P021115   JointJ=X011115263   IsCurved=No
-   Frame=BR0212   JointI=P021116   JointJ=X011116267   IsCurved=No
-   Frame=BR0215   JointI=P011118   JointJ=X011118285   IsCurved=No
-   Frame=BR0216   JointI=P021218   JointJ=X011118285   IsCurved=No
-   Frame=BR0224   JointI=P011217   JointJ=X011117280   IsCurved=No
-   Frame=BR0268   JointI=P021122   JointJ=X011122339   IsCurved=No
    Frame=BR0269   JointI=P011123   JointJ=X011123354   IsCurved=No
    Frame=BR0270   JointI=P011224   JointJ=X011123354   IsCurved=No
    Frame=BR0277   JointI=P011124   JointJ=X011123354   IsCurved=No
@@ -85,33 +71,24 @@ TABLE:  "CONNECTIVITY - FRAME"
    Frame=BR0290   JointI=P021220   JointJ=X011219381   IsCurved=No
    Frame=BR0291   JointI=P011219   JointJ=X011218372   IsCurved=No
    Frame=BR0292   JointI=P021218   JointJ=X011218372   IsCurved=No
+   Frame=BR0299   JointI=P011220   JointJ=X011219381   IsCurved=No
    Frame=BR0300   JointI=P021219   JointJ=X011219381   IsCurved=No
-   Frame=BR0301   JointI=P011220   JointJ=X011120311   IsCurved=No
-   Frame=BR0302   JointI=P021120   JointJ=X011120311   IsCurved=No
    Frame=BR0313   JointI=P011221   JointJ=X011121324   IsCurved=No
    Frame=BR0314   JointI=P021121   JointJ=X011121324   IsCurved=No
-   Frame=BR0319   JointI=P011222   JointJ=X011222420   IsCurved=No
    Frame=BR0331   JointI=P011223   JointJ=X011223435   IsCurved=No
    Frame=BR0332   JointI=P021323   JointJ=X011223435   IsCurved=No
    Frame=BR0333   JointI=P011223   JointJ=X011222422   IsCurved=No
    Frame=BR0334   JointI=P021222   JointJ=X011222422   IsCurved=No
    Frame=BR0353   JointI=P011321   JointJ=X011321463   IsCurved=No
-   Frame=BR0354   JointI=P021322   JointJ=X011321463   IsCurved=No
    Frame=BR0357   JointI=P011322   JointJ=X011322469   IsCurved=No
    Frame=BR0358   JointI=P021323   JointJ=X011322469   IsCurved=No
-   Frame=BR0359   JointI=P011322   JointJ=X011321463   IsCurved=No
-   Frame=BR0360   JointI=P021321   JointJ=X011321463   IsCurved=No
-   Frame=BR0361   JointI=P011322   JointJ=X011222420   IsCurved=No
-   Frame=BR0362   JointI=P021222   JointJ=X011222420   IsCurved=No
    Frame=BR0363   JointI=P011323   JointJ=X011322469   IsCurved=No
+   Frame=BR0364   JointI=P021322   JointJ=X011322469   IsCurved=No
+   Frame=BR0365   JointI=P011323   JointJ=X011223435   IsCurved=No
    Frame=BR0366   JointI=P021223   JointJ=X011223435   IsCurved=No
-   Frame=BR0381   JointI=P021120   JointJ=X021120506   IsCurved=No
-   Frame=BR0382   JointI=P031121   JointJ=X021120506   IsCurved=No
    Frame=BR0385   JointI=P021120   JointJ=X021120510   IsCurved=No
    Frame=BR0386   JointI=P021221   JointJ=X021120510   IsCurved=No
-   Frame=BR0387   JointI=P021120   JointJ=X021119499   IsCurved=No
    Frame=BR0388   JointI=P021219   JointJ=X021119499   IsCurved=No
-   Frame=BR0390   JointI=P031120   JointJ=X021120506   IsCurved=No
    Frame=BR0391   JointI=P021121   JointJ=X021121519   IsCurved=No
    Frame=BR0392   JointI=P021222   JointJ=X021121519   IsCurved=No
    Frame=BR0393   JointI=P021121   JointJ=X021120510   IsCurved=No
@@ -124,14 +101,12 @@ TABLE:  "CONNECTIVITY - FRAME"
    Frame=BR0411   JointI=P021221   JointJ=X021221547   IsCurved=No
    Frame=BR0412   JointI=P021322   JointJ=X021221547   IsCurved=No
    Frame=BR0413   JointI=P021222   JointJ=X021222551   IsCurved=No
-   Frame=BR0414   JointI=P021323   JointJ=X021222551   IsCurved=No
    Frame=BR0415   JointI=P021222   JointJ=X021221547   IsCurved=No
    Frame=BR0416   JointI=P021321   JointJ=X021221547   IsCurved=No
    Frame=BR0417   JointI=P021223   JointJ=X021222551   IsCurved=No
    Frame=BR0418   JointI=P021322   JointJ=X021222551   IsCurved=No
    Frame=CO0001   JointI=P001115   JointJ=P011115   IsCurved=No
    Frame=CO0002   JointI=P001116   JointJ=P011116   IsCurved=No
-   Frame=CO0006   JointI=P001120   JointJ=P011120   IsCurved=No
    Frame=CO0007   JointI=P001121   JointJ=P011121   IsCurved=No
    Frame=CO0008   JointI=P001122   JointJ=P011122   IsCurved=No
    Frame=CO0009   JointI=P001123   JointJ=P011123   IsCurved=No
@@ -139,19 +114,17 @@ TABLE:  "CONNECTIVITY - FRAME"
    Frame=CO0011   JointI=P001217   JointJ=P011217   IsCurved=No
    Frame=CO0012   JointI=P001218   JointJ=P011218   IsCurved=No
    Frame=CO0013   JointI=P001219   JointJ=P011219   IsCurved=No
-   Frame=CO0015   JointI=P001221   JointJ=P011221   IsCurved=No
+   Frame=CO0014   JointI=P001220   JointJ=P011220   IsCurved=No
    Frame=CO0016   JointI=P001222   JointJ=P011222   IsCurved=No
    Frame=CO0017   JointI=P001223   JointJ=P011223   IsCurved=No
    Frame=CO0022   JointI=P001321   JointJ=P011321   IsCurved=No
+   Frame=CO0023   JointI=P001322   JointJ=P011322   IsCurved=No
    Frame=CO0024   JointI=P001323   JointJ=P011323   IsCurved=No
    Frame=CO0026   JointI=P011115   JointJ=P021115   IsCurved=No
    Frame=CO0027   JointI=P011116   JointJ=P021116   IsCurved=No
-   Frame=CO0031   JointI=P011120   JointJ=P021120   IsCurved=No
    Frame=CO0032   JointI=P011121   JointJ=P021121   IsCurved=No
    Frame=CO0033   JointI=P011122   JointJ=P021122   IsCurved=No
    Frame=CO0034   JointI=P011123   JointJ=P021123   IsCurved=No
-   Frame=CO0035   JointI=P011218   JointJ=P021218   IsCurved=No
-   Frame=CO0036   JointI=P011219   JointJ=P021219   IsCurved=No
    Frame=CO0037   JointI=P011220   JointJ=P021220   IsCurved=No
    Frame=CO0038   JointI=P011221   JointJ=P021221   IsCurved=No
    Frame=CO0039   JointI=P011222   JointJ=P021222   IsCurved=No
@@ -171,36 +144,22 @@ TABLE:  "DATABASE FORMAT TYPES"
    UnitsCurr=Yes   OverrideE=No
  
 TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
-   Frame=BR0017   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0018   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0094   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0111   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0112   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0120   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0143   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0144   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0146   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0159   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0160   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0177   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0178   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0183   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0184   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0185   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0186   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0187   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0188   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0194   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=BR0191   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0195   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0196   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0197   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0198   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0206   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0212   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0215   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0216   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0224   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0268   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0269   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0270   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0277   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
@@ -210,33 +169,24 @@ TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
    Frame=BR0290   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0291   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0292   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=BR0299   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0300   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0301   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0302   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0313   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0314   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0319   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0331   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0332   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0333   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0334   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0353   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0354   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0357   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0358   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0359   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0360   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0361   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0362   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0363   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=BR0364   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=BR0365   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0366   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0381   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0382   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0385   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0386   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0387   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0388   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0390   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0391   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0392   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0393   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
@@ -249,14 +199,12 @@ TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
    Frame=BR0411   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0412   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0413   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=BR0414   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0415   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0416   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0417   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=BR0418   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0001   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0002   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=CO0006   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0007   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0008   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0009   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
@@ -264,19 +212,17 @@ TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
    Frame=CO0011   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0012   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0013   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=CO0015   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=CO0014   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0016   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0017   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0022   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
+   Frame=CO0023   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0024   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0026   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0027   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=CO0031   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0032   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0033   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0034   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=CO0035   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
-   Frame=CO0036   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0037   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0038   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
    Frame=CO0039   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
@@ -288,36 +234,22 @@ TABLE:  "FRAME AUTO MESH ASSIGNMENTS"
    Frame=CO0046   AutoMesh=Yes   AtJoints=Yes   AtFrames=No   NumSegments=0   MaxLength=0   MaxDegrees=0
  
 TABLE:  "FRAME DESIGN PROCEDURES"
-   Frame=BR0017   DesignProc="From Material"
    Frame=BR0018   DesignProc="From Material"
-   Frame=BR0094   DesignProc="From Material"
-   Frame=BR0111   DesignProc="From Material"
-   Frame=BR0112   DesignProc="From Material"
    Frame=BR0120   DesignProc="From Material"
    Frame=BR0143   DesignProc="From Material"
    Frame=BR0144   DesignProc="From Material"
    Frame=BR0146   DesignProc="From Material"
    Frame=BR0159   DesignProc="From Material"
    Frame=BR0160   DesignProc="From Material"
-   Frame=BR0177   DesignProc="From Material"
    Frame=BR0178   DesignProc="From Material"
    Frame=BR0183   DesignProc="From Material"
    Frame=BR0184   DesignProc="From Material"
-   Frame=BR0185   DesignProc="From Material"
-   Frame=BR0186   DesignProc="From Material"
-   Frame=BR0187   DesignProc="From Material"
-   Frame=BR0188   DesignProc="From Material"
-   Frame=BR0194   DesignProc="From Material"
+   Frame=BR0191   DesignProc="From Material"
    Frame=BR0195   DesignProc="From Material"
    Frame=BR0196   DesignProc="From Material"
    Frame=BR0197   DesignProc="From Material"
    Frame=BR0198   DesignProc="From Material"
    Frame=BR0206   DesignProc="From Material"
-   Frame=BR0212   DesignProc="From Material"
-   Frame=BR0215   DesignProc="From Material"
-   Frame=BR0216   DesignProc="From Material"
-   Frame=BR0224   DesignProc="From Material"
-   Frame=BR0268   DesignProc="From Material"
    Frame=BR0269   DesignProc="From Material"
    Frame=BR0270   DesignProc="From Material"
    Frame=BR0277   DesignProc="From Material"
@@ -327,33 +259,24 @@ TABLE:  "FRAME DESIGN PROCEDURES"
    Frame=BR0290   DesignProc="From Material"
    Frame=BR0291   DesignProc="From Material"
    Frame=BR0292   DesignProc="From Material"
+   Frame=BR0299   DesignProc="From Material"
    Frame=BR0300   DesignProc="From Material"
-   Frame=BR0301   DesignProc="From Material"
-   Frame=BR0302   DesignProc="From Material"
    Frame=BR0313   DesignProc="From Material"
    Frame=BR0314   DesignProc="From Material"
-   Frame=BR0319   DesignProc="From Material"
    Frame=BR0331   DesignProc="From Material"
    Frame=BR0332   DesignProc="From Material"
    Frame=BR0333   DesignProc="From Material"
    Frame=BR0334   DesignProc="From Material"
    Frame=BR0353   DesignProc="From Material"
-   Frame=BR0354   DesignProc="From Material"
    Frame=BR0357   DesignProc="From Material"
    Frame=BR0358   DesignProc="From Material"
-   Frame=BR0359   DesignProc="From Material"
-   Frame=BR0360   DesignProc="From Material"
-   Frame=BR0361   DesignProc="From Material"
-   Frame=BR0362   DesignProc="From Material"
    Frame=BR0363   DesignProc="From Material"
+   Frame=BR0364   DesignProc="From Material"
+   Frame=BR0365   DesignProc="From Material"
    Frame=BR0366   DesignProc="From Material"
-   Frame=BR0381   DesignProc="From Material"
-   Frame=BR0382   DesignProc="From Material"
    Frame=BR0385   DesignProc="From Material"
    Frame=BR0386   DesignProc="From Material"
-   Frame=BR0387   DesignProc="From Material"
    Frame=BR0388   DesignProc="From Material"
-   Frame=BR0390   DesignProc="From Material"
    Frame=BR0391   DesignProc="From Material"
    Frame=BR0392   DesignProc="From Material"
    Frame=BR0393   DesignProc="From Material"
@@ -366,14 +289,12 @@ TABLE:  "FRAME DESIGN PROCEDURES"
    Frame=BR0411   DesignProc="From Material"
    Frame=BR0412   DesignProc="From Material"
    Frame=BR0413   DesignProc="From Material"
-   Frame=BR0414   DesignProc="From Material"
    Frame=BR0415   DesignProc="From Material"
    Frame=BR0416   DesignProc="From Material"
    Frame=BR0417   DesignProc="From Material"
    Frame=BR0418   DesignProc="From Material"
    Frame=CO0001   DesignProc="From Material"
    Frame=CO0002   DesignProc="From Material"
-   Frame=CO0006   DesignProc="From Material"
    Frame=CO0007   DesignProc="From Material"
    Frame=CO0008   DesignProc="From Material"
    Frame=CO0009   DesignProc="From Material"
@@ -381,19 +302,17 @@ TABLE:  "FRAME DESIGN PROCEDURES"
    Frame=CO0011   DesignProc="From Material"
    Frame=CO0012   DesignProc="From Material"
    Frame=CO0013   DesignProc="From Material"
-   Frame=CO0015   DesignProc="From Material"
+   Frame=CO0014   DesignProc="From Material"
    Frame=CO0016   DesignProc="From Material"
    Frame=CO0017   DesignProc="From Material"
    Frame=CO0022   DesignProc="From Material"
+   Frame=CO0023   DesignProc="From Material"
    Frame=CO0024   DesignProc="From Material"
    Frame=CO0026   DesignProc="From Material"
    Frame=CO0027   DesignProc="From Material"
-   Frame=CO0031   DesignProc="From Material"
    Frame=CO0032   DesignProc="From Material"
    Frame=CO0033   DesignProc="From Material"
    Frame=CO0034   DesignProc="From Material"
-   Frame=CO0035   DesignProc="From Material"
-   Frame=CO0036   DesignProc="From Material"
    Frame=CO0037   DesignProc="From Material"
    Frame=CO0038   DesignProc="From Material"
    Frame=CO0039   DesignProc="From Material"
@@ -405,36 +324,22 @@ TABLE:  "FRAME DESIGN PROCEDURES"
    Frame=CO0046   DesignProc="From Material"
  
 TABLE:  "FRAME LOAD TRANSFER OPTIONS"
-   Frame=BR0017   Transfer=Yes
    Frame=BR0018   Transfer=Yes
-   Frame=BR0094   Transfer=Yes
-   Frame=BR0111   Transfer=Yes
-   Frame=BR0112   Transfer=Yes
    Frame=BR0120   Transfer=Yes
    Frame=BR0143   Transfer=Yes
    Frame=BR0144   Transfer=Yes
    Frame=BR0146   Transfer=Yes
    Frame=BR0159   Transfer=Yes
    Frame=BR0160   Transfer=Yes
-   Frame=BR0177   Transfer=Yes
    Frame=BR0178   Transfer=Yes
    Frame=BR0183   Transfer=Yes
    Frame=BR0184   Transfer=Yes
-   Frame=BR0185   Transfer=Yes
-   Frame=BR0186   Transfer=Yes
-   Frame=BR0187   Transfer=Yes
-   Frame=BR0188   Transfer=Yes
-   Frame=BR0194   Transfer=Yes
+   Frame=BR0191   Transfer=Yes
    Frame=BR0195   Transfer=Yes
    Frame=BR0196   Transfer=Yes
    Frame=BR0197   Transfer=Yes
    Frame=BR0198   Transfer=Yes
    Frame=BR0206   Transfer=Yes
-   Frame=BR0212   Transfer=Yes
-   Frame=BR0215   Transfer=Yes
-   Frame=BR0216   Transfer=Yes
-   Frame=BR0224   Transfer=Yes
-   Frame=BR0268   Transfer=Yes
    Frame=BR0269   Transfer=Yes
    Frame=BR0270   Transfer=Yes
    Frame=BR0277   Transfer=Yes
@@ -444,33 +349,24 @@ TABLE:  "FRAME LOAD TRANSFER OPTIONS"
    Frame=BR0290   Transfer=Yes
    Frame=BR0291   Transfer=Yes
    Frame=BR0292   Transfer=Yes
+   Frame=BR0299   Transfer=Yes
    Frame=BR0300   Transfer=Yes
-   Frame=BR0301   Transfer=Yes
-   Frame=BR0302   Transfer=Yes
    Frame=BR0313   Transfer=Yes
    Frame=BR0314   Transfer=Yes
-   Frame=BR0319   Transfer=Yes
    Frame=BR0331   Transfer=Yes
    Frame=BR0332   Transfer=Yes
    Frame=BR0333   Transfer=Yes
    Frame=BR0334   Transfer=Yes
    Frame=BR0353   Transfer=Yes
-   Frame=BR0354   Transfer=Yes
    Frame=BR0357   Transfer=Yes
    Frame=BR0358   Transfer=Yes
-   Frame=BR0359   Transfer=Yes
-   Frame=BR0360   Transfer=Yes
-   Frame=BR0361   Transfer=Yes
-   Frame=BR0362   Transfer=Yes
    Frame=BR0363   Transfer=Yes
+   Frame=BR0364   Transfer=Yes
+   Frame=BR0365   Transfer=Yes
    Frame=BR0366   Transfer=Yes
-   Frame=BR0381   Transfer=Yes
-   Frame=BR0382   Transfer=Yes
    Frame=BR0385   Transfer=Yes
    Frame=BR0386   Transfer=Yes
-   Frame=BR0387   Transfer=Yes
    Frame=BR0388   Transfer=Yes
-   Frame=BR0390   Transfer=Yes
    Frame=BR0391   Transfer=Yes
    Frame=BR0392   Transfer=Yes
    Frame=BR0393   Transfer=Yes
@@ -483,14 +379,12 @@ TABLE:  "FRAME LOAD TRANSFER OPTIONS"
    Frame=BR0411   Transfer=Yes
    Frame=BR0412   Transfer=Yes
    Frame=BR0413   Transfer=Yes
-   Frame=BR0414   Transfer=Yes
    Frame=BR0415   Transfer=Yes
    Frame=BR0416   Transfer=Yes
    Frame=BR0417   Transfer=Yes
    Frame=BR0418   Transfer=Yes
    Frame=CO0001   Transfer=Yes
    Frame=CO0002   Transfer=Yes
-   Frame=CO0006   Transfer=Yes
    Frame=CO0007   Transfer=Yes
    Frame=CO0008   Transfer=Yes
    Frame=CO0009   Transfer=Yes
@@ -498,19 +392,17 @@ TABLE:  "FRAME LOAD TRANSFER OPTIONS"
    Frame=CO0011   Transfer=Yes
    Frame=CO0012   Transfer=Yes
    Frame=CO0013   Transfer=Yes
-   Frame=CO0015   Transfer=Yes
+   Frame=CO0014   Transfer=Yes
    Frame=CO0016   Transfer=Yes
    Frame=CO0017   Transfer=Yes
    Frame=CO0022   Transfer=Yes
+   Frame=CO0023   Transfer=Yes
    Frame=CO0024   Transfer=Yes
    Frame=CO0026   Transfer=Yes
    Frame=CO0027   Transfer=Yes
-   Frame=CO0031   Transfer=Yes
    Frame=CO0032   Transfer=Yes
    Frame=CO0033   Transfer=Yes
    Frame=CO0034   Transfer=Yes
-   Frame=CO0035   Transfer=Yes
-   Frame=CO0036   Transfer=Yes
    Frame=CO0037   Transfer=Yes
    Frame=CO0038   Transfer=Yes
    Frame=CO0039   Transfer=Yes
@@ -524,7 +416,6 @@ TABLE:  "FRAME LOAD TRANSFER OPTIONS"
 TABLE:  "FRAME LOCAL AXES ASSIGNMENTS 1 - TYPICAL"
    Frame=CO0001   Angle=93
    Frame=CO0002   Angle=93
-   Frame=CO0006   Angle=93
    Frame=CO0007   Angle=93
    Frame=CO0008   Angle=93
    Frame=CO0009   Angle=93
@@ -532,19 +423,17 @@ TABLE:  "FRAME LOCAL AXES ASSIGNMENTS 1 - TYPICAL"
    Frame=CO0011   Angle=93
    Frame=CO0012   Angle=93
    Frame=CO0013   Angle=93
-   Frame=CO0015   Angle=93
+   Frame=CO0014   Angle=93
    Frame=CO0016   Angle=93
    Frame=CO0017   Angle=93
    Frame=CO0022   Angle=93
+   Frame=CO0023   Angle=93
    Frame=CO0024   Angle=93
    Frame=CO0026   Angle=93
    Frame=CO0027   Angle=93
-   Frame=CO0031   Angle=93
    Frame=CO0032   Angle=93
    Frame=CO0033   Angle=93
    Frame=CO0034   Angle=93
-   Frame=CO0035   Angle=93
-   Frame=CO0036   Angle=93
    Frame=CO0037   Angle=93
    Frame=CO0038   Angle=93
    Frame=CO0039   Angle=93
@@ -556,36 +445,22 @@ TABLE:  "FRAME LOCAL AXES ASSIGNMENTS 1 - TYPICAL"
    Frame=CO0046   Angle=93
  
 TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
-   Frame=BR0017   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0018   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0094   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0111   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0112   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0120   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0143   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0144   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0146   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0159   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0160   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0177   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0178   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0183   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0184   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0185   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0186   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0187   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0188   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0194   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=BR0191   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0195   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0196   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0197   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0198   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0206   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0212   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0215   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0216   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0224   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0268   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0269   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0270   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0277   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
@@ -595,33 +470,24 @@ TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
    Frame=BR0290   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0291   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0292   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=BR0299   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0300   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0301   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0302   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0313   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0314   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0319   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0331   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0332   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0333   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0334   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0353   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0354   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0357   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0358   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0359   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0360   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0361   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0362   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0363   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=BR0364   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=BR0365   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0366   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0381   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0382   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0385   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0386   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0387   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0388   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0390   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0391   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0392   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0393   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
@@ -634,14 +500,12 @@ TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
    Frame=BR0411   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0412   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0413   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=BR0414   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0415   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0416   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0417   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=BR0418   StationType=MaxStaSpcg   MaxStaSpcg=500   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0001   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0002   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=CO0006   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0007   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0008   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0009   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
@@ -649,19 +513,17 @@ TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
    Frame=CO0011   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0012   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0013   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=CO0015   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=CO0014   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0016   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0017   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0022   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
+   Frame=CO0023   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0024   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0026   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0027   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=CO0031   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0032   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0033   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0034   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=CO0035   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
-   Frame=CO0036   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0037   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0038   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
    Frame=CO0039   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
@@ -673,35 +535,22 @@ TABLE:  "FRAME OUTPUT STATION ASSIGNMENTS"
    Frame=CO0046   StationType=MinNumSta   MinNumSta=3   AddAtElmInt=Yes   AddAtPtLoad=Yes
  
 TABLE:  "FRAME RELEASE ASSIGNMENTS 1 - GENERAL"
-   Frame=BR0017   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0018   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0094   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0111   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0112   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0120   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0143   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0144   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0146   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0159   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0160   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0177   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0178   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0183   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0184   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0185   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0186   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0187   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0188   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0194   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
+   Frame=BR0191   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0195   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0196   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0197   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0198   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0206   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0212   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0216   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0224   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0268   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0269   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0270   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0277   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
@@ -711,32 +560,24 @@ TABLE:  "FRAME RELEASE ASSIGNMENTS 1 - GENERAL"
    Frame=BR0290   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0291   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0292   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
+   Frame=BR0299   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0300   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0301   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0302   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0313   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0314   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0319   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0331   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0332   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0333   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0334   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0353   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0354   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0357   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0358   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0359   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0360   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0361   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0362   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0363   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
+   Frame=BR0364   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
+   Frame=BR0365   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0366   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0381   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0382   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0385   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0386   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0388   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
-   Frame=BR0390   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0391   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0392   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
    Frame=BR0393   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
@@ -755,120 +596,93 @@ TABLE:  "FRAME RELEASE ASSIGNMENTS 1 - GENERAL"
    Frame=BR0418   PI=No   V2I=No   V3I=No   TI=No   M2I=Yes   M3I=Yes   PJ=No   V2J=No   V3J=No   TJ=No   M2J=No   M3J=No
  
 TABLE:  "FRAME SECTION ASSIGNMENTS"
-   Frame=BR0017   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0018   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0094   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0111   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0112   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0120   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0143   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0144   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0146   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0159   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0160   AutoSelect=N.A.   AnalSect=HSS88.9X3.2   MatProp=Default
-   Frame=BR0177   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
+   Frame=BR0160   AutoSelect=N.A.   AnalSect=HSS76.2X3.4   MatProp=Default
    Frame=BR0178   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0183   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0184   AutoSelect=N.A.   AnalSect=HSS88.9X3.2   MatProp=Default
-   Frame=BR0185   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0186   AutoSelect=N.A.   AnalSect=HSS88.9X3.2   MatProp=Default
-   Frame=BR0187   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0188   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0194   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
+   Frame=BR0184   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
+   Frame=BR0191   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0195   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0196   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0197   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0198   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0206   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0212   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0215   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0216   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0224   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0268   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0269   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0270   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0277   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0283   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0284   AutoSelect=N.A.   AnalSect=HSS88.9X3.2   MatProp=Default
-   Frame=BR0289   AutoSelect=N.A.   AnalSect=HSS152.4X3.2   MatProp=Default
-   Frame=BR0290   AutoSelect=N.A.   AnalSect=HSS219.1X4.8   MatProp=Default
-   Frame=BR0291   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0292   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0300   AutoSelect=N.A.   AnalSect=HSS190.5X4.8   MatProp=Default
-   Frame=BR0301   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0302   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
+   Frame=BR0283   AutoSelect=N.A.   AnalSect=HSS219.1X4.8   MatProp=Default
+   Frame=BR0284   AutoSelect=N.A.   AnalSect=HSS127X3.2   MatProp=Default
+   Frame=BR0289   AutoSelect=N.A.   AnalSect=HSS141.3X3.4   MatProp=Default
+   Frame=BR0290   AutoSelect=N.A.   AnalSect=HSS141.3X3.4   MatProp=Default
+   Frame=BR0291   AutoSelect=N.A.   AnalSect=HSS127X3.2   MatProp=Default
+   Frame=BR0292   AutoSelect=N.A.   AnalSect=HSS152.4X4.8   MatProp=Default
+   Frame=BR0299   AutoSelect=N.A.   AnalSect=HSS88.9X3.2   MatProp=Default
+   Frame=BR0300   AutoSelect=N.A.   AnalSect=HSS168.3X3.2   MatProp=Default
    Frame=BR0313   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0314   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0319   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0331   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0332   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0333   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0334   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0353   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0354   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0357   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0358   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0359   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0360   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0361   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0362   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0363   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
+   Frame=BR0364   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
+   Frame=BR0365   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0366   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0381   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0382   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0385   AutoSelect=N.A.   AnalSect=HSS114.3X3.2   MatProp=Default
-   Frame=BR0386   AutoSelect=N.A.   AnalSect=HSS127X3.2   MatProp=Default
-   Frame=BR0387   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
+   Frame=BR0386   AutoSelect=N.A.   AnalSect=HSS141.3X3.4   MatProp=Default
    Frame=BR0388   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0390   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0391   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0392   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0393   AutoSelect=N.A.   AnalSect=HSS101.6X3.2   MatProp=Default
-   Frame=BR0394   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
+   Frame=BR0393   AutoSelect=N.A.   AnalSect=HSS168.3X3.2   MatProp=Default
+   Frame=BR0394   AutoSelect=N.A.   AnalSect=HSS152.4X3.2   MatProp=Default
    Frame=BR0397   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0398   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0399   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0401   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0402   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0411   AutoSelect=N.A.   AnalSect=HSS141.3X3.4   MatProp=Default
-   Frame=BR0412   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
+   Frame=BR0411   AutoSelect=N.A.   AnalSect=HSS152.4X3.2   MatProp=Default
+   Frame=BR0412   AutoSelect=N.A.   AnalSect=HSS141.3X3.4   MatProp=Default
    Frame=BR0413   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0414   AutoSelect=N.A.   AnalSect=HSS168.3X3.2   MatProp=Default
    Frame=BR0415   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
-   Frame=BR0416   AutoSelect=N.A.   AnalSect=HSS141.3X3.4   MatProp=Default
-   Frame=BR0417   AutoSelect=N.A.   AnalSect=HSS127X3.2   MatProp=Default
+   Frame=BR0416   AutoSelect=N.A.   AnalSect=HSS177.8X3.2   MatProp=Default
+   Frame=BR0417   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=BR0418   AutoSelect=N.A.   AnalSect=HSS76.2X3.2   MatProp=Default
    Frame=CO0001   AutoSelect=N.A.   AnalSect=HSS152.4X152.4X4.8   MatProp=Default
    Frame=CO0002   AutoSelect=N.A.   AnalSect=HSS152.4X152.4X4.8   MatProp=Default
-   Frame=CO0006   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
    Frame=CO0007   AutoSelect=N.A.   AnalSect=HSS127X127X4.8   MatProp=Default
    Frame=CO0008   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
    Frame=CO0009   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
    Frame=CO0010   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
    Frame=CO0011   AutoSelect=N.A.   AnalSect=HSS127X127X4.8   MatProp=Default
-   Frame=CO0012   AutoSelect=N.A.   AnalSect=HSS127X127X4.8   MatProp=Default
-   Frame=CO0013   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
-   Frame=CO0015   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
-   Frame=CO0016   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0012   AutoSelect=N.A.   AnalSect=HSS152.4X152.4X6.4   MatProp=Default
+   Frame=CO0013   AutoSelect=N.A.   AnalSect=HSS203.2X203.2X7.9   MatProp=Default
+   Frame=CO0014   AutoSelect=N.A.   AnalSect=HSS127X127X4.8   MatProp=Default
+   Frame=CO0016   AutoSelect=N.A.   AnalSect=HSS101.6X101.6X4.8   MatProp=Default
    Frame=CO0017   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
    Frame=CO0022   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0023   AutoSelect=N.A.   AnalSect=HSS152.4X152.4X4.8   MatProp=Default
    Frame=CO0024   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
    Frame=CO0026   AutoSelect=N.A.   AnalSect=HSS152.4X152.4X4.8   MatProp=Default
    Frame=CO0027   AutoSelect=N.A.   AnalSect=HSS152.4X152.4X4.8   MatProp=Default
-   Frame=CO0031   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
    Frame=CO0032   AutoSelect=N.A.   AnalSect=HSS127X127X4.8   MatProp=Default
    Frame=CO0033   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
    Frame=CO0034   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
-   Frame=CO0035   AutoSelect=N.A.   AnalSect=HSS127X127X4.8   MatProp=Default
-   Frame=CO0036   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
-   Frame=CO0037   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0037   AutoSelect=N.A.   AnalSect=HSS127X127X4.8   MatProp=Default
    Frame=CO0038   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
-   Frame=CO0039   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0039   AutoSelect=N.A.   AnalSect=HSS101.6X101.6X4.8   MatProp=Default
    Frame=CO0040   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
    Frame=CO0041   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
-   Frame=CO0042   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0042   AutoSelect=N.A.   AnalSect=HSS152.4X152.4X4.8   MatProp=Default
    Frame=CO0043   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
-   Frame=CO0045   AutoSelect=N.A.   AnalSect=HSS114.3X114.3X4.8   MatProp=Default
+   Frame=CO0045   AutoSelect=N.A.   AnalSect=HSS139.7X139.7X4.8   MatProp=Default
    Frame=CO0046   AutoSelect=N.A.   AnalSect=HSS127X127X4.8   MatProp=Default
  
 TABLE:  "FRAME SECTION PROPERTIES 01 - GENERAL"
@@ -3948,8 +3762,6 @@ TABLE:  "GROUPS 1 - DEFINITIONS"
 TABLE:  "JOINT COORDINATES"
    Joint=P001115   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16353254.45   Y=13445068.67   Z=58197.74855   SpecialJt=No
    Joint=P001116   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16351257.2   Y=13444964   Z=58197.74855   SpecialJt=No
-   Joint=P001118   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16347262.68   Y=13444754.66   Z=58197.74855   SpecialJt=No
-   Joint=P001120   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16343268.16   Y=13444545.31   Z=58197.74855   SpecialJt=No
    Joint=P001121   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16341270.9   Y=13444440.64   Z=58197.74855   SpecialJt=No
    Joint=P001122   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16339273.64   Y=13444335.97   Z=58197.74855   SpecialJt=No
    Joint=P001123   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16337276.38   Y=13444231.3   Z=58197.74855   SpecialJt=No
@@ -3958,19 +3770,15 @@ TABLE:  "JOINT COORDINATES"
    Joint=P001218   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16347367.35   Y=13442757.4   Z=58197.74855   SpecialJt=No
    Joint=P001219   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16345370.09   Y=13442652.72   Z=58197.74855   SpecialJt=No
    Joint=P001220   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16343372.83   Y=13442548.05   Z=58197.74855   SpecialJt=No
-   Joint=P001221   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16341375.57   Y=13442443.38   Z=58197.74855   SpecialJt=No
    Joint=P001222   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16339378.31   Y=13442338.71   Z=58197.74855   SpecialJt=No
    Joint=P001223   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16337381.05   Y=13442234.04   Z=58197.74855   SpecialJt=No
    Joint=P001224   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16335383.79   Y=13442129.36   Z=58197.74855   SpecialJt=No
-   Joint=P001320   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16343477.5   Y=13440550.79   Z=58197.74855   SpecialJt=No
    Joint=P001321   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16341480.24   Y=13440446.12   Z=58197.74855   SpecialJt=No
    Joint=P001322   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16339482.98   Y=13440341.45   Z=58197.74855   SpecialJt=No
    Joint=P001323   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16337485.73   Y=13440236.78   Z=58197.74855   SpecialJt=No
    Joint=P001324   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16335488.47   Y=13440132.11   Z=58197.74855   SpecialJt=No
    Joint=P011115   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16353254.45   Y=13445068.67   Z=60197.74855   SpecialJt=No
    Joint=P011116   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16351257.2   Y=13444964   Z=60197.74855   SpecialJt=No
-   Joint=P011118   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16347262.68   Y=13444754.66   Z=60197.74855   SpecialJt=No
-   Joint=P011120   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16343268.16   Y=13444545.31   Z=60197.74855   SpecialJt=No
    Joint=P011121   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16341270.9   Y=13444440.64   Z=60197.74855   SpecialJt=No
    Joint=P011122   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16339273.64   Y=13444335.97   Z=60197.74855   SpecialJt=No
    Joint=P011123   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16337276.38   Y=13444231.3   Z=60197.74855   SpecialJt=No
@@ -4004,31 +3812,21 @@ TABLE:  "JOINT COORDINATES"
    Joint=P031120   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16343268.16   Y=13444545.31   Z=64197.74855   SpecialJt=No
    Joint=P031121   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16341270.9   Y=13444440.64   Z=64197.74855   SpecialJt=No
    Joint=X00111826   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16347315.01   Y=13443756.03   Z=59197.74855   SpecialJt=No
-   Joint=X001219132   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16344371.46   Y=13442600.39   Z=59197.74855   SpecialJt=No
    Joint=X001220143   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16343425.17   Y=13441549.42   Z=59197.74855   SpecialJt=No
    Joint=X001221158   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16341427.91   Y=13441444.75   Z=59197.74855   SpecialJt=No
    Joint=X001223188   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16337433.39   Y=13441235.41   Z=59197.74855   SpecialJt=No
    Joint=X001223190   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16336382.42   Y=13442181.7   Z=59197.74855   SpecialJt=No
-   Joint=X001321234   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16340481.61   Y=13440393.79   Z=59197.74855   SpecialJt=No
-   Joint=X001322242   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16338484.36   Y=13440289.11   Z=59197.74855   SpecialJt=No
    Joint=X001323250   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16336487.1   Y=13440184.44   Z=59197.74855   SpecialJt=No
    Joint=X011115263   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16352255.82   Y=13445016.34   Z=61197.74855   SpecialJt=No
-   Joint=X011116267   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16350258.57   Y=13444911.66   Z=61197.74855   SpecialJt=No
-   Joint=X011117280   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16348313.64   Y=13443808.36   Z=60197.74855   SpecialJt=No
-   Joint=X011118285   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16347315.01   Y=13443756.03   Z=61197.74855   SpecialJt=No
-   Joint=X011120311   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16343320.49   Y=13443546.68   Z=61197.74855   SpecialJt=No
    Joint=X011121324   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16341323.24   Y=13443442.01   Z=61197.74855   SpecialJt=No
-   Joint=X011122339   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16338275.01   Y=13444283.63   Z=61197.74855   SpecialJt=No
    Joint=X011123354   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16336330.09   Y=13443180.33   Z=60197.74855   SpecialJt=No
    Joint=X011218372   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16346368.72   Y=13442705.06   Z=61197.74855   SpecialJt=No
    Joint=X011219381   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16344371.46   Y=13442600.39   Z=61197.74855   SpecialJt=No
-   Joint=X011222420   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16339430.65   Y=13441340.08   Z=61197.74855   SpecialJt=No
    Joint=X011222422   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16338379.68   Y=13442286.37   Z=61197.74855   SpecialJt=No
    Joint=X011223435   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16337433.39   Y=13441235.41   Z=61197.74855   SpecialJt=No
    Joint=X011321463   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16340481.61   Y=13440393.79   Z=61197.74855   SpecialJt=No
    Joint=X011322469   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16338484.36   Y=13440289.11   Z=61197.74855   SpecialJt=No
    Joint=X021119499   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16344319.12   Y=13443599.02   Z=62197.74855   SpecialJt=No
-   Joint=X021120506   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16342269.53   Y=13444492.98   Z=63197.74855   SpecialJt=No
    Joint=X021120510   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16342321.87   Y=13443494.35   Z=62197.74855   SpecialJt=No
    Joint=X021121519   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16340324.61   Y=13443389.67   Z=62197.74855   SpecialJt=No
    Joint=X021122527   CoordSys=GLOBAL   CoordType=Cartesian   XorR=16338327.35   Y=13443285   Z=62197.74855   SpecialJt=No
@@ -4174,8 +3972,6 @@ TABLE:  "JOINT PATTERN DEFINITIONS"
 TABLE:  "JOINT RESTRAINT ASSIGNMENTS"
    Joint=P001115   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001116   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
-   Joint=P001118   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
-   Joint=P001120   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001121   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001122   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001123   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
@@ -4184,11 +3980,9 @@ TABLE:  "JOINT RESTRAINT ASSIGNMENTS"
    Joint=P001218   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001219   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001220   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
-   Joint=P001221   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001222   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001223   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001224   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
-   Joint=P001320   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001321   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001322   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
    Joint=P001323   U1=Yes   U2=Yes   U3=Yes   R1=Yes   R2=Yes   R3=Yes
