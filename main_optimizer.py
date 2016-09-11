@@ -74,7 +74,7 @@ def writeToFile(memberList, addBack):
     else:
     	listFalses = [False] * len(sapIMember["member_ID"])
     	sapIMember["add_back?"] = listFalses
-    #sapIMember.to_csv("SAP_I_Member.txt", index = False)
+    sapIMember.to_csv("SAP_I_Member.txt", index = False)
 
     inputStartNodes = sapIMember["start_node"]
     inputEndNodes = sapIMember["end_node"]
@@ -110,7 +110,7 @@ def writeToFile(memberList, addBack):
                     else:
                         sapINode.ix[j, "member_ID"] == "0"	# remove ground nodes that have no attached members
 
-    #sapINode.to_csv("SAP_I_Node.txt", index = False)
+    sapINode.to_csv("SAP_I_Node.txt", index = False)
 
     forcesOutput = pd.read_csv("SAP_O_MemberForce.txt")	# use DC ratios from sizing instead
 
