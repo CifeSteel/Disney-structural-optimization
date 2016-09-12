@@ -253,6 +253,8 @@ memberFcsSorted = memberFcsSorted.reset_index(drop = True)
 
 # find x% members to remove
 numberToRemove = int(np.ceil(inputs.get_value(2, "Values") * len(memberFcsSorted["member_ID"]) / 100.0))
+if numberToRemove % 2 != 0:	# ensure the number or elements removed is even
+	numberToRemove = numberToRemove + 1
 
 membersRemoved = memberFcsSorted[:numberToRemove]
 membersRemaining = memberFcsSorted[numberToRemove:]
@@ -281,7 +283,7 @@ for i in range(0, len(loadedNodes)):
             nodeToMems[thisNode].append(memberIDs[j])
             if memberIDs[j] in memberIDsRemaining:	# members that have not been removed
                 membersLoaded.append(memberIDs[j])
-    if len(membersLoaded) <= 3:
+    if len(membersLoaded) <= 2:
         for j in range(len(membersConsidered)-1, -1, -1):	# range(start,stop,step)
             if membersConsidered[j] in nodeToMems[thisNode]:
                 memberToAdd = membersConsidered[j]	# do not remove any members that have a loaded node
@@ -299,6 +301,133 @@ for i in range(0, len(loadedNodes)):
                 membersRemaining = membersRemaining[membersRemaining["member_ID"] != memberToRemove]
                 membersRemaining = membersRemaining.reset_index(drop = True)
                 break
+
+''' Ensure brace continuity in member removal (will only work with consisent labeling convention)'''
+braceContinuityMap = {}
+for i in range(0,len(sapIMember['member_ID'])):
+	firstMember = sapIMember.get_value(i,'member_ID')
+	#print int(firstMember[2:len(firstMember)])
+	if firstMember[0:2] == 'BR':
+		braceContinuityMap[firstMember] = []
+		end_node1 = sapIMember.get_value(i,'end_node')
+		for j in range(0,len(sapIMember['member_ID'])):
+			secondMember = sapIMember.get_value(j,'member_ID')
+			end_node2 = sapIMember.get_value(j,'end_node')
+			if secondMember[0:2] == 'BR' and end_node1 == end_node2 and ((int(firstMember[2:len(firstMember)]) - int(secondMember[2:len(firstMember)])) == 1 or (int(firstMember[2:len(firstMember)]) - int(secondMember[2:len(firstMember)])) == -1):
+				braceContinuityMap[firstMember].append(secondMember)
+
+
+#print membersRemoved['member_ID']
+#print membersRemoved[membersRemoved['member_ID'] == 'BR0108'].empty
+print len(membersRemoved),len(membersRemaining)
+
+for i in range(0,len(membersRemoved['member_ID'])):
+	firstMember = membersRemoved.get_value(i,'member_ID')
+	
+	if firstMember[0:2] == 'BR':
+		secondMember = braceContinuityMap[firstMember][0]
+		#print firstMember,secondMember
+
+		#if secondMember == 'BR0163':
+			#print 'In removed:',not(membersRemoved[membersRemoved['member_ID'] == secondMember].empty)
+			#print 'In remaining:',not(membersRemaining[membersRemaining['member_ID'] == secondMember].empty)
+			#secondMemberData = membersRemaining[membersRemaining["member_ID"] == secondMember]
+			#secondMemberData = secondMemberData.reset_index(drop = True)
+
+		if membersRemoved[membersRemoved['member_ID'] == secondMember].empty:
+			secondMemberData = membersRemaining[membersRemaining['member_ID'] == secondMember]
+			secondMemberData = secondMemberData.reset_index(drop = True)
+			membersRemoved = membersRemoved.append(secondMemberData)
+			membersRemoved = membersRemoved.reset_index(drop = True)
+			membersRemaining = membersRemaining[membersRemaining['member_ID'] != secondMember]
+			membersRemaining = membersRemaining.reset_index(drop = True)
+				
+		#if secondMember == 'BR0163':
+			#print 'In removed:',not(membersRemoved[membersRemoved['member_ID'] == secondMember].empty)
+			#print 'In remaining:',not(membersRemaining[membersRemaining['member_ID'] == secondMember].empty)
+
+print len(membersRemoved),len(membersRemaining)
+#print membersRemoved['member_ID']
+
+''' Un-fix nodes from previous iterations'''
+for i in range(0,len(membersRemaining['member_ID'])):
+	currentMember = membersRemaining.get_value(i,'member_ID')
+	if currentMember[0:2] == 'BR':
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2I'] = True
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3I'] = True
+	elif currentMember[0:2] == 'BE':
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2I'] = True
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3I'] = True
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2J'] = True
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3J'] = True
+		
+           
+'''MECHANISM 1: avoiding free-end mechanisms within membersRemaining'''
+for i in range(0,len(membersRemaining['member_ID'])):
+	currentMember = membersRemaining.get_value(i,'member_ID')
+	membersConnectedtoStart = 0
+	membersConnectedtoEnd = 0
+	start_node = membersRemaining.get_value(i,'start_node')
+	end_node = membersRemaining.get_value(i,'end_node')
+	for j in range(0,len(membersRemaining['member_ID'])):
+		if currentMember != membersRemaining.get_value(j,'member_ID'):
+			if membersRemaining.get_value(j,'start_node') == start_node or membersRemaining.get_value(j,'end_node') == start_node:
+				membersConnectedtoStart = membersConnectedtoStart + 1
+			if membersRemaining.get_value(j,'start_node')==end_node or membersRemaining.get_value(j,'end_node')==end_node:
+				membersConnectedtoEnd = membersConnectedtoEnd + 1
+	
+	#if currentMember=="BR0178":
+		#print currentMember,start_node,end_node,"start #:",membersConnectedtoStart,"end #:", membersConnectedtoEnd
+		#print currentMember, "before:",sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J']
+
+	if membersConnectedtoStart == 0:
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2J'] = False 	# false = fixed
+		#sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J'] = True
+		#sapIMember = sapIMember.reset_index(drop = True)
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3J'] = False
+		#sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J'] = True
+		sapIMember = sapIMember.reset_index(drop = True)
+	if membersConnectedtoEnd == 0:
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2I'] = False
+		#sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'] = True
+		#sapIMember = sapIMember.reset_index(drop = True)
+		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3I'] = False
+		#sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'] = True
+		#sapIMember = sapIMember.reset_index(drop = True)
+	#if currentMember=="BR0178":
+		#print currentMember, "after:",sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J']
+
+''' MECHANISM 2: avoiding vertical mechanisms within membersRemaining'''
+verticalElements = []
+for i in range(0,len(membersRemaining['member_ID'])):	# finding all vertical elements
+	start_node = membersRemaining.get_value(i,'start_node')
+	end_node = membersRemaining.get_value(i,'end_node')
+	start_node_Z = sapINode[sapINode['node_ID'] == start_node].iloc[0]['Z']
+	end_node_Z = sapINode[sapINode['node_ID'] == end_node].iloc[0]['Z']
+	if start_node_Z != end_node_Z:
+		verticalElements.append(membersRemaining.get_value(i,'member_ID'))
+#print verticalElements
+
+for i in range(0,len(sapINode['node_ID'])):
+	currentNode = sapINode.get_value(i,'node_ID')
+	membersConnected = []
+	for j in range(0,len(membersRemaining['member_ID'])):
+		if membersRemaining.get_value(j,'start_node')==currentNode or membersRemaining.get_value(j,'end_node')==currentNode:
+			membersConnected.append(membersRemaining.get_value(j,'member_ID'))
+	flag = True 	# no vertical elements connected to the node
+	for element in membersConnected:
+		if element in verticalElements:
+			flag = False
+	if flag == True and len(membersConnected) != 0:
+		for member in membersConnected:	# fix all of them
+		#member = membersConnected[0]	# only fix the first element
+			sapIMember.loc[sapIMember['member_ID'] == member,'M2J'] = False
+			sapIMember.loc[sapIMember['member_ID'] == member,'M3J'] = False
+			sapIMember.loc[sapIMember['member_ID'] == member,'M2I'] = False
+			sapIMember.loc[sapIMember['member_ID'] == member,'M3I'] = False
+
+
+# updating logs
 emptyD = {"member_ID": [], "checked?": [], "cross_section": []}
 lastRemovedNew = pd.DataFrame(data  = emptyD)
 for i in range(0, len(membersRemoved["member_ID"])):
@@ -315,7 +444,7 @@ for i in range(0, len(membersRemaining["member_ID"])):
 d = {"member_ID": membersRemaining["member_ID"], "cross_section": membersRemaining["cross_section"]}
 newMemberList = pd.DataFrame(data = d)
 
-if totalCost <= 1.05 *float(lastCost.get_value(0, "last_cost")) and not membersRemoved.empty:
+if totalCost <= 1.00 *float(lastCost.get_value(0, "last_cost")) and not membersRemoved.empty:
     d = {"member_ID": membersRemoved["member_ID"], "cross_section": ["0"] * len(membersRemoved["member_ID"])}
     newMemberList = newMemberList.append(pd.DataFrame(data = d))
     newMemberList = newMemberList.reset_index(drop = True)

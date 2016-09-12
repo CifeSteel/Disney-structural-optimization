@@ -32,9 +32,9 @@ geomData = pd.read_csv("member_geometry.txt")
 type_corresponding={1:"Square",2:"W",3:"Round"}
 geo_corresponding={"Width":{"Square":"B","W":"bf","Round":"D"}}
 
-Fy=345;
-E=200000;
-K=1;
+Fy=345.0;
+E=200000*0.8;
+K=1.0;
 
 
 # In[2]:

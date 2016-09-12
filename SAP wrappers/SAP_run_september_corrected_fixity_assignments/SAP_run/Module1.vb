@@ -125,6 +125,8 @@ Module Module1
         Dim Startvalue() As Double = {}
         Dim EndValue() As Double = {}
         Dim memberlist = New List(Of Integer)
+        Dim ret As Integer
+        ret = 0
 
         For i = 0 To Member_ID.Count - 1
 
@@ -133,10 +135,31 @@ Module Module1
             Else
                 SM.FrameObj.SetSection(Member_ID(i), Member_Size(i)) 'update section sizes
             End If
+
+            ReDim ii(5)
+            ReDim jj(5)
+            ReDim Startvalue(5)
+            ReDim EndValue(5)
+
+
             ii = {Member_I_U1(i), Member_I_U2(i), Member_I_U3(i), Member_I_R1(i), Member_I_R2(i), Member_I_R3(i)}
             jj = {Member_J_U1(i), Member_J_U2(i), Member_J_U3(i), Member_J_R1(i), Member_J_R2(i), Member_J_R3(i)}
-            SM.FrameObj.SetReleases(Member_ID(i), ii, jj, Startvalue, EndValue) 'reset releases
 
+            'Startvalue = {0, 0, 0, 0, 0.01, 0.01}
+            'EndValue = {0, 0, 0, 0, 0.01, 0.01}
+
+            'ii = {False, False, False, False, False, True}
+            'jj = {False, False, False, False, False, False}
+            'ii = {False, False, False, False, True, True}
+            'jj = {False, False, False, False, True, True}
+            'ii = {True, True, True, True, True, True}
+            'jj = {True, True, True, True, True, True}
+
+            ret = SM.FrameObj.SetReleases(Member_ID(i), ii, jj, Startvalue, EndValue) 'reset releases
+
+            Dim releaseTest = New System.IO.StreamWriter(AppPath + "\resease_test.txt", False)
+            releaseTest.WriteLine(ret)
+            releaseTest.Close()
 
             If Member_Size(i) = "0" Then
                 SM.FrameObj.Delete(Member_ID(i)) 'remove members

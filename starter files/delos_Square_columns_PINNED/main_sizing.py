@@ -27,17 +27,14 @@ global continuity_list,cycle_list
 global continuity_root,cycle_root
 global num_all_sec
 global type_corresponding, geo_corresponding
-global geomData
 
 geomData = pd.read_csv("member_geometry.txt")
 type_corresponding={1:"Square",2:"W",3:"Round"}
 geo_corresponding={"Width":{"Square":"B","W":"bf","Round":"D"}}
 
-print geomData
-
-Fy=345;
-E=200000;
-K=1;
+Fy=345.0;
+E=200000*0.8;
+K=1.0;
 
 
 # In[2]:
@@ -897,13 +894,13 @@ def calculate_cost():
         size=mem_info.cross_section[i]
         if mem_info.group[i] == 3:
            # c=sec_info["Round"].unit_price[size]*sec_info["Round"].W[size]*mem_info.L[i]/1000000 # real member cost
-           c = 2*250*0 + 1300/1000*mem_info.L[i]/1000*sec_info["Round"].W[size]	# 1000 ton/kg and 1000 m/mm
+           c = 1300/1000*mem_info.L[i]/1000*sec_info["Round"].W[size]	# 1000 ton/kg and 1000 m/mm
         elif mem_info.group[i] == 1:
           #  c=sec_info["Square"].unit_price[size]*sec_info["Square"].W[size]*mem_info.L[i]/1000000 # real member cost
-          c = 3500*0 + 1300/1000*mem_info.L[i]/1000*sec_info["Square"].W[size]
+          c = 1300/1000*mem_info.L[i]/1000*sec_info["Square"].W[size]
         else:
           #  c=sec_info["W"].unit_price[size]*sec_info["W"].W[size]*mem_info.L[i]/1000000   # real member cost
-          c = 2*250*0 + 1000/1000*mem_info.L[i]/1000*sec_info["W"].W[size]
+          c = 1000/1000*mem_info.L[i]/1000*sec_info["W"].W[size]
         # if the W is N/mm. L is mm... check this unit assumption!!!!!!!!!!!????
         member_cost.append(c)
 
