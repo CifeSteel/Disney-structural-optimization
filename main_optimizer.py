@@ -202,7 +202,6 @@ loadBearing = sapINode["load_bearing?"]
 for i in range(0, len(nodeIds)):
     if loadBearing[i] == "TRUE" or loadBearing[i] == True:
         loadedNodes.append(nodeIds[i])
-
 # check for stability
 #minFirstMode = inputs.get_value(0, "Values")
 #firstMode = modeFrequencies.get_value(0, "Frequency")
@@ -232,8 +231,8 @@ memberLoadInverses = memberLoadInverses[memberLoadInverses["load_inverse"] < inp
 memberIDs = memberLoadInverses["member_ID"]
 for i in range(0, len(memberIDs)):
     size = memberSizes.get_value(i, "cross_section")
-    sizeSelect = sec_info[sec_info["AISC_Manual_Label"] == size]
-    #area = sizeSelect["A"].tolist()[0]
+    #sizeSelect = sec_info[sec_info["AISC_Manual_Label"] == size]	# weight-based
+    #area = sizeSelect["A"].tolist()[0]								# weight-based
     #Fcs.append(area/(1000000*memberLoadInverses.get_value(i, "load_inverse")))	# weight based optimization
     Fcs.append(memberCosts.get_value(i, "cost")/(1000000*memberLoadInverses.get_value(i, "load_inverse")))	# cost based optimization
 
@@ -265,42 +264,6 @@ membersRemaining = membersRemaining.reset_index(drop = True)
 membersToAdd = pd.DataFrame()
 membersToRemove = pd.DataFrame()
 
-# find lone members connected to loaded nodes and add back
-memberIDs = sapIMember["member_ID"]
-startNodes = sapIMember["start_node"]
-endNodes = sapIMember["end_node"]
-memSizes = sapIMember["size"]	# the difference between memSizes and memberSizes is that the array also has the 0 (removed) members
-memberIDsRemaining = membersRemaining["member_ID"].tolist()
-membersConsidered = membersRemoved["member_ID"]
-for i in range(0, len(loadedNodes)):
-    thisNode = loadedNodes[i]
-    membersLoaded = []
-    nodeToMems = {}   
-    for j in range(0, len(memberIDs)):
-        if (startNodes[j] == thisNode or endNodes[j] == thisNode):	# the member contains the current loaded node either as start or end
-            if thisNode not in nodeToMems:
-                nodeToMems[thisNode] = []
-            nodeToMems[thisNode].append(memberIDs[j])
-            if memberIDs[j] in memberIDsRemaining:	# members that have not been removed
-                membersLoaded.append(memberIDs[j])
-    if len(membersLoaded) <= 2:
-        for j in range(len(membersConsidered)-1, -1, -1):	# range(start,stop,step)
-            if membersConsidered[j] in nodeToMems[thisNode]:
-                memberToAdd = membersConsidered[j]	# do not remove any members that have a loaded node
-                memberToRemove = memberIDsRemaining[0]
-                d = membersRemoved[membersRemoved["member_ID"] == memberToAdd]
-                d = d.reset_index(drop = True)
-                membersRemaining = membersRemaining.append(d)
-                membersRemaining = membersRemaining.reset_index(drop = True)
-                d = membersRemaining[membersRemaining["member_ID"] == memberToRemove]
-                d = d.reset_index(drop = True)
-                membersRemoved = membersRemoved.append(d)
-                membersRemoved = membersRemoved.reset_index(drop = True)
-                membersRemoved = membersRemoved[membersRemoved["member_ID"] != memberToAdd]
-                membersRemoved = membersRemoved.reset_index(drop = True)
-                membersRemaining = membersRemaining[membersRemaining["member_ID"] != memberToRemove]
-                membersRemaining = membersRemaining.reset_index(drop = True)
-                break
 
 ''' Ensure brace continuity in member removal (will only work with consisent labeling convention)'''
 braceContinuityMap = {}
@@ -319,7 +282,7 @@ for i in range(0,len(sapIMember['member_ID'])):
 
 #print membersRemoved['member_ID']
 #print membersRemoved[membersRemoved['member_ID'] == 'BR0108'].empty
-print len(membersRemoved),len(membersRemaining)
+#print len(membersRemoved),len(membersRemaining)
 
 for i in range(0,len(membersRemoved['member_ID'])):
 	firstMember = membersRemoved.get_value(i,'member_ID')
@@ -346,7 +309,7 @@ for i in range(0,len(membersRemoved['member_ID'])):
 			#print 'In removed:',not(membersRemoved[membersRemoved['member_ID'] == secondMember].empty)
 			#print 'In remaining:',not(membersRemaining[membersRemaining['member_ID'] == secondMember].empty)
 
-print len(membersRemoved),len(membersRemaining)
+#print len(membersRemoved),len(membersRemaining)
 #print membersRemoved['member_ID']
 
 ''' Un-fix nodes from previous iterations'''
@@ -360,8 +323,44 @@ for i in range(0,len(membersRemaining['member_ID'])):
 		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3I'] = True
 		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2J'] = True
 		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3J'] = True
-		
-           
+
+''' find lone members connected to loaded nodes and add back'''
+memberIDs = sapIMember["member_ID"]
+startNodes = sapIMember["start_node"]
+endNodes = sapIMember["end_node"]
+memSizes = sapIMember["size"]	# the difference between memSizes and memberSizes is that the array also has the 0 (removed) members
+memberIDsRemaining = membersRemaining["member_ID"].tolist()
+membersConsidered = membersRemoved["member_ID"]
+memsAtNodeMap = {}   # all the members from SAP_I_Member connected to the loaded nodes
+minNumber = 2
+
+for i in range(0, len(loadedNodes)):
+    thisNode = loadedNodes[i]
+    memsAtNodeMap[thisNode] = []
+    membersLoadedAtNode = []
+    for j in range(0, len(memberIDs)):
+        if (startNodes[j] == thisNode or endNodes[j] == thisNode):	# the member contains the current loaded node either as start or end
+            memsAtNodeMap[thisNode].append(memberIDs[j])
+            if memberIDs[j] in memberIDsRemaining:	# members that have not been removed and that are connected to the loaded node
+                membersLoadedAtNode.append(memberIDs[j])
+
+    if len(membersLoadedAtNode) < minNumber:
+    	numberToAddBack = minNumber - len(membersLoadedAtNode)
+    	for element in membersConsidered:
+            if element in memsAtNodeMap[thisNode] and numberToAddBack > 0:
+
+                d = membersRemoved[membersRemoved["member_ID"] == element]
+                d = d.reset_index(drop = True)
+                membersRemaining = membersRemaining.append(d)
+                membersRemaining = membersRemaining.reset_index(drop = True)
+
+                membersRemoved = membersRemoved[membersRemoved["member_ID"] != element]
+                membersRemoved = membersRemoved.reset_index(drop = True)
+                numberToAddBack = numberToAddBack - 1
+
+            elif numberToAddBack == 0:
+            	break		
+     
 '''MECHANISM 1: avoiding free-end mechanisms within membersRemaining'''
 for i in range(0,len(membersRemaining['member_ID'])):
 	currentMember = membersRemaining.get_value(i,'member_ID')
@@ -419,12 +418,13 @@ for i in range(0,len(sapINode['node_ID'])):
 		if element in verticalElements:
 			flag = False
 	if flag == True and len(membersConnected) != 0:
-		for member in membersConnected:	# fix all of them
-		#member = membersConnected[0]	# only fix the first element
-			sapIMember.loc[sapIMember['member_ID'] == member,'M2J'] = False
-			sapIMember.loc[sapIMember['member_ID'] == member,'M3J'] = False
-			sapIMember.loc[sapIMember['member_ID'] == member,'M2I'] = False
-			sapIMember.loc[sapIMember['member_ID'] == member,'M3I'] = False
+		#for member in membersConnected:	# fix all of them
+		member = membersConnected[0]	# only fix the first element
+		sapIMember.loc[sapIMember['member_ID'] == member,'M2J'] = False
+		sapIMember.loc[sapIMember['member_ID'] == member,'M3J'] = False
+		sapIMember.loc[sapIMember['member_ID'] == member,'M2I'] = False
+		sapIMember.loc[sapIMember['member_ID'] == member,'M3I'] = False
+
 
 
 # updating logs
@@ -444,7 +444,7 @@ for i in range(0, len(membersRemaining["member_ID"])):
 d = {"member_ID": membersRemaining["member_ID"], "cross_section": membersRemaining["cross_section"]}
 newMemberList = pd.DataFrame(data = d)
 
-if totalCost <= 1.00 *float(lastCost.get_value(0, "last_cost")) and not membersRemoved.empty:
+if totalCost <= 1.05 *float(lastCost.get_value(0, "last_cost")) and not membersRemoved.empty:
     d = {"member_ID": membersRemoved["member_ID"], "cross_section": ["0"] * len(membersRemoved["member_ID"])}
     newMemberList = newMemberList.append(pd.DataFrame(data = d))
     newMemberList = newMemberList.reset_index(drop = True)

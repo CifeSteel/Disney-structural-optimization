@@ -1,0 +1,112 @@
+
+
+ SAP2000 v16.1.1 Ultimate (Analysis Build 9194/32)
+ File: C:\Users\Filippo\AppDat...\Debug\SAPMODEL\delos_turtle_20160913064455.LOG
+
+
+
+
+ B E G I N   A N A L Y S I S                                2016/09/13  06:44:57
+
+
+ RUNNING ANALYSIS WITHIN THE GUI PROCESS
+ USING THE ADVANCED SOLVER (PROVIDES LIMITED INSTABILITY INFORMATION)
+
+ NUMBER OF JOINTS                          =         187
+    WITH RESTRAINTS                        =          25
+ NUMBER OF FRAME/CABLE/TENDON ELEMENTS     =         562
+ NUMBER OF LOAD PATTERNS                   =           6
+ NUMBER OF ACCELERATION LOADS              =           6
+ NUMBER OF LOAD CASES                      =           7
+
+
+ E L E M E N T   F O R M A T I O N                                      06:44:57
+
+
+
+ L I N E A R   E Q U A T I O N   S O L U T I O N                        06:44:57
+
+ FORMING STIFFNESS AT ZERO (UNSTRESSED) INITIAL CONDITIONS
+
+ TOTAL NUMBER OF EQUILIBRIUM EQUATIONS     =        1047
+ NUMBER OF NON-ZERO STIFFNESS TERMS        =       20058
+
+ NUMBER OF EIGENVALUES BELOW SHIFT         =           0
+
+
+ L I N E A R   S T A T I C   C A S E S                                  06:44:57
+
+ USING STIFFNESS AT ZERO (UNSTRESSED) INITIAL CONDITIONS
+
+ TOTAL NUMBER OF CASES TO SOLVE            =           6
+ NUMBER OF CASES TO SOLVE PER BLOCK        =           6
+
+ LINEAR STATIC CASES TO BE SOLVED:
+
+ CASE: DEAD
+ CASE: LIVE
+ CASE: WIND +X
+ CASE: WIND +Y
+ CASE: WIND -X
+ CASE: WIND -Y
+
+
+ E I G E N   M O D A L   A N A L Y S I S                                06:44:57
+
+ CASE: MODAL
+
+ USING STIFFNESS AT ZERO (UNSTRESSED) INITIAL CONDITIONS
+
+ NUMBER OF STIFFNESS DEGREES OF FREEDOM    =        1047
+ NUMBER OF MASS DEGREES OF FREEDOM         =         486
+ MAXIMUM NUMBER OF EIGEN MODES SOUGHT      =          12
+ MINIMUM NUMBER OF EIGEN MODES SOUGHT      =           1
+ NUMBER OF RESIDUAL-MASS MODES SOUGHT      =           0
+ NUMBER OF SUBSPACE VECTORS USED           =          24
+ RELATIVE CONVERGENCE TOLERANCE            =    1.00E-09
+
+ FREQUENCY SHIFT  (CENTER) (CYC/TIME)      =     .000000
+ FREQUENCY CUTOFF (RADIUS) (CYC/TIME)      =  -INFINITY-
+ ALLOW AUTOMATIC FREQUENCY SHIFTING        =         YES
+
+
+ Original stiffness at shift : EV= 0.0000000E+00, f=     .000000, T=  -INFINITY-
+ Number of eigenvalues below shift =      0
+ Found mode      1 of     12:  EV= 7.3430737E+01, f=    1.363826, T=    0.733231
+ Found mode      2 of     12:  EV= 4.6204329E+02, f=    3.421066, T=    0.292307
+ Found mode      3 of     12:  EV= 1.7311878E+03, f=    6.622046, T=    0.151011
+
+ Forming stiffness, new shift: EV= 6.8513410E+03, f=   13.173705, T=    0.075909
+ Number of eigenvalues below shift =      3
+
+ Forming stiffness, new shift: EV= 7.1729658E+03, f=   13.479367, T=    0.074187
+ Number of eigenvalues below shift =      3
+ Found mode      4 of     12:  EV= 7.1736948E+03, f=   13.480052, T=    0.074184
+
+ Forming stiffness, new shift: EV= 7.2103285E+03, f=   13.514428, T=    0.073995
+ Number of eigenvalues below shift =      4
+ Found mode      5 of     12:  EV= 7.2122930E+03, f=   13.516269, T=    0.073985
+
+ Forming stiffness, new shift: EV= 7.2338294E+03, f=   13.536434, T=    0.073875
+ Number of eigenvalues below shift =      5
+ Found mode      6 of     12:  EV= 7.2350662E+03, f=   13.537591, T=    0.073868
+ Found mode      7 of     12:  EV= 7.2380386E+03, f=   13.540371, T=    0.073853
+ Found mode      8 of     12:  EV= 7.2419976E+03, f=   13.544074, T=    0.073833
+
+ Forming stiffness, new shift: EV= 7.2492396E+03, f=   13.550844, T=    0.073796
+ Number of eigenvalues below shift =      9
+ Found mode      9 of     12:  EV= 7.2496117E+03, f=   13.551192, T=    0.073794
+ Found mode     10 of     12:  EV= 7.2479991E+03, f=   13.549685, T=    0.073802
+
+ * * * W A R N I N G * * *
+ EIGENVALUE          10 WAS FOUND OUT OF SEQUENCE
+
+ Found mode     11 of     12:  EV= 7.2508420E+03, f=   13.552342, T=    0.073788
+ Found mode     12 of     12:  EV= 7.2509795E+03, f=   13.552471, T=    0.073787
+
+ NUMBER OF EIGEN MODES FOUND               =          12
+ NUMBER OF ITERATIONS PERFORMED            =          78
+ NUMBER OF STIFFNESS SHIFTS                =           5
+
+
+ A N A L Y S I S   C O M P L E T E                          2016/09/13  06:44:59
