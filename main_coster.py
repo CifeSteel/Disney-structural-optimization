@@ -5,8 +5,8 @@ sapIMember = pd.read_csv('SAP_I_Member.txt')
 sapINode = pd.read_csv('SAP_I_Node.txt')
 nodeGeometry = pd.read_csv('node_geometry.txt')
 pin_connection_cost = 250
-fix_connection_cost = 250
-base_plate_cost = 650
+fix_connection_cost = 400
+base_plate_cost = 850
 # read member costs
 memberCosts = pd.read_csv("member_cost.txt")
 

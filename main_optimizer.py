@@ -253,7 +253,7 @@ memberFcsSorted = memberFcsSorted.reset_index(drop = True)
 # find x% members to remove
 numberToRemove = int(np.ceil(inputs.get_value(2, "Values") * len(memberFcsSorted["member_ID"]) / 100.0))
 if numberToRemove % 2 != 0:	# ensure the number or elements removed is even
-	numberToRemove = numberToRemove + 1
+	numberToRemove = numberToRemove - 1
 
 membersRemoved = memberFcsSorted[:numberToRemove]
 membersRemaining = memberFcsSorted[numberToRemove:]
@@ -312,18 +312,6 @@ for i in range(0,len(membersRemoved['member_ID'])):
 #print len(membersRemoved),len(membersRemaining)
 #print membersRemoved['member_ID']
 
-''' Un-fix nodes from previous iterations'''
-for i in range(0,len(membersRemaining['member_ID'])):
-	currentMember = membersRemaining.get_value(i,'member_ID')
-	if currentMember[0:2] == 'BR':
-		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2I'] = True
-		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3I'] = True
-	elif currentMember[0:2] == 'BE':
-		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2I'] = True
-		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3I'] = True
-		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2J'] = True
-		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3J'] = True
-
 ''' find lone members connected to loaded nodes and add back'''
 memberIDs = sapIMember["member_ID"]
 startNodes = sapIMember["start_node"]
@@ -359,8 +347,20 @@ for i in range(0, len(loadedNodes)):
                 numberToAddBack = numberToAddBack - 1
 
             elif numberToAddBack == 0:
-            	break		
-     
+            	break
+                
+''' Un-fix nodes from previous iterations'''
+for i in range(0,len(membersRemaining['member_ID'])):
+    currentMember = membersRemaining.get_value(i,'member_ID')
+    if currentMember[0:2] == 'BR':
+        sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2I'] = True
+        sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3I'] = True
+    elif currentMember[0:2] == 'BE':
+        sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2I'] = True
+        sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3I'] = True
+        sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2J'] = True
+        sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3J'] = True
+
 '''MECHANISM 1: avoiding free-end mechanisms within membersRemaining'''
 for i in range(0,len(membersRemaining['member_ID'])):
 	currentMember = membersRemaining.get_value(i,'member_ID')
@@ -372,7 +372,7 @@ for i in range(0,len(membersRemaining['member_ID'])):
 		if currentMember != membersRemaining.get_value(j,'member_ID'):
 			if membersRemaining.get_value(j,'start_node') == start_node or membersRemaining.get_value(j,'end_node') == start_node:
 				membersConnectedtoStart = membersConnectedtoStart + 1
-			if membersRemaining.get_value(j,'start_node')==end_node or membersRemaining.get_value(j,'end_node')==end_node:
+			if membersRemaining.get_value(j,'start_node')== end_node or membersRemaining.get_value(j,'end_node')== end_node:
 				membersConnectedtoEnd = membersConnectedtoEnd + 1
 	
 	#if currentMember=="BR0178":
@@ -385,7 +385,7 @@ for i in range(0,len(membersRemaining['member_ID'])):
 		#sapIMember = sapIMember.reset_index(drop = True)
 		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M3J'] = False
 		#sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J'] = True
-		sapIMember = sapIMember.reset_index(drop = True)
+		#sapIMember = sapIMember.reset_index(drop = True)
 	if membersConnectedtoEnd == 0:
 		sapIMember.loc[sapIMember['member_ID'] == currentMember,'M2I'] = False
 		#sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'] = True
@@ -396,7 +396,7 @@ for i in range(0,len(membersRemaining['member_ID'])):
 	#if currentMember=="BR0178":
 		#print currentMember, "after:",sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J']
 
-''' MECHANISM 2: avoiding vertical mechanisms within membersRemaining'''
+''' MECHANISM 2: avoiding vertical mechanisms within membersRemaining
 verticalElements = []
 for i in range(0,len(membersRemaining['member_ID'])):	# finding all vertical elements
 	start_node = membersRemaining.get_value(i,'start_node')
@@ -423,7 +423,7 @@ for i in range(0,len(sapINode['node_ID'])):
 		sapIMember.loc[sapIMember['member_ID'] == member,'M2J'] = False
 		sapIMember.loc[sapIMember['member_ID'] == member,'M3J'] = False
 		sapIMember.loc[sapIMember['member_ID'] == member,'M2I'] = False
-		sapIMember.loc[sapIMember['member_ID'] == member,'M3I'] = False
+		sapIMember.loc[sapIMember['member_ID'] == member,'M3I'] = False'''
 
 
 
@@ -443,8 +443,23 @@ for i in range(0, len(membersRemaining["member_ID"])):
 # check for convergence
 d = {"member_ID": membersRemaining["member_ID"], "cross_section": membersRemaining["cross_section"]}
 newMemberList = pd.DataFrame(data = d)
-
 if totalCost <= 1.05 *float(lastCost.get_value(0, "last_cost")) and not membersRemoved.empty:
+	d = {"member_ID": membersRemoved["member_ID"], "cross_section": ["0"] * len(membersRemoved["member_ID"])}
+	newMemberList = newMemberList.append(pd.DataFrame(data = d))
+	newMemberList = newMemberList.reset_index(drop = True)
+
+	lastCost.ix[0, "last_cost"] = totalCost
+	lastCost.to_csv("last_cost.txt", index = False)
+
+	lastRemoved = lastRemovedNew
+	lastRemoved.to_csv("last_removed.txt", index = False)
+	writeToFile(newMemberList, False)
+	
+else:
+	convergedBool = True
+	convergedOutput.write(str(convergedBool))
+
+'''if totalCost <= 1.05 *float(lastCost.get_value(0, "last_cost")) and not membersRemoved.empty:
     d = {"member_ID": membersRemoved["member_ID"], "cross_section": ["0"] * len(membersRemoved["member_ID"])}
     newMemberList = newMemberList.append(pd.DataFrame(data = d))
     newMemberList = newMemberList.reset_index(drop = True)
@@ -463,7 +478,7 @@ else:
 		convergedBool = True
 		convergedOutput.write(str(convergedBool))
 	else:
-		writeToFile(updatedMemberList, True)
+		writeToFile(updatedMemberList, True)'''
  
 
 convergedOutput.close()
