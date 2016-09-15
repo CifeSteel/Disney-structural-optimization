@@ -911,27 +911,33 @@ def calculate_load_per_unit_cost():
     
     member_lpuc=[]
     for i in mem_info.index:
-            
         size=mem_info.cross_section[i]
-        
+
         if mem_info.group[i] == 3:
-            p1=mem_info.P[i]/sec_info["Round"].A[size]+(mem_info.Mx[i]*sec_info["Round"].D[size]/sec_info["Round"].I[size]/2 +mem_info.My[i]*sec_info["Round"].D[size]/sec_info["Round"].I[size]/2)
-            p2=mem_info.Mx[i]/mem_info.Mcx[i]+mem_info.My[i]/mem_info.Mcy[i]
-            lpuc = ((mem_info.P[i]/sec_info["Round"].A[size]) + (sec_info["Round"].D[size]/(sec_info["Round"].I[size]*2.0))* (mem_info.My[i] + mem_info.Mx[i])) * sec_info["Round"].A[size]/1e20
+            #p1=mem_info.P[i]/sec_info["Round"].A[size]+(mem_info.Mx[i]*sec_info["Round"].D[size]/sec_info["Round"].I[size]/2 +mem_info.My[i]*sec_info["Round"].D[size]/sec_info["Round"].I[size]/2)
+            #p2=mem_info.Mx[i]/mem_info.Mcx[i]+mem_info.My[i]/mem_info.Mcy[i]
+            #lpuc = ( (mem_info.P[i]/sec_info["Round"].A[size]) + (sec_info["Round"].D[size]/(sec_info["Round"].I[size]*2.0))* (mem_info.My[i] + mem_info.Mx[i]) ) * sec_info["Round"].A[size]/1e20
+            stress = mem_info.P[i]/sec_info["Round"].A[size] + (mem_info.Mx[i]/sec_info["Round"].I[size] + mem_info.My[i]/sec_info["Round"].I[size]) * (sec_info["Round"].D[size]/2.0)
+            demand = stress * sec_info["Round"].A[size]/100000
         elif mem_info.group[i] == 1:
-            p1=mem_info.P[i]/sec_info["Square"].A[size]+(mem_info.Mx[i]*sec_info["Square"].B[size]/sec_info["Square"].I[size]/2 +mem_info.My[i]*sec_info["Square"].B[size]/sec_info["Square"].I[size]/2)
-            p2=mem_info.Mx[i]/mem_info.Mcx[i]+mem_info.My[i]/mem_info.Mcy[i]
-            lpuc = ((mem_info.P[i]/sec_info["Square"].A[size]) + (sec_info["Square"].B[size]/(sec_info["Square"].I[size]*2.0))* (mem_info.My[i] + mem_info.Mx[i])) * sec_info["Square"].A[size]/1e20
+            #p1=mem_info.P[i]/sec_info["Square"].A[size]+(mem_info.Mx[i]*sec_info["Square"].B[size]/sec_info["Square"].I[size]/2 +mem_info.My[i]*sec_info["Square"].B[size]/sec_info["Square"].I[size]/2)
+            #p2=mem_info.Mx[i]/mem_info.Mcx[i]+mem_info.My[i]/mem_info.Mcy[i]
+            #lpuc = ((mem_info.P[i]/sec_info["Square"].A[size]) + (sec_info["Square"].B[size]/(sec_info["Square"].I[size]*2.0))* (mem_info.My[i] + mem_info.Mx[i])) * sec_info["Square"].A[size]/1e20
+            stress = mem_info.P[i]/sec_info["Square"].A[size] + (mem_info.Mx[i]/sec_info["Square"].I[size] + mem_info.My[i]/sec_info["Square"].I[size]) * (sec_info["Square"].B[size]/2.0)
+            demand = stress * sec_info["Square"].A[size]/100000
         else:
-            p1=mem_info.P[i]/sec_info["W"].A[size]+(mem_info.Mx[i]*sec_info["W"].d[size]/sec_info["W"].Ix[size]/2+mem_info.My[i]*sec_info["W"].d[size]/sec_info["W"].Iy[size]/2)
-            p2=mem_info.Mx[i]/mem_info.Mcx[i]+mem_info.My[i]/mem_info.Mcy[i]
-            lpuc = ((mem_info.P[i]/sec_info["W"].A[size]) + (sec_info["W"].d[size]/(sec_info["W"].Ix[size]*2.0))* (mem_info.My[i] + mem_info.Mx[i])) * sec_info["W"].A[size]/1e20
+            #p1=mem_info.P[i]/sec_info["W"].A[size]+(mem_info.Mx[i]*sec_info["W"].d[size]/sec_info["W"].Ix[size]/2+mem_info.My[i]*sec_info["W"].d[size]/sec_info["W"].Iy[size]/2)
+            #p2=mem_info.Mx[i]/mem_info.Mcx[i]+mem_info.My[i]/mem_info.Mcy[i]
+            #lpuc = ((mem_info.P[i]/sec_info["W"].A[size]) + (sec_info["W"].d[size]/(sec_info["W"].Ix[size]*2.0))* (mem_info.My[i] + mem_info.Mx[i])) * sec_info["W"].A[size]/1e20
+            stress = mem_info.P[i]/sec_info["W"].A[size] + mem_info.Mx[i]/sec_info["W"].Ix[size] *sec_info["W"].d[size]/2.0 + mem_info.My[i]/sec_info["W"].Iy[size] *sec_info["W"].bf[size]/2.0
+            demand = stress * sec_info["W"].A[size]/100000
+
         
         #lpuc=(mem_info.P[i]/(mem_info.Pc[i]*p1*sec_info.A[size]))+(p2/(p1*sec_info.Ix[size]))
        
         # if the W is kg/m. L is mm... check this unit assumption!!!!!!!!!!!????
-        member_lpuc.append(lpuc)
-
+        #member_lpuc.append(lpuc)
+        member_lpuc.append(stress/100)
     return member_lpuc
 
 

@@ -225,16 +225,16 @@ for i in range(0, len(nodeIds)):
 Fcs = []
 
 # remove members with demand less than threshold (or Fc > threshold). Threshold = 300.
-memberLoadInverses = memberLoadInverses[memberLoadInverses["load_inverse"] < inputs.get_value(1, "Values")]
+#memberLoadInverses = memberLoadInverses[memberLoadInverses["load_inverse"] < inputs.get_value(1, "Values")]
 
 # find Fcs and order by descending values
 memberIDs = memberLoadInverses["member_ID"]
 for i in range(0, len(memberIDs)):
-    size = memberSizes.get_value(i, "cross_section")
+	size = memberSizes.get_value(i, "cross_section")
+	Fcs.append( memberCosts.get_value(i, "cost")/ memberLoadInverses.get_value(i, "load_inverse") )	# cost based optimization
     #sizeSelect = sec_info[sec_info["AISC_Manual_Label"] == size]	# weight-based
     #area = sizeSelect["A"].tolist()[0]								# weight-based
     #Fcs.append(area/(1000000*memberLoadInverses.get_value(i, "load_inverse")))	# weight based optimization
-    Fcs.append(memberCosts.get_value(i, "cost")/(1000000*memberLoadInverses.get_value(i, "load_inverse")))	# cost based optimization
 
 memberLoadInverses = memberLoadInverses.sort_values(by = "member_ID", ascending = True)		# because all the outputs from sizing are ordered alphabetically
 memberLoadInverses = memberLoadInverses.reset_index(drop = True)
@@ -396,7 +396,7 @@ for i in range(0,len(membersRemaining['member_ID'])):
 	#if currentMember=="BR0178":
 		#print currentMember, "after:",sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3I'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M2J'],sapIMember[sapIMember['member_ID'] == currentMember].iloc[0]['M3J']
 
-''' MECHANISM 2: avoiding vertical mechanisms within membersRemaining
+'''MECHANISM 2: avoiding vertical mechanisms within membersRemaining'''
 verticalElements = []
 for i in range(0,len(membersRemaining['member_ID'])):	# finding all vertical elements
 	start_node = membersRemaining.get_value(i,'start_node')
@@ -423,7 +423,7 @@ for i in range(0,len(sapINode['node_ID'])):
 		sapIMember.loc[sapIMember['member_ID'] == member,'M2J'] = False
 		sapIMember.loc[sapIMember['member_ID'] == member,'M3J'] = False
 		sapIMember.loc[sapIMember['member_ID'] == member,'M2I'] = False
-		sapIMember.loc[sapIMember['member_ID'] == member,'M3I'] = False'''
+		sapIMember.loc[sapIMember['member_ID'] == member,'M3I'] = False
 
 
 
